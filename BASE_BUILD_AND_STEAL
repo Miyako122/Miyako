@@ -1,4 +1,19 @@
 -- ==========================================
+-- 0. GAME BUG FIXER (MENGATASI INFINITE YIELD CONSOLE)
+-- ==========================================
+task.spawn(function()
+    pcall(function()
+        local playerGui = game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui", 5)
+        if playerGui and not playerGui:FindFirstChild("ProximityPrompts") then
+            -- Membuat objek palsu agar script game berhenti mencari dan console bersih
+            local dummyPrompt = Instance.new("Folder") 
+            dummyPrompt.Name = "ProximityPrompts"
+            dummyPrompt.Parent = playerGui
+        end
+    end)
+end)
+
+-- ==========================================
 -- DEV MIYAKO - MIYAKO BUILD BASE & STEAL VIP
 -- Game: Build a Base and Steal V3
 -- ==========================================
