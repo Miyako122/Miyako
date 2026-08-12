@@ -1,1 +1,550 @@
-return(function(...)local m={"7i4=Y^!s:b7s\"47h","7p\"93sT!fR2*?K5s","7ip18GoI?5\\OX_=_","7`*g1ib+!ohYL\\GCSdduFS0,Q*";"7&bC<8;e:$?WF=mu";"7SaN","7iO;2VSa/-qos3d5+O","7W=+rMW&\'HJip18gbPSPQ^(TlNtmOhdWOu+4j%","7`*gmWbs(/Qs08lAWd)FcPt:Uo","7SWrm$;rJ<Nt-Ar9jF`sB";"7<Ll?O;.e5:<,@M6ps";"7*5kN.b+mV2;r\"P%pqiF3";"7^C&@ao3I#m;#3g","7\'$_!@";"7W[9ugsV`-:+O","7\'$_)c;\'";"7pqiEQoI5!j;r/";"7!P,(4","7<H^32+apuk+S4h4","7iDH`=sT";"7+g47_;Ee\"q+gKGU";"7qFU%ot\\[+-t\\TLG","7W8#V%p6G\"KTEHumps";"7sKnF5;:M.L;:MF/;#/";"7iUH)=P).a";"7^@]b\"sV^Kd;F4?";"7p:@WsoPf!&s.ptQ";"7*Hr.Ve8JsH!+1i!sE","7qFKgRct9UN^SNUNW6c)h<Cm1cba","7S^m0!o;?";"7(/qHFs&TSa,f0uj&X";"7j(.m4*?ZW/+VFmcPtD";"7WV!R9+g_5B+>V3CoS";"7*5kN.bPWQ2P9G","7^9OBh+a6\'Q;_Be`oT^";"7Wgrs@PiDpupqi.LoTQ";"7PKA.nt:9FJs8h[L<(","7^)K\\7^)KQ\\oPe2@p=I","7<$\\8N;#J<?+^Z";"7<*o+,s<nlY;_mbKpq*,6";"7<H^3)^JR6";"7t_J1co+OBKTbIJ:";"7j6b(u+aM","7+^%Mm!V","7sV_-lTm)";"7s0Hh/PtaMmPt-\\J+a)@?+D";"7iUYm2;.Mk";"7SarE#bPWQ2P9G";"7o?-Ofp=uqL;BBHJ";"7trsmkoS";"7(TaC1h4n\'%jDG3$";"7<GV]-s0Y^m+O","7jqfK]+1;]Dt.V!m+D","7ib@tC<H<BHTcB","7Wdk(UoE]TN+^%m","7<,lpu^k(ik+O","7SY3g7&rVfIP8Cim","7ip1gCTmDOR";"7S[KWqSq?(PtR-f>","7^C7(>bPWQ2P9G";"7YL8Vu;:Lcrj:c;@p7.";"7W8#V%p6GuZ!GmuJTUeIno29";"7ib@tC","7h#1G_(/*k6&b?rtsT";"7;_`N","7*a","7^)K\\7^)KQ\\oPe2@p=4*M<ZlhgTC","7t#]*","7p.bL:(T%Qe&\\]>P","7<AnIZ;:^*DWgrs@PiDpupqi.LoTQ","7te\'t.ooX/CpqiF3","7<@VI5;:7","7e72B$<3:t6;!!ol<q","7tFi:^Y9G/)i4pmN";"7ib1G@p6Q]5TC";"7s0Y$F";"7iDG;Uo5ZK:+>GNf","7jF`s@;-!";"7+Sm\'H(oV>VW0;QR*?;","7oT9=j";"7<*o+,s<nlY;_m]#Pt]:IPiDlJPJr";"7iDHc8";"7SWrm$;rJ<Nt.V!q+K(91+O","7WF6E!S0,l4bW";"7WgnF$";"7sK>\'SoX8J4T\\\\RTsY5_Ao].-^+a;j3;--O4o*9f+;?#@LO3L-De#L\"tW8#V%p6L8O+>43jsdL@2oN2s*sVY>f+a69","7!/)Df<Lj?jWgQdbOj_";"7jqfKm+apjEsE";"7Sa/%qp\"lo@TmGX^","7ib@tC*PAUtsY)KL;-!","7;!7mpW=^<Z;e#E\"";"7e.5^+jBctmT/.[&";"7t#]g=","7*H?++h:VcX!\'+K$p%";"7i!VL8TUa4N+M8","7j7]\\","7;2[0!PaD^4TUBpT&H","7ib@tCt#]g=";"7te\'t.oS";"7","7t#fqBp=GoOTE\']BPCXJ`o59","7jqfKm";"7(f1C@PCgjWSqWn7";"7jqp;=o;YH&","7o;V/,;:^fJ";"7o;VYsTUaT?","7`*g1ib+NJ;<9?f;<k\'-s(H`","7jrL[`p-ItdhqAmit5R";"7t#fqH+>LNcsE";"7<H<Fcp=^]N+D","7^9OB*pF=@XTm)";"7t_J%EopBQ\\+>G>";"7<H<BHTE<d=o2DOX+O","7`*K/0";"7<X\"h!;.aTN","7SSqia^3(7Zo;YH&","7SlbGqsV^g";"7<CHa\\is0Zqi;,#7*1","7^9OBesg;W`TUeb","7hD$&`&m=lLSWBu,","7TbiiQp%","7Sa/-qoPfgdPtH";"7;#045j:12!s7r2+<Hq";"7(/\\99S8EYUoT2_M";"7oGEH\'P>l(hp_9O_pm;";"7^)KQ>t#WGQ+aP";"7TDSCQ+M%_1P9G";"7qF,tmct9U5o2G?\'4lq&GPi<-*";"7W=+rMW&\'HG^SG%pi5<s";"7`*gC5bP+M[","7<Z-`!s0ZNEPi\'/","7os\"t<Ojqfp&;_Jj<1!";"7qFKDXct9\\GoE2dTSS(RF4Jf=Vs[C(?+>Yo=s4tt^;rIE`o*P","7`*gC;bP>9n^SAkHS-]=GWF)4P^1Et6j/","7P9%oEp\"]B=p=^)";"7RO";"7<Z-`-Pjdp[Tk";"7^C7-2Pt>9>;R3OLp=I";"7WV!R9+dj7%o;Vnd<Zl_Ops";"7^k6l>+O";"7^C7-2Pt>,_Pjdf","7qFKgRct9UY^Sm%OSgt\'rS-]>QbP-0fi\')","7ippgih/","7p=#/QSqeot!)C1>h%";"7jhS37","7(f=*iiU*flo582#+^g","7ippgi";"7<$\\8@PiYP%O*u","7s0HeL+>GZ";"7tB[k\\sg;-GbPWQ2P9G","7SWrm$;rJ<N","7*W","7qFKgEt.OtH+e*aU+^Z";"7`*gmWbs(/Qs08lAWd)FcPt:UoeE";"7<*o+,";"7i46`U;o`2$;H";"7t#j/\"opsW/^tmdpp=^D";"7^tUd8i5\'o]p(bYU&D[";"7pr%h:peTt_o?P?e+8q","7\'$_6U+^%G","7pRM\'*WqLLDeQXGm","7oE5RDP9G";"7t_JE)+ap]8+a&@N+D";"7t_d(-;#J0";"7<\'<B6pTgCu;#3g";"7W8#V%p6G\")o;0k%s0glJp%";"7`*KDI","7<HMO`op+G:<,@M6ps","7ib@tC<\'MsV;.D";"7*?D1ct.OtH+D","7WV!R9+dj7%o;Vnd";"7s0UNij=EqCTI4J6P-","7<i4a7<9fGCt\\[ZUSg)m>";"7<LluEbPWQ2P9G";"7SlbGqt_Jq[+a69";"7iO;2VSa/-qo+QWqopU";"7^9OBP+a;J:P9,","7jr\"";"7jqfK6+dj(dP9G","7^k(eB","7*5kblo5ZgL+O";"7<N,N7!np","7<H<BHTE<d=o2DOX+g<auTDaO:oS";"7&U<=8t!\"D0sR*%Up%";"7<,lpu<X\"*$pF=\'U+>mWlsV`)","7^CIAoP<`a9;DU\\,eE","7`*KD5","7T]*Rk*TnU1T]i/Z";"7Sa/a8Pt%MB","7TbI_ATC";"7<,lpuiU<5mP9Fnh","7PlJ^U+>2","7`*K&;`A`TA<X\"BZb+Gkc+SmjX","7t-A/cbPWQ2P9G","7t.V99+-$i@;#3g";"7PC[9RPCHuf&!>f;tG","7ib@tCWd)p+p%";"7s0Z\"V\'Zo:9\'$Q`csVI","7<,lpujqp;=o;YH&";"7SW+CQ^9Om","7WE","7W8#V%p6GJBWKb\'6sV^g";"7j#$R$^SU^/j_r&)^S[","7jq]-3sV:Mb!GRdN;R\\M","7+^`LsW\";kgWY<!R+`2";"7ops<b","7:.";"7j\"csH+SD_qbPWQ2P9G","7t-H!1bPWQ2P9G";"7T!W-:^1kRi&;%RI","7Pi<A\"jR(7k<\'YFlP.","7oI5!j;r/","7jFQQosV^g","7<Ll]g;.eO?PC9";"7P)s#:Sa.X8S1:(Ljs","7ip1%APj$?E;-!","7\'$_cH;:M(mp=J","7<Z-`!s0Za","7`*gU1qBBArM*\\`td3AE&o;qjXop#VJ","7j_u#","7<H<BHTcB";"7iO;2VSa/-qo+V\\8!n8!L";"7j=i.#Y9L(NiOpC$,f\"";"7^CqA@sVQ1R<,@M6ps","7<G\'\\6PCgPi+VE/0";"7<)FTpYGcJMbs5<:YLqp9j_r&)^S[";"7onWROT]E;qsq/YP+O";"7t#fqBp=GoOT2hb)s0$!-pq*,6","7Sa/-qoPe26;rI78";"7bi@","7t_J.Es8?M`+M`2%;.aW3+O";"7i46`U;!Lb#!n8!L","7S>kWNo%9oej&3*3","7^C7-2Ptg","7^C7-2Pt>,\"p=I","7`*g1+b+mmFs8>)EPi\'?As[8F*bW";"7<H<[u+M..";"7t#fqBpq3Ffsh\'16;:7","7<HK\\OopU";"7*1","7^tB<U","7j#$Z\\b+g](b+!:A<)f$<","7<,lpuibltloIn";"7SaMR";"7+12FDto\\n","7<H<BHTk";"7Wd)BkoI5,i+-$i@;#3g";"7iplD&TmYE5","7WRWP+^kpDDpOXi1TU!","7sVBf=+>9","7<Zl_@oAJ>cP9sdFPt]h:";"7o5ZK(;\'";"7qFVX";"7*?D.U^k(i^sg;W`";"7t-H8@+a;J:P9,","7<L\"o%Tm<0","7e.dY0+SXMhP@9.rSD","7jF`sB";"7WKbT\"p.N9)ON;3";"7^tmk","7iUYm2;.>imT\\CZ","7^jp^d;r5QqOX:A";"7q.p;FWF9mpYGfl6jb#:d","7*ci\"@h&]5leV9Z%","7SYJ?GWrl3Y^81eB*W","7^jp^d;r5PdTUR\\/sVP8";"7s0Z\"V\'H@oI;r/";"7^CqAHo3I#m;#3g";"7,/AE<e64+(!+;65","7t.\'cGj7sGkTk";"7`*g1ibP+uF<)p3!^8K;Obsh$5ip#Y#bPS\\LW5","7<H<l2+a+`upqiF3";"7iO;2VSM9";"7t#f<g+O";"7jqfKm+a;=","7`*g.6bs?[bj#$tXWqNR!b+D$:j%";"7<,lQa+ap]EO*%1#!c?u"}for u,p in ipairs({{1,277};{1,208},{209;277}})do while p[1]<p[2]do m[p[1]],m[p[2]],p[1],p[2]=m[p[2]],m[p[1]],p[1]+1,p[2]-1 end end local function u(u)return m[u+23133]end do local u=math.floor local p=string.char local J=m local B=table.concat local S=type local U={h=17;M=54,L=47,d=40;y=4,["8"]=14,r=11,E=32;N=41,A=8;f=2;V=27,F=43,v=34;p=57;["4"]=19,["6"]=38,K=45,H=13,T=42;n=58,R=6;i=22;["7"]=36,l=1,W=29,I=0,B=18;D=35;["2"]=26,c=49,a=46,C=63,["0"]=39,g=9,["/"]=37;q=10;["+"]=16,Y=61,s=20,b=48;["5"]=55;m=53,j=30,w=15;O=62;o=3;G=50,e=44,t=21;["9"]=33;X=59,J=12,z=52;["3"]=24;Q=23;U=25,["1"]=7,k=60,x=28;u=56,P=5,Z=51,S=31}local G=string.sub local k={Z=56;X=2,["^"]=22,g=47;I=9;l=79,s=33;n=4;t=26,r=41,M=49;["`"]=77;["."]=69,T=36;O=39;["/"]=5,u=58,A=3;[":"]=13;G=84;U=65,["*"]=28;[";"]=35,i=27,["7"]=45;_=40;["&"]=17,["%"]=60;e=15;f=6;P=31;m=66;V=75,[">"]=50;["!"]=38;h=16;D=11,["]"]=61,Y=20;["$"]=55,["?"]=7;J=82;["+"]=32,[")"]=53;R=14,["="]=71,[","]=29,F=70,j=25;["3"]=0;B=67,["9"]=80;["\\"]=64;H=57,b=10,q=72,["-"]=42;C=81;["0"]=19,["["]=73;p=34,["\""]=43;a=51;["4"]=12;["1"]=78;["2"]=62,E=63;o=37;["\'"]=30;["("]=18,N=1,d=46,["8"]=74;L=83;["#"]=68,["<"]=21,["5"]=8;K=48,W=24;["@"]=52,["6"]=44,S=23;k=54,Q=76;c=59}local b=table.insert local v=string.len for m=1,#J,1 do local a=J[m]if S(a)=="string"then local S=G(a,1,1)if S=="P"then a=G(a,2)local S=v(a)local k={}local g=1 local V=0 local f=0 while g<=S do local m=G(a,g,g)local J=U[m]if J then V=V+J*(64^((3-f)))f=f+1 if f==4 then f=0 local m=u(V/65536)local J=u((V%65536)/256)local B=V%256 b(k,p(m,J,B))V=0 end elseif m=="="then b(k,p(u(V/65536)))if g>=S or G(a,g+1,g+1)~="="then b(k,p(u((V%65536)/256)))end break end g=g+1 end J[m]=B(k)elseif S=="7"then a=G(a,2)local S=v(a)local U={}local g=1 while g<=S do local m=(S-g)+1 local J=m>=5 and 5 or m local B=0 local v=J>1 for m=0,4,1 do local u if m<J then local p=G(a,g+m,g+m)u=k[p]if not u then v=false break end else u=84 end B=B*85+u end if v then local m=u(B/16777216)%256 local S=u(B/65536)%256 local G=u(B/256)%256 local k=B%256 if J==5 then b(U,p(m,S,G,k))elseif J==4 then b(U,p(m,S,G))elseif J==3 then b(U,p(m,S))elseif J==2 then b(U,p(m))end end g=g+J end J[m]=B(U)end end end end return(function(J,B,G,k,U,S,m,v,Z,p,V,e,c,L,y,b,g,a,f,l,H,D,s)Z,V,a,e,s,v,b,f,g,p,l,D,c,y,L,H=function(m)v[m]=v[m]-1 if 0==v[m]then v[m],b[m]=nil,nil end end,function(m)for u=1,#m,1 do v[m[u]]=v[m[u]]+1 end if B then local p=B(true)local J=U(p)J[u(-23042)],J[u(-22911)],J[u(-22909)]=m,f,function()return 1556810 end return p else return S({},{[u(-22911)]=f,[u(-23042)]=m;[u(-22909)]=function()return 1556810 end})end end,function()g=1+g v[g]=1 return g end,function(m,u)local J=V(u)local B=function(B,S,U)return p(m,{B,S,U},u,J)end return B end,function(m,u)local J=V(u)local B=function(B)return p(m,{B},u,J)end return B end,{},{},function(m)local u,p=1,m[1]while p do v[p],u=v[p]-1,u+1 if 0==v[p]then v[p],b[p]=nil,nil end p=m[u]end end,0,function(p,B,S,U)local n,PA,Y,w,UA,BA,rA,x,pA,EA,f,eA,P,q,WA,wA,HA,C,gA,bA,O,CA,uA,jA,yA,I,VA,j,ZA,LA,kA,E,vA,sA,tA,zA,GA,g,d,t,QA,iA,JA,v,F,mA,NA,h,fA,dA,k,o,Q,lA,M,xA,oA,z,qA,T,r,N,A,DA,cA,i,aA,TA,RA,SA,K,X,W,R,XA,V while p do if p>8477443 then if p<12571961 then if p<11070426 then if 9648898>p then if p>8943119 then if p<9287890 then if p>9097655 then if 9187045>p then p=b[S[2]]p=p and 11403289 or 68572 else N,p=u(-23076),7832611 R=V==N x=R end else if 9020631>p then d,t,P=u(-22958),p,u(-22959)d=R[d]d=d(R,P)j,p=d,d and 12650716 or 7097684 elseif p<9050427 then v=u(-22900)k=b[S[1]]p=k[v]p=p and 5357483 or 6709279 else k,p=f,i p=16755872 end end else if 9331538>p then p=k and 10072862 or 5948729 elseif 9417245>p then p=x and 7583828 or 10432602 elseif 9536721>p then p,v,k=m[u(-22938)],nil,{}else j,p=d,P p=12650716 end end else if 8700631>p then if p<8669270 then if 8568816>p then k=u(-23081)v=L(3589445,{S[1],S[2];S[3]})p=m[k]k=p(v)p=5638875 elseif p<8646221 then i,f,p=nil,nil,3941788 else g=u(-22996)k=m[g]g=u(-22907)p=k[g]g=.2 k=p(g)i=u(-23065)g=a()p=b[S[3]]k=p()b[g]=k f=b[S[4]]V=f[i]p,k=V and 8057395 or 15685865,V end else if p<8685339 then f=u(-22915)k=V[f]f=u(-23098)p=k[f]f,k,N=p,u(-23012),u(-23091)p=m[k]q=b[S[2]]N=q[N]R={N(q)}q={p(J(R))}x,k,i=q[3],q[1],q[2]q,p=k,2691778 else p=r and 11950938 or 16531116 end end else if p<8715763 then f=u(-22996)V=m[f]f=u(-23010)k=V[f]p=11968851 f=b[S[5]]V=k(f)elseif p<8759305 then N,x=1,p R=f[N]N=u(-23075)q=R==N p,i=q and 12241072 or 2775938,q elseif p<8831804 then p=9171324<395463 b[S[2]]=p p=11363144 else k,f,v=u(-22900),360,16121452<14340911 p=b[S[1]]x,V=340,u(-23059)p[k]=v k=u(-23109)p=b[S[1]]g=m[V]V=u(-22860)v=g[V]i,V=0,0 g=v(V,f,i,x)p[k]=g k=u(-22900)p=b[S[2]]v=4367241~=14945990 p[k]=v p,k=m[u(-23099)],{}end end end else if 10703426>p then if 10277831>p then if p<10055115 then if p<9873583 then p,r,j,X=R,q,10101298<15463487,nil b[S[3]]=p p,q,R,V,N=3629293,nil,nil,j,nil b[S[4]]=r elseif p<10031929 then p,v,k=m[u(-22991)],nil,{}else p=8443358 end else if p<10136853 then g,k=36,u(-23051)p=v[k]k=u(-23032)p[k]=g p=5948729 else q,p,R,N,X=nil,10887438,nil,nil,nil end end else if 10386015>p then p=j p,X=7554027,r elseif p<10424907 then q,N=p,u(-23113)R=V==N x,p=R,R and 7832611 or 9250873 elseif 10547252>p then p,i,f=1038798,nil,nil else p,k=m[u(-22992)],{}end end else if p<10918149 then if 10861682>p then if p<10749591 then p=k and 6318898 or 10026491 elseif p<10795079 then k=b[S[1]]v=u(-23065)p=k[v]v=p p,k=v and 4985103 or 10744951,v else p=k and 11010811 or 7553004 end else if p<10894714 then i,R=x(f,i)p=i and 7399524 or 3629293 else p=u(-22887)p,k=v[p],u(-22915)p=p(v,k)V=p p=V and 11139072 or 8443358 end end else if 10937860>p then p=b[S[1]]V=u(-22966)b[S[2]]=p v=u(-22862)k=b[S[3]]f=b[S[2]]g=V..f k[v]=g i,r,X=u(-23109),0,0 k=b[S[4]]R,N=u(-23059),0 g=b[S[5]]V=b[S[6]]q=m[R]R,v=u(-22860),u(-22963)x=q[R]v,R=k[v],1 q=x(R,N,X,r)f={[i]=q}v=v(k,g,V,f)g=u(-23092)V=c(11077095,{S[5]})k=u(-23100)k=v[k]k=k(v)k=v[g]g,p=u(-22965),m[u(-22969)]g=k[g]g=g(k,V)k,v,g=2594129>=9881147,nil,u(-22952)m[g]=k k={}elseif 10976111>p then p,i=11804740,u(-22918)f=b[v]V=f[i]q=u(-22961)x=m[q]q=u(-22918)i=x[q]x=u(-22905)f=i[x]g=V==f k=g elseif p<11037284 then k=u(-23051)p=v[k]i=u(-22961)f=m[i]i=u(-23119)V=f[i]f=u(-23038)g=V[f]V,k,i=3591392<=8031044,u(-23045),u(-22961)k=p[k]k=k(p,g,V)k=u(-23051)p=v[k]k=u(-23045)k=p[k]f=m[i]i=u(-23119)V=f[i]f=u(-22899)g=V[f]V=13749472~=2053449 k=k(p,g,V)p=7553004 else f=u(-22915)V=b[S[1]]g=V[f]V=u(-23098)v=g[V]g=u(-22859)k=v[g]v=3.5 p=k-v b[S[2]]=p p=15713627 end end end end else if p<11948134 then if 11467812>p then if p<11312992 then if p>11146635 then if 11208237>p then k,v=u(-22862),u(-22896)p=b[S[2]]p[k]=v v=u(-22996)k=m[v]v=u(-22881)p=k[v]v=2 g=s(12555281,{S[2]})k=p(v,g)p,k=m[u(-23105)],{}else p,k=m[u(-22898)],{}end else if p<11108083 then k,v=u(-22900),7229779<=1385850 p=b[S[1]]p[k]=v p,k=m[u(-22975)],{}elseif 11139353>p then k=u(-22880)p=m[k]q=u(-23083)q=V[q]x={q(V)}q={p(J(x))}f,p,k,i=q[2],14602881,q[1],q[3]x=k else k,p={},m[u(-23079)]end end else if p<11372467 then p,k=m[u(-23041)],{}elseif p<11392539 then k,p=u(-23051),u(-22887)p=v[p]p=p(v,k)g=p p=g and 2216241 or 10901990 elseif 11415739>p then V=u(-22996)g=m[V]V=u(-23010)p=g[V]V=b[S[2]]g=p(V)p=68572 else x,R=u(-23059),0 i=m[x]x=u(-22860)f=i[x]q,p,N,x=0,13173113,100,1 i=f(x,q,R,N)g=i end end else if p>11711703 then if p<11723516 then g,k,v={G(2,J(B))},u(-22879),B[1]p=m[k]k=p()f=b[S[1]]p,V=f and 15292947 or 5722722,k k=f elseif p<11764139 then k,p,v={},m[u(-23128)],nil elseif p<11875035 then p=k and 5837138 or 12597771 else f=u(-23059)V=m[f]f,q,i,x,p=u(-22860),0,0,0,14022318 g=V[f]f=1 V=g(f,i,x,q)k=V end else if p<11674098 then if p<11544176 then k,p={},m[u(-23078)]elseif p<11617353 then p=i p,k=5722722,f else Q,w,p=u(-22941),u(-22958),4428409 w=R[w]w=w(R,Q)o=w end else if p<11697159 then p,V=7656668,u(-23081)f=y(6879621,{S[2]})g=m[V]V=g(f)else p=N and 3740403 or 6005936 end end end end else if p<12245980 then if 12101429>p then if 12001081>p then if p<11959894 then P=u(-23065)d=N[P]P=u(-22915)t=d[P]d=u(-23098)j=t[d]r=j-f j=u(-22910)p=r[j]r=p p=r<v p=p and 1240023 or 16711287 elseif 11983661>p then p=4788105 else g,V=u(-22887),u(-23051)g=v[g]g=g(v,V)p,k=9324908,g end else if p<12023940 then i,k=u(-22961),u(-22858)p=b[v]k,g=p[k],u(-23051)k=k(p,g)p=u(-23071)f=m[i]i=u(-23119)V=f[i]p,f=k[p],u(-23085)g=V[f]p=p(k,g)V=e(8002793,{v;S[2]})g=u(-22996)k=m[g]g=u(-22881)p=k[g]g=.03 k=p(g,V)p=15763391 else v,g=B[1],u(-23098)k=v[g]R,i=u(-23050),u(-23059)g=b[S[1]]p=k-g g=p p=b[S[2]]f=m[i]i=u(-22860)V=f[i]q=b[S[3]]x=q[R]q,k=u(-22928),u(-23098)i=x[q]N=b[S[3]]X=u(-23050)R=N[X]X,N,v=u(-22859),u(-22882),nil q=R[N]j,N=u(-22859),u(-23050)R=g[N]x=q+R N=b[S[3]]R=N[X]N=u(-22928)q=R[N]r=b[S[3]]X=r[j]r=u(-22882)N=X[r]r=u(-22859)X=g[r]g=nil R=N+X f=V(i,x,q,R)p[k]=f p,k=m[u(-23108)],{}end end else if p<12163424 then x,v=u(-23083),u(-22880)k=m[v]f=b[S[3]]x=f[x]i={x(f)}f={k(J(i))}v,g,V,p=f[1],f[2],f[3],3941788 elseif 12193828>p then g=u(-22900)k=b[S[2]]p,V=14294919,15680784>1832807 k[g]=V elseif p<12230273 then j=u(-22958)j,r,t=R[j],p,u(-22869)j=j(R,t)p,X=j and 14762004 or 9012501,j else k,p=i,x p=3992554 end end else if 12383668>p then if p<12263571 then p=b[S[2]]p=p and 8666339 or 1827782 elseif 12298925>p then q,X=i,u(-22958)X,r=R[X],u(-23011)X=X(R,r)p,N=X and 11699912 or 12219475,X elseif 12344788>p then g=u(-22931)k=b[S[2]]v=u(-22862)k[v]=g k=b[S[2]]p,v=16699113,u(-22871)g=b[S[3]]k[v]=g else v,k,p=nil,{},m[u(-22856)]end else if p<12433455 then p,q={J(g)},u(-23122)f=p x=m[q]N=1 R=f[N]q=x(R)x=u(-22990)i=q==x p,k=i and 8728740 or 3992554,i elseif p<12494775 then p,d=W,T p=9577120 elseif p<12538639 then k,p={},m[u(-23111)]else k,v=u(-22862),u(-23068)p=b[S[1]]p[k]=v p,k=m[u(-23077)],{}end end end end end else if 15301617>p then if p>14217932 then if p<14800022 then if p<14621922 then if 14428484>p then if p<14296294 then k,p,v={},m[u(-23070)],nil elseif 14298923>p then f=b[S[4]]i={f(v,J(g))}k,p={J(i)},m[u(-22864)]else v=u(-22862)k=b[S[1]]q,p=u(-23024),not k b[S[1]]=p i=p k=b[S[2]]V=p x=b[S[1]]i,f,V=u(-22982),x and q,p g=f or i k[v]=g i=p k=b[S[2]]x=b[S[1]]v,p,f=u(-22871),x and 4422886 or 3154685,x end else if p<14579835 then k=a()EA,dA=u(-23059),tA b[k]=PA WA=u(-23013)TA=m[WA]PA,WA=k,u(-22860)k=TA[WA]zA=25 oA=b[rA]WA,QA=u(-23033),0 TA=k(WA,oA)oA=m[EA]EA=u(-22860)WA=oA[EA]EA,wA,k=1,0,u(-23109)oA=WA(EA,wA,QA,zA)TA[k]=oA wA,WA,oA,k=200,1,u(-22972),u(-23121)TA[k]=WA EA=b[PA]k,dA,QA=u(-22862),nil,200 WA=oA..EA EA=u(-22981)TA[k]=WA oA=m[EA]EA,k=u(-22957),u(-22871)WA=oA[EA]EA=200 oA=WA(EA,wA,QA)TA[k]=oA k,wA=u(-23022),u(-22961)EA=m[wA]wA=u(-23022)oA=EA[wA]wA,EA=u(-22961),u(-22968)WA=oA[EA]TA[k]=WA k,WA=u(-23104),11 TA[k]=WA EA=m[wA]k,wA=u(-23112),u(-23112)oA=EA[wA]EA=u(-23117)WA=oA[EA]TA[k]=WA oA=c(10934308,{PA,LA,NA;N;rA;T})WA=u(-23063)k=TA[WA]PA=Z(PA)p,WA=6627187,u(-22965)WA,TA=k[WA],nil WA=WA(k,oA)else i,R=x(f,i)p=i and 12276254 or 10037368 end end else if p<14657663 then p,k=m[u(-22893)],{}elseif p<14714048 then g=u(-22996)k=m[g]g=u(-22950)p=k[g]g=e(3382161,{S[1]})k=p(g)b[S[2]]=k p=3792153 elseif p<14757869 then v=B[1]p=v and 7486832 or 6354959 else N,p=X,r p=11699912 end end else if p<15095393 then if p<14896035 then p=q i[k]=x p=8626104 elseif 14958238>p then k=b[S[2]]v,g,f=u(-22862),u(-22921),u(-22981)k[v]=g k=b[S[2]]v,x=u(-22871),220 V=m[f]p,i,f=16699113,220,u(-22957)g=V[f]f=220 V=g(f,i,x)k[v]=V elseif 14990806>p then k,v=u(-23053),B[1]p=m[k]k=p()p,g=u(-23000),v k[p]=g p=v and 14674363 or 9123217 else p=nil k={p}p=m[u(-23110)]end else if 15173404>p then p,k=R,q p=5124980 elseif 15197185>p then p=16469760 elseif 15256064>p then p=5766609 else R=u(-23067)q=m[R]R=q()i,x=p,not R f,p=x,x and 10417212 or 11580918 end end end else if 13334258>p then if 12727748>p then if p>12632426 then if 12677441>p then X,p=j,t p=14762004 else p=b[S[2]]k,v=u(-22862),u(-23060)p[k]=v v=u(-22996)k=m[v]g=l(5745518,{S[2]})v=u(-22881)p=k[v]v=2 k=p(v,g)p,k=m[u(-23115)],{}end else if p<12593206 then k=b[S[1]]v=1 p=k-v b[S[1]]=p p=4336551 elseif p<12605953 then v=Z(v)k,p={},m[u(-22920)]else v=u(-23053)k=m[v]v=k()k=u(-22902)p=v[k]p=p and 8511528 or 13444100 end end else if p<12879489 then f=u(-23098)V=g[f]f=u(-22859)k=V[f]V=3.5 p=k-V b[S[2]]=p p=4925936 elseif p<13090381 then N=u(-23086)R=i[N]N=0 q=R>N p,x=9338168,q elseif 13250118>p then k,p=g,V p=g and 14022318 or 11945330 else k=b[S[1]]v=u(-23065)p=k[v]v=p p=v and 11381790 or 6379321 end end else if p<13871632 then if p<13673223 then if p<13392746 then j,q,i=u(-23053),p,u(-22885)k=b[S[5]]g=b[S[3]]N=p V=b[S[6]]r=m[j]j=r()r=u(-22902)X=j[r]R,p=X,X and 7837238 or 6063701 elseif p<13540651 then V,k=u(-23130),u(-23130)p=b[S[3]]g=m[V]i,V=0,u(-22860)v=g[V]f,V=-99999,0 g=v(V,f,i)p[k]=g p=0 b[S[2]]=p p=5638875 else p,i=3260979,nil end else if 13783663>p then k=u(-23081)p=m[k]v=l(6131247,{S[1]})k=p(v)k,p={},m[u(-23016)]else X=u(-23065)p=N[X]r,X=u(-23051),u(-22887)X=p[X]X=X(p,r)p,r=X and 1647482 or 8698476,X end end else if 13891776>p then d=u(-23065)t=N[d]j,r=p,t p=t and 15347575 or 10354818 elseif 13960344>p then x=b[v]f,i=x,p p=x and 15439764 or 9072093 elseif p<14081631 then g,p=u(-22963),v v=k k=b[S[3]]V=b[S[2]]x=u(-23109)i={[x]=v}f=b[S[4]]g=k[g]g=g(k,V,f,i)k=u(-23100)k=g[k]k=k(g)V=b[S[1]]k=not V p=k and 378910 or 6277043 else k=b[S[3]]p=not k p=p and 11153635 or 3450737 end end end end else if 15867848>p then if p<15696236 then if 15429707>p then if 15343108>p then if 15319656>p then i,v,g=0,B[1],u(-23013)k=m[g]g=u(-22860)p=k[g]x,g=0,u(-23005)V=b[S[1]]k=p(g,V)q,g,p,f=24,k,u(-23109),u(-23059)V=m[f]f=u(-22860)k=V[f]f=1 V=k(f,i,x,q)g[p]=V i,V,p,f,k=200,u(-22972),u(-23121),u(-22981),1 g[p]=k p=u(-22862)k=V..v g[p]=k V=m[f]p,f,x=u(-22871),u(-22957),200 k=V[f]f=200 V=k(f,i,x)g[p]=V i,p=u(-22961),u(-23022)f=m[i]i=u(-23022)V=f[i]i,q,f,R=u(-22961),.5,u(-22967),0 k=V[f]g[p]=k k,p=11,u(-23104)g[p]=k x=3 f=m[i]p,i=u(-23112),u(-23112)V=f[i]i,f=u(-23059),u(-23117)k=V[f]V=u(-23013)g[p]=k k=m[V]V=u(-22860)p=k[V]V=u(-23062)k=p(V,g)p=u(-23109)f=m[i]V,i=k,u(-22860)k=f[i]i=0 f=k(i,x,q,R)i=u(-23059)V[p]=f f=m[i]p,x,i=u(-23098),0,u(-22860)k=f[i]q,i,R=.25,0,0 f=k(i,x,q,R)V[p]=f f=u(-23013)k=b[S[2]]p=u(-22885)V[p]=k k,q,p=0,0,u(-22925)V[p]=k k=m[f]f=u(-22860)p=k[f]f,x=u(-22867),u(-23055)k=p(f,V)p=u(-22906)i=m[x]x=u(-22860)f=i[x]x=1 i=f(x,q)k[p]=i k,p={g},m[u(-23123)]elseif p<15333833 then p=k and 15019166 or 8672202 else p=k and 3421858 or 1073561 end else if 15383613>p then P,d=u(-22915),u(-23065)t=N[d]d,p=u(-22887),10354818 d=t[d]d=d(t,P)r=d else k=b[S[1]]v=0 p=k==v p=p and 12704167 or 14140945 end end else if 15451535>p then f,p=V,9072093 elseif p<15481101 then i,k=v,u(-22880)p=m[k]R=b[S[2]]N={p(R)}k,q=N[1],N[3]R,x,p=k,N[2],4005314 elseif 15592380>p then p=b[S[6]]g,v=u(-22903),u(-22862)p[v]=g g=u(-22996)v=m[g]g=u(-22881)p=v[g]V=l(6226804,{S[6]})g=3 v=p(g,V)k,p={},m[u(-23056)]else f=b[g]V=k k,p=f,f and 13898371 or 16755872 end end else if p<15757870 then if 15744747>p then if p<15710117 then p=14294919 elseif p<15728188 then k,p={},m[u(-23058)]else v=15 k=b[S[1]]p=k<v p=p and 15746746 or 3157254 end else if p<15749547 then k=b[S[1]]v=1 p=k+v b[S[1]]=p p=3157254 else p,k=u(-22857),2479437>=8369872 g[p]=k p=16200875 end end else if p<15799386 then v=Z(v)p,k=m[u(-22945)],{}elseif 15845308>p then v=u(-22900)k=b[S[2]]p,g=6926431,4997318>2075290 k[v]=g elseif p<15855368 then k=u(-22862)p=b[S[2]]g=u(-22939)p[k]=g g=u(-22996)k=m[g]g=u(-22950)p=k[g]g=l(16147961,{S[5],S[3];S[1];S[6],v,S[2]})v=Z(v)k=p(g)p,k=m[u(-22979)],{}else v,f,q=B[1],u(-22918),u(-22961)V=v[f]x=m[q]q=u(-22918)i=x[q]x=u(-22892)f=i[x]g=V==f k,p=g,g and 2716813 or 848855 end end end else if 16585599>p then if p<16284161 then if 16162407>p then if 16014078>p then g,V=u(-22887),u(-23051)g,p=v[g],2729958 g=g(v,V)k=g elseif p<16152251 then V,k=1,0 g=b[S[1]]v=g-V g=v v,p=1,3260979 V=v v=0 f=v>V v=k-V else x,k=2,u(-23097)p=m[k]i=f[x]k=p(i)i=k p=i and 133596 or 6796195 end else if p<16184574 then R,p,N=nil,2691778,nil else k=u(-22872)p=g[k]p=p and 2076668 or 7016358 end end else if p<16370092 then f=b[S[4]]g,p=f,4371475 elseif 16421249>p then v=u(-23065)k=b[S[1]]p=k[v]v=a()b[v]=p p=b[v]p=p and 12003690 or 15763391 elseif p<16500438 then o=u(-23013)k=m[o]o=u(-22860)HA=a()Q=u(-23059)p=k[o]n,o,M=45,u(-23033),5 E=b[W]C=0 k=p(o,E)GA=1 o=a()b[o]=k SA=u(-23059)p=b[o]w=m[Q]z,Q=45,u(-22860)E=w[Q]k,Q=u(-23109),0 w=E(Q,z,C,n)Q,n=u(-23059),0 p[k]=w k=u(-23098)p=b[o]C,z,I=.1,-22,340 w=m[Q]Q=u(-22860)E=w[Q]Q=.5 w=E(Q,z,C,n)p[k]=w k=u(-22885)p=b[o]E=b[d]p[k]=E k=u(-22862)p=b[o]E=u(-23001)p[k]=E z,k=u(-22961),u(-23104)p=b[o]E=22 p[k]=E p=b[o]k=u(-22871)E=b[j]C=u(-23059)p[k]=E dA,k=32,u(-23022)p=b[o]Q=m[z]z,K=u(-23022),u(-22981)w=Q[z]Q=u(-22967)E=w[Q]p[k]=E p=b[o]n,k,E=50,u(-23020),13481181~=16710096 p[k]=E E=9307617~=5712891 p=b[o]k=u(-22873)p[k]=E E,k=10829625<=9632573,u(-22900)p=b[o]p[k]=E E=u(-23013)k=m[E]E=u(-22860)p=k[E]w=b[o]z,E=0,u(-22867)k=p(E,w)JA=255 LA=a()p,Q=u(-22906),u(-23055)w=m[Q]Q=u(-22860)E=w[Q]Q=1 w=E(Q,z)A,E=32,u(-23013)k[p]=w k=m[E]F,E=50,u(-22860)p=k[E]w=b[o]E=u(-22954)k=p(E,w)E,p=k,u(-22956)k=b[j]w=u(-23013)E[p]=k p,k=u(-23125),.4 E[p]=k p,k=u(-23127),1.5 E[p]=k k=m[w]w=u(-22860)p=k[w]Q=b[W]w=u(-23033)k=p(w,Q)w=a()b[w]=k O=0 p=b[w]z=m[C]h,C=0,u(-22860)Q=z[C]C=0 z=Q(C,n,h,F)n,C,k=0,u(-23059),u(-23109)p[k]=z h,k=.4,u(-23098)p=b[w]z=m[C]C=u(-22860)Q=z[C]C,F=.62,0 z=Q(C,n,h,F)n=u(-23059)p[k]=z Q=1 p=b[w]k=u(-23121)p[k]=Q Q,k=u(-23015),u(-22862)p=b[w]p[k]=Q Q,k=28,u(-23104)p=b[w]p[k]=Q k,Q=u(-23020),3794183<=15898292 p=b[w]p[k]=Q Q=16656529>2725029 p=b[w]k=u(-22873)p[k]=Q k,Q,h,F=u(-22900),13105938<2837057,360,0 p=b[w]p[k]=Q Q,vA=u(-23013),u(-22878)k=m[Q]Q=u(-22860)p=k[Q]Q=u(-23062)z=b[W]k=p(Q,z)Q=a()b[Q]=k p=b[Q]C=m[n]n,k=u(-22860),u(-23109)z=C[n]n=0 C=z(n,h,F,I)p[k]=C k=u(-23098)yA=a()F=.5 p=b[Q]h,n=-180,u(-23059)C=m[n]n=u(-22860)z=C[n]I,n=-170,.5 C=z(n,h,F,I)p[k]=C p=b[Q]k,z=u(-22885),t p[k]=z z,h,ZA=0,8,u(-23069)p=b[Q]k=u(-22925)p[k]=z k,z=u(-22951),7953434>605635 p=b[Q]p[k]=z z=u(-23013)k=m[z]z=u(-22860)p=k[z]n,z=u(-23055),u(-22867)C=b[Q]k=p(z,C)p=u(-22906)C=m[n]F,n=0,u(-22860)z=C[n]n=0 C=z(n,h)z=u(-23013)k[p]=C k=m[z]Y,z=u(-23019),u(-22860)p=k[z]z=u(-22954)C=b[Q]k=p(z,C)I,z,p=0,k,u(-22956)k=b[j]z[p]=k h,p,k=u(-23059),u(-23125),.6 z[p]=k k,p,C=1.5,u(-23127),u(-23013)z[p]=k k=m[C]C=u(-22860)p=k[C]C=u(-23062)n=b[Q]k=p(C,n)p=u(-23109)n=m[h]h,C=u(-22860),k k=n[h]h=1 n=k(h,F,I,A)gA=1 C[p]=n k=b[d]p=u(-22885)C[p]=k p,k,I,F,BA=u(-22925),0,8,u(-23055),255 C[p]=k p,k,n=u(-23020),655391~=3965661,u(-23013)C[p]=k A=0 k=m[n]n=u(-22860)p=k[n]n=u(-22867)k=p(n,C)h=m[F]p,F=u(-22906),u(-22860)n=h[F]F=0 h=n(F,I)n=u(-23013)k[p]=h k=m[n]n=u(-22860)p=k[n]n=u(-23062)k=p(n,C)p,F,n=u(-23109),u(-23059),k h=m[F]I,F=0,u(-22860)k=h[F]F=1 h=k(F,I,A,M)I,F=0,u(-23059)n[p]=h h=m[F]A,M,p,F=1,-5,u(-23098),u(-22860)k=h[F]F=0 h=k(F,I,A,M)I=u(-23059)n[p]=h h,p=u(-23013),u(-22885)k=b[d]n[p]=k p,k=u(-22925),0 n[p]=k k=m[h]h=u(-22860)p=k[h]h=u(-23005)k=p(h,C)M,p=1,u(-23109)F=m[I]h,I,A=k,u(-22860),-75 k=F[I]I=1 F=k(I,A,M,O)h[p]=F A,I=12,u(-23059)F=m[I]O,I,p=0,u(-22860),u(-23098)k=F[I]I,M=0,0 F=k(I,A,M,O)h[p]=F k,p=1,u(-23121)h[p]=k k,p=u(-22917),u(-22862)h[p]=k I=u(-22981)F=m[I]I,p=u(-22957),u(-22871)k=F[I]A,M,I,qA=255,255,255,u(-23059)F=k(I,A,M)h[p]=F p,A=u(-23022),u(-22961)I=m[A]A=u(-23022)F=I[A]I=u(-22967)k=F[I]h[p]=k k,p,A=11,u(-23104),u(-22961)h[p]=k p=u(-23112)I=m[A]A=u(-23112)F=I[A]I=u(-23117)k=F[I]F=u(-23013)h[p]=k A,pA=u(-23089),220 k=m[F]F=u(-22860)p=k[F]F=u(-22986)k=p(F,h)I=m[A]A,p,F,kA=u(-22860),u(-22956),k,-42 k=I[A]O=m[Y]Y=u(-22860)M=O[Y]Y=0 mA=m[K]K,RA=u(-22957),0 uA=mA[K]K=0 mA={uA(K,pA,JA)}O=M(Y,J(mA))uA,pA=u(-23019),u(-22981)Y=m[uA]uA=u(-22860)M=Y[uA]cA=a()uA=1 K=m[pA]pA=u(-22957)mA=K[pA]JA,pA,jA=255,255,0 K={mA(pA,JA,BA)}Y={M(uA,J(K))}A,uA={O;J(Y)},32 Y=0 I=k(A)F[p]=I eA,I=u(-23013),u(-23013)k=m[I]I=u(-22860)p=k[I]I=u(-23033)k=p(I,C)M=u(-23059)A=m[M]M,p,I,O=u(-22860),u(-23109),k,32 k=A[M]K,M=32,0 A=k(M,O,Y,uA)M=u(-23059)I[p]=A Y=0 A=m[M]p,uA,O,M=u(-23098),0,-32,u(-22860)k=A[M]M=1 A=k(M,O,Y,uA)k=1 fA=a()I[p]=A Y,M,p=100,u(-22981),u(-23121)I[p]=k p,k=u(-22862),u(-22949)I[p]=k A=m[M]p,M,O=u(-22871),u(-22957),100 k=A[M]M=255 A=k(M,O,Y)I[p]=A p,O=u(-23022),u(-22961)M=m[O]Y,O=u(-23059),u(-23022)A=M[O]M=u(-22967)k=A[M]XA=1 I[p]=k A=y(7505869,{W})p,k=u(-23104),12 I[p]=k k,NA,M=u(-23063),0,u(-23063)p=I[k]k,uA=u(-22965),32 k=p[k]k=k(p,A)k=b[o]p=l(9028762,{Q;N,o})A,mA=p,0 p=k[M]k=u(-22965)k,M=p[k],u(-23013)k=k(p,A)k=m[M]M=u(-22860)p=k[M]M=u(-23033)k=p(M,C)M=k O=m[Y]p,Y=u(-23109),u(-22860)k=O[Y]Y=0 O=k(Y,uA,mA,K)Y=u(-23059)M[p]=O p,uA=u(-23098),-64 O=m[Y]mA,Y,K=0,u(-22860),0 k=O[Y]Y=1 O=k(Y,uA,mA,K)M[p]=O k,p=1,u(-23121)K=a()uA=u(-22961)M[p]=k k,p=u(-23088),u(-22862)M[p]=k k=b[j]p=u(-22871)M[p]=k p=u(-23022)Y=m[uA]uA=u(-23022)O=Y[uA]Y=u(-22967)k=O[Y]mA=a()M[p]=k p,k=u(-23104),13 M[p]=k k=u(-23063)O=a()p=M[k]k=u(-22965)Y=a()k=p[k]k=k(p,A)p=nil b[O]=p p=nil b[Y]=p k,p=u(-23080),nil uA=a()b[uA]=p p=nil b[mA]=p p=l(12044191,{uA;Q;mA})b[K]=p pA=s(2848228,{O,uA,Q,mA})p=C[k]k=u(-22965)k=p[k]k=k(p,pA)k=u(-22973)p=C[k]pA=l(15855501,{Y})k=u(-22965)k=p[k]k=k(p,pA)k=u(-22973)p=x[k]pA=L(16646042,{Y;O,K})k=u(-22965)k=p[k]k=k(p,pA)pA,PA=u(-23013),32 k=m[pA]pA=u(-22860)p=k[pA]pA=u(-22964)JA=b[Q]k=p(pA,JA)pA=a()b[pA]=k k,UA=u(-23109),-16 p=b[pA]BA=m[SA]SA=u(-22860)JA=BA[SA]SA=1 BA=JA(SA,UA,GA,kA)p[k]=BA kA=37 p=b[pA]SA=u(-23059)BA=m[SA]SA=u(-22860)JA=BA[SA]k,UA,SA,GA=u(-23098),8,0,0 BA=JA(SA,UA,GA,kA)GA=0 p[k]=BA JA=1 p=b[pA]k=u(-23121)p[k]=JA UA,kA,JA=0,600,3 p=b[pA]k=u(-23101)p[k]=JA SA,k=u(-23059),u(-23054)p=b[pA]BA=m[SA]SA=u(-22860)JA=BA[SA]SA=0 BA=JA(SA,UA,GA,kA)p[k]=BA JA=u(-23013)k=m[JA]JA=u(-22860)p=k[JA]BA=b[pA]UA,JA=u(-22961),u(-22922)k=p(JA,BA)p=u(-22932)SA=m[UA]VA,UA=20,u(-22932)BA=SA[UA]JA,SA=k,u(-22870)k=BA[SA]JA[p]=k SA,p,UA=u(-23055),u(-22989),6 BA=m[SA]SA=u(-22860)k=BA[SA]SA=0 BA=k(SA,UA)JA[p]=BA UA=a()p=H(15310287,{pA;j})GA=c(14753734,{i;f;UA})k,BA=u(-22999),p p=L(5579034,{pA,d;j;P;N;T})SA=p p=BA(k)p,k=nil,u(-23049)b[UA]=p p=SA(k,GA)k=u(-23053)p=m[k]GA=8407272>=16727453 k=p()p,kA=u(-22902),u(-23013)k[p]=GA GA=a()p=0 b[GA]=p k=m[kA]kA=u(-22860)p=k[kA]kA=u(-22944)bA=b[g]k=p(kA,bA)kA=a()b[kA]=k k=u(-23109)p=b[kA]aA=m[vA]vA=u(-22860)bA=aA[vA]vA=20 aA=bA(vA,gA,VA)bA=1 p[k]=aA p=b[kA]k=u(-23125)p[k]=bA p=b[kA]bA,k=16610922~=6109025,u(-23087)p[k]=bA p=b[kA]gA,k,vA,bA=-99999,u(-22886),u(-23130),10240939>=7961812 p[k]=bA VA=0 p=b[kA]aA=m[vA]k,vA=u(-23130),u(-22860)bA=aA[vA]vA=0 aA=bA(vA,gA,VA)p[k]=aA k=u(-23074)aA=s(7106888,{})p=nil bA=a()b[bA]=p gA=c(5263892,{f,GA})p=SA(k,aA)aA=p p=aA b[bA]=p vA=u(-23027)k=x[vA]vA=u(-22965)vA=k[vA]vA=vA(k,gA)gA=u(-22926)vA=a()VA=L(8038342,{vA,w;bA})k,rA=15893788<14724592,35 b[vA]=k k=SA(gA,VA)gA=b[w]VA=u(-23063)k=gA[VA]gA,tA=u(-22965),0 VA=c(16640083,{vA;w;bA,j;N,T,P,d})gA=k[gA]gA=gA(k,VA)gA=u(-23053)k=m[gA]gA=k()VA,k=3193763>11693821,u(-23036)gA[k]=VA VA=c(300454,{f})gA=u(-23009)k=SA(gA,VA)gA=u(-22976)k=BA(gA)gA=a()k=2673034>=10303456 b[gA]=k VA=a()k=nil b[VA]=k k=l(8012810,{f,V})b[fA]=k DA=H(2561614,{gA,q,fA,f,VA})sA=a()k=SA(ZA,DA)ZA=u(-23053)k=m[ZA]DA=12259541<=11405348 ZA=k()k=u(-23000)ZA[k]=DA k=nil ZA=a()b[ZA]=k lA=H(14962447,{g,ZA})DA=u(-22983)k=SA(DA,lA)DA=b[i]lA=u(-23039)k=DA[lA]lA=e(12614136,{f,GA,kA})DA=u(-22965)DA=k[DA]DA=DA(k,lA)DA=u(-23073)k=BA(DA)DA=a()k=nil b[DA]=k k=u(-23102)lA=a()b[lA]=k k=0 b[yA]=k k=7774290<2135031 b[cA]=k k=12663809<12129167 b[sA]=k k=u(-22877)b[LA]=k k=1 b[HA]=k iA=m[eA]eA=u(-22860)k=iA[eA]xA=b[pA]eA=u(-23062)iA=k(eA,xA)k=u(-23109)xA=m[qA]qA=u(-22860)eA=xA[qA]qA=1 xA=eA(qA,RA,NA,rA)rA,eA=0,1 iA[k]=xA xA,k=u(-23013),u(-23121)iA[k]=eA eA=m[xA]xA=u(-22860)k=eA[xA]xA=u(-23005)eA=k(xA,iA)xA=a()b[xA]=eA k=b[xA]eA,NA=u(-23109),u(-23059)RA=m[NA]NA=u(-22860)qA=RA[NA]NA=.78 RA=qA(NA,rA,XA,jA)k[eA]=RA rA=150 k=b[xA]qA=b[d]eA=u(-22885)k[eA]=qA qA,eA=u(-23107),u(-22862)k=b[xA]NA=u(-22981)k[eA]=qA k=b[xA]RA=m[NA]eA,NA=u(-22871),u(-22957)qA=RA[NA]NA,XA=150,150 RA=qA(NA,rA,XA)k[eA]=RA rA,eA=u(-22961),u(-23022)k=b[xA]NA=m[rA]rA=u(-23022)RA=NA[rA]NA=u(-23064)qA=RA[NA]k[eA]=qA NA,eA,rA,qA=u(-23055),u(-23104),6,11 k=b[xA]k[eA]=qA qA=u(-23013)eA=m[qA]qA=u(-22860)k=eA[qA]qA=u(-22867)RA=b[xA]eA=k(qA,RA)RA=m[NA]NA,k=u(-22860),u(-22906)qA=RA[NA]NA=0 RA=qA(NA,rA)qA=u(-23013)eA[k]=RA NA,XA=u(-23059),1 eA=m[qA]qA=u(-22860)k=eA[qA]qA=u(-23033)eA=k(qA,iA)k=u(-23109)RA=m[NA]NA=u(-22860)jA=0 qA=RA[NA]NA,rA=.2,0 RA=qA(NA,rA,XA,jA)eA[k]=RA NA,k=u(-23059),u(-23098)RA=m[NA]rA,jA,NA,XA=0,0,u(-22860),0 qA=RA[NA]NA=.8 RA=qA(NA,rA,XA,jA)eA[k]=RA rA,k=10,u(-22885)qA=b[j]eA[k]=qA k,qA,NA=u(-22862),u(-23072),u(-22981)eA[k]=qA RA=m[NA]k,NA,XA=u(-22871),u(-22957),10 qA=RA[NA]NA=10 RA=qA(NA,rA,XA)eA[k]=RA k,XA,rA=u(-23022),6,u(-22961)NA=m[rA]rA=u(-23022)RA=NA[rA]NA=u(-22967)qA=RA[NA]eA[k]=qA k,qA,RA=u(-23104),12,u(-23013)eA[k]=qA qA=m[RA]RA=u(-22860)k=qA[RA]rA,RA=u(-23055),u(-22867)qA=k(RA,eA)k=u(-22906)NA=m[rA]rA=u(-22860)RA=NA[rA]rA=0 NA=RA(rA,XA)qA[k]=NA RA=s(10754232,{f;X;DA,lA;xA,j})qA=u(-23063)k=eA[qA]qA=u(-22965)qA,XA=k[qA],u(-23059)qA=qA(k,RA)qA,RA=u(-23029),u(-23013)k=BA(qA)qA=m[RA]RA=u(-22860)k=qA[RA]NA=b[pA]RA=u(-23033)qA=k(RA,NA)RA=a()TA=0 b[RA]=qA k=b[RA]rA=m[XA]XA=u(-22860)NA=rA[XA]qA,jA,XA=u(-23109),0,1 rA=NA(XA,jA,tA,dA)k[qA]=rA qA,jA=u(-22885),220 k=b[RA]NA=b[d]k[qA]=NA k=b[RA]XA,qA,NA=u(-22981),u(-22862),u(-22921)k[qA]=NA k=b[RA]qA=u(-22871)rA=m[XA]XA,tA=u(-22957),220 NA=rA[XA]XA=220 rA=NA(XA,jA,tA)jA=u(-22961)k[qA]=rA qA=u(-23022)k=b[RA]XA=m[jA]jA=u(-23022)rA=XA[jA]dA,XA=0,u(-23064)NA=rA[XA]k[qA]=NA k=b[RA]qA,NA=u(-23104),11 k[qA]=NA NA,XA=u(-23013),u(-23055)qA=m[NA]NA=u(-22860)k=qA[NA]NA=u(-22867)rA=b[RA]qA=k(NA,rA)k=u(-22906)rA=m[XA]XA,jA=u(-22860),6 NA=rA[XA]XA=0 rA=NA(XA,jA)qA[k]=rA NA=u(-23063)qA=b[RA]k=qA[NA]NA=l(4922071,{cA;RA;j})qA=u(-22965)qA=k[qA]qA=qA(k,NA)NA,tA=u(-23013),0 qA=m[NA]jA,NA=u(-23059),u(-22860)k=qA[NA]NA=u(-23033)rA=b[pA]qA=k(NA,rA)NA=a()b[NA]=qA k=b[NA]XA=m[jA]jA,qA=u(-22860),u(-23109)rA=XA[jA]jA=1 XA=rA(jA,tA,dA,PA)k[qA]=XA k=b[NA]rA=b[d]qA,tA=u(-22885),220 k[qA]=rA XA=u(-22966)k=b[NA]jA=b[LA]qA,dA=u(-22862),220 rA=XA..jA jA=u(-22981)k[qA]=rA qA=u(-22871)k=b[NA]XA=m[jA]PA,jA=0,u(-22957)rA=XA[jA]jA=220 XA=rA(jA,tA,dA)tA=u(-22961)k[qA]=XA oA=25 k=b[NA]qA=u(-23022)jA=m[tA]tA=u(-23022)XA=jA[tA]jA=u(-23064)rA=XA[jA]k[qA]=rA qA=u(-23104)k=b[NA]tA,rA,jA=6,11,u(-23055)k[qA]=rA rA=u(-23013)qA=m[rA]rA=u(-22860)k=qA[rA]rA=u(-22867)XA=b[NA]qA=k(rA,XA)XA=m[jA]jA,k=u(-22860),u(-22906)rA=XA[jA]jA=0 XA=rA(jA,tA)qA[k]=XA rA=u(-23013)qA=m[rA]rA=u(-22860)k=qA[rA]XA=b[pA]rA=u(-22964)qA=k(rA,XA)dA,tA=0,u(-23059)rA=a()b[rA]=qA k=b[rA]qA=u(-23109)jA=m[tA]tA=u(-22860)XA=jA[tA]tA=1 jA=XA(tA,dA,PA,TA)PA=28 k[qA]=jA tA=u(-22981)k=b[rA]jA=m[tA]dA,tA=22,u(-22957)XA=jA[tA]tA,qA=20,u(-22885)jA=XA(tA,dA,PA)XA=0 k[qA]=jA PA,qA,tA=0,u(-22925),u(-23059)k=b[rA]k[qA]=XA XA,qA=878487>=3660974,u(-22900)k=b[rA]k[qA]=XA k=b[rA]p,qA,XA=6627187,u(-23101),2 k[qA]=XA k=b[rA]qA=u(-22974)XA=b[j]k[qA]=XA k=b[rA]dA=0 jA=m[tA]qA,tA=u(-23054),u(-22860)XA=jA[tA]tA=0 WA=#r TA=WA*oA jA=XA(tA,dA,PA,TA)dA=6 k[qA]=jA XA=u(-23013)qA=m[XA]XA=u(-22860)k=qA[XA]XA=u(-22867)jA=b[rA]tA=u(-23055)qA=k(XA,jA)k=u(-22906)jA=m[tA]tA=u(-22860)XA=jA[tA]tA=0 jA=XA(tA,dA)dA=u(-22961)qA[k]=jA XA=u(-23013)qA=m[XA]XA=u(-22860)k=qA[XA]jA=b[rA]XA=u(-22922)qA=k(XA,jA)tA=m[dA]k,dA=u(-22932),u(-22932)jA=tA[dA]tA=u(-22870)XA=jA[tA]qA[k]=XA XA=u(-22880)k=m[XA]dA={k(r)}tA,jA,XA=dA[3],dA[2],dA[1]else p,X=16168273,nil end end else if p<16694527 then if p<16643062 then p=b[S[1]]p=p and 2697526 or 14640964 elseif p<16662914 then V=b[S[1]]v=B[1]g=v==V p,k=g and 4980958 or 15338641,g elseif p<16684864 then f=e(2797622,{v,S[4];g})k=u(-23081)p=m[k]k=p(f)p=16689942 else g=Z(g)p,V=12250889,nil end else if p<16705200 then k,p={},m[u(-22924)]elseif p<16712670 then r,p=nil,16531116 elseif 16734963>p then k,q,j,N=u(-22862),p,u(-23053),p r=m[j]j=r()r=u(-22902)X=j[r]r,N=u(-23024),u(-22982)R=X and r x=R or N i[k]=x k,q,j,N=u(-22871),p,u(-23053),p r=m[j]j=r()r=u(-22902)X=j[r]R,p=X,X and 6302559 or 8082084 else p=k and 16679787 or 16689942 end end end end end end else if p<4442939 then if 2694652>p then if p<1259136 then if p>924976 then if p>1111427 then if 1150579>p then k=b[S[5]]p=k and 8702786 or 11968851 elseif p<1214435 then j,r,p,X=150,150,14838041,u(-22981)N=m[X]X=u(-22957)R=N[X]X=150 N=R(X,r,j)x=N elseif p<1242142 then p,j=r,N g,v=j,p p=16711287 else g=u(-22900)k=b[S[2]]V=12326265<3501123 k[g]=V V=u(-23053)g=m[V]V=g()g=u(-22902)k=V[g]p=k and 7908155 or 15706608 end else if 1056179>p then if p<1004272 then TA=0 XA=a()k=4006425>=7349580 kA=Z(kA)b[XA]=k oA,tA,wA,I=32,u(-23063),0,nil jA=b[NA]k=jA[tA]f=Z(f)tA=L(2685349,{XA,rA;N;T})jA=u(-22965)T=Z(T)jA=k[jA]jA=jA(k,tA)tA=u(-23013)jA=m[tA]tA=u(-22860)k=jA[tA]dA=b[pA]tA=u(-23062)jA=k(tA,dA)PA,k=u(-23059),u(-23109)dA=m[PA]r,PA=nil,u(-22860)aA,zA=nil,0 tA=dA[PA]WA,PA=0,1 dA=tA(PA,TA,WA,oA)tA=1 jA[k]=dA dA,k,EA,WA,M=u(-23013),u(-23121),1,u(-23059),nil jA[k]=tA oA=0 tA=m[dA]dA=u(-22860)k=tA[dA]dA=u(-23005)tA=k(dA,jA)qA=nil dA=a()lA=Z(lA)b[dA]=tA k=b[dA]tA=u(-23109)TA=m[WA]BA,WA=nil,u(-22860)PA=TA[WA]WA=.6 TA=PA(WA,oA,EA,wA)k[tA]=TA k=b[dA]tA=u(-22885)PA=b[d]k[tA]=PA tA,EA=u(-22862),220 k=b[dA]g=Z(g)PA,oA,WA=u(-23048),220,u(-22981)k[tA]=PA eA,tA=nil,u(-22871)k=b[dA]TA=m[WA]XA=Z(XA)Q=Z(Q)WA=u(-22957)PA=TA[WA]WA=220 TA=PA(WA,oA,EA)x=nil k[tA]=TA oA=u(-22961)k=b[dA]WA=m[oA]oA,tA=u(-23022),u(-23022)TA=WA[oA]WA,C=u(-23064),nil PA=TA[WA]k[tA]=PA k=b[dA]PA,tA=11,u(-23104)k[tA]=PA PA,CA,EA=u(-23013),38,1 tA=m[PA]PA=u(-22860)k=tA[PA]wA,PA,oA=0,u(-22867),6 P=Z(P)TA=b[dA]h=nil tA=k(PA,TA)k,WA=u(-22906),u(-23055)TA=m[WA]WA=u(-22860)PA=TA[WA]xA=Z(xA)WA=0 TA=PA(WA,oA)PA,oA,WA=u(-23013),0,u(-23059)tA[k]=TA tA=m[PA]PA=u(-22860)k=tA[PA]PA=u(-23033)tA=k(PA,jA)k=u(-23109)i=Z(i)TA=m[WA]WA=u(-22860)PA=TA[WA]WA=.18 TA=PA(WA,oA,EA,wA)oA,EA=0,0 tA[k]=TA wA=0 VA=Z(VA)E=nil N=Z(N)k,WA=u(-23098),u(-23059)ZA=Z(ZA)TA=m[WA]WA=u(-22860)PA=TA[WA]WA=.62 V=Z(V)TA=PA(WA,oA,EA,wA)oA=255 tA[k]=TA wA=1 PA=b[d]QA,EA,k=0,255,u(-22885)tA[k]=PA WA,k,PA=u(-22981),u(-22862),u(-23066)tA[k]=PA TA=m[WA]WA=u(-22957)NA=Z(NA)k=u(-22871)PA=TA[WA]WA=255 O=Z(O)TA=PA(WA,oA,EA)tA[k]=TA TA=u(-23013)PA=m[TA]TA=u(-22860)k=PA[TA]TA=u(-22867)PA=k(TA,tA)k,oA=u(-22906),u(-23055)WA=m[oA]d=Z(d)oA=u(-22860)TA=WA[oA]EA=6 X=Z(X)oA,z=0,nil WA=TA(oA,EA)SA=nil PA[k]=WA TA=u(-23013)GA=Z(GA)oA=u(-23059)PA=m[TA]TA=u(-22860)Y=Z(Y)k=PA[TA]TA=u(-23033)PA=k(TA,jA)EA=0 WA=m[oA]oA=u(-22860)TA=WA[oA]UA=Z(UA)k,oA=u(-23109),.18 R=Z(R)WA=TA(oA,EA,wA,QA)QA,oA=0,u(-23059)PA[k]=WA k=u(-23098)WA=m[oA]EA,oA=0,u(-22860)TA=WA[oA]wA,oA=0,.82 WA=TA(oA,EA,wA,QA)PA[k]=WA wA,k=10,u(-22885)TA=b[j]PA[k]=TA k,TA,oA=u(-22862),u(-22995),u(-22981)PA[k]=TA QA=0 bA=Z(bA)WA=m[oA]oA=u(-22957)TA=WA[oA]k,EA,oA=u(-22871),10,10 WA=TA(oA,EA,wA)W=Z(W)mA=Z(mA)PA[k]=WA WA=u(-23013)TA=m[WA]WA=u(-22860)k=TA[WA]EA,A,WA=u(-23055),nil,u(-22867)TA=k(WA,PA)k=u(-22906)oA=m[EA]wA=6 rA=Z(rA)jA,EA=nil,u(-22860)WA=oA[EA]o=Z(o)EA=0 oA=WA(EA,wA)TA[k]=oA F,TA=nil,u(-23063)k=tA[TA]WA=s(6947158,{HA,dA})TA=u(-22965)TA=k[TA]TA=TA(k,WA)TA=u(-23063)WA=l(15742749,{HA,dA})wA=u(-23059)k=PA[TA]TA=u(-22965)TA=k[TA]TA=TA(k,WA)WA=u(-23013)dA=Z(dA)TA=m[WA]WA=u(-22860)k=TA[WA]gA=Z(gA)oA=b[pA]t,WA=nil,u(-23033)TA=k(WA,oA)vA=Z(vA)uA=Z(uA)fA=Z(fA)WA=a()b[WA]=TA k=b[WA]EA=m[wA]wA,TA=u(-22860),u(-23109)oA=EA[wA]wA=1 EA=oA(wA,QA,zA,CA)zA=10 k[TA]=EA TA=u(-22885)k=b[WA]oA=b[j]k[TA]=oA QA,wA,PA=10,u(-22981),nil k=b[WA]TA,oA=u(-22862),u(-23068)k[TA]=oA TA=u(-22871)k=b[WA]EA=m[wA]wA=u(-22957)oA=EA[wA]wA=10 EA=oA(wA,QA,zA)k[TA]=EA QA,TA=u(-22961),u(-23022)k=b[WA]wA=m[QA]QA=u(-23022)EA=wA[QA]wA,p=u(-23061),m[u(-23082)]oA=EA[wA]k[TA]=oA TA=u(-23104)k=b[WA]wA,oA=u(-23055),12 k[TA]=oA oA=u(-23013)TA=m[oA]oA=u(-22860)k=TA[oA]oA=u(-22867)EA=b[WA]TA=k(oA,EA)k=u(-22906)EA=m[wA]QA,n,wA=6,nil,u(-22860)oA=EA[wA]wA=0 EA=oA(wA,QA)TA[k]=EA TA=b[WA]K=Z(K)oA=u(-23063)k=TA[oA]TA=u(-22965)TA=k[TA]oA=y(15419651,{yA;WA;DA,q,HA;LA})wA=u(-23126)DA=Z(DA)TA=TA(k,oA)pA=Z(pA)k=nil HA=Z(HA)WA=Z(WA)oA=u(-22901)TA=a()iA=nil b[TA]=k k=m[oA]EA=m[wA]QA=D(11723494,{cA,yA;sA;TA})wA=u(-22985)oA=k(EA,wA,QA)wA=u(-22996)cA=Z(cA)b[TA]=oA q=Z(q)LA=Z(LA)w=Z(w)EA=m[wA]wA=u(-22950)k=EA[wA]wA=e(15219182,{sA,RA;yA;j})TA=Z(TA)JA=nil yA=Z(yA)tA=nil EA=k(wA)RA=Z(RA)sA=Z(sA)k={}j=Z(j)elseif 1023122>p then r,p=u(-22862),15171621 X=i[r]r=u(-22982)N=X==r q=N else g,i=V(v,g)p=g and 635381 or 2432214 end else if p<1092052 then k,v,p={},nil,m[u(-22861)]else x=u(-22981)i=m[x]x=u(-22957)f=i[x]x,R,q,p=150,150,150,2955957 i=f(x,q,R)g=i end end end else if p<470219 then if p<217025 then if p<72703 then p=3792153 elseif 105215>p then k,V=u(-22915),0 p=v[k]g=p k=b[S[2]]p=k==V p=p and 12751329 or 4925936 else p,x,k=i,8604088<16287212,2428829>15051866 b[S[2]]=p b[S[1]]=k p=6796195 b[S[3]]=x end else if p<339682 then k,v=u(-23053),B[1]p=m[k]k=p()p,g=u(-23036),v k[p]=g p=not v p=p and 2998689 or 9496322 else V=u(-23092)k=g[V]f=y(6365893,{S[1];S[2]})V=u(-22965)V,p=k[V],6277043 V=V(k,f)end end else if 598455>p then k,p,v={},m[u(-23084)],nil elseif 665595>p then f,q=g,u(-22958)q,R=i[q],u(-22998)q=q(i,R)x,p=q,q and 13007650 or 9338168 elseif 772332>p then k,p={g},m[u(-22897)]else q,f=u(-22961),u(-22918)V=v[f]x=m[q]q=u(-22918)i=x[q]p,x=2716813,u(-22905)f=i[x]g=V==f k=g end end end else if p>2146454 then if 2563582>p then if p>2486594 then if 2551294>p then i,p=u(-23096),6913240<4969805 b[S[1]]=p k=b[S[2]]v,V=u(-22862),u(-23095)f=m[i]x=b[S[3]]i=f(x)g=V..i k[v]=g v=u(-22871)k=b[S[2]]g=b[S[4]]k[v]=g v=u(-23081)k=m[v]p=6772761 g=y(4174854,{S[3]})v=k(g)else v=B[1]p=v b[S[1]]=p k=b[S[1]]p=k and 3257424 or 1112311 end else if 2264122>p then i=u(-22961)f=m[i]i=u(-23119)V=f[i]f,p=u(-23038),u(-23045)k=V[f]p,i,V=g[p],u(-22961),7568874>10727770 p=p(g,k,V)f=m[i]i=u(-23119)V=f[i]p,f=u(-23045),u(-22899)p=g[p]k=V[f]V=15675513<14393810 p=p(g,k,V)k=u(-22857)p=g[k]p=p and 15752349 or 16200875 elseif 2372109>p then k=u(-23081)p=m[k]v=l(16372738,{S[1],S[2]})k=p(v)p=11139635 else g=u(-22996)v=m[g]g=u(-22907)p=v[g]g=1 v=p(g)p=2950825 end end else if 2590876>p then f,v={[i]=x},u(-22963)v,p=k[v],q v=v(k,g,V,f)k=u(-23100)k,p=v[k],7901209 k=k(v)elseif p<2650775 then N,w,t,P=q,{},u(-22878),4 j=m[t]t=u(-22860)r=j[t]E=5 d=i*P t,T,N,P=0,3,nil,0 j=r(t,d,P)o,d=4,2 p=X+j j=1 P=b[S[3]]t,r=u(-23075),p W=b[S[4]]p={[j]=t;[d]=P,[T]=W;[o]=r,[E]=w}j,P=p,u(-23040)p=b[S[5]]d=m[P]t=u(-23076)P={d(j)}t,d,j,X=p[t],u(-22996),nil,nil t=t(p,J(P))t=m[d]d=u(-22907)p=t[d]r,d=nil,.02 t=p(d)p=4005314 elseif 2688563>p then k=b[S[1]]p=not k b[S[1]]=p k=b[S[1]]p=k and 15835382 or 6926431 else x,N=q(i,x)p=x and 4318268 or 695809 end end else if p>1616921 then if 1737632>p then d=u(-22895)t=X[d]p,d=8698476,0 j=t>d r=j elseif p<1861926 then v=Z(v)p,k=m[u(-22874)],{}elseif 1986369>p then v=u(-23090)p=b[S[1]]k=u(-22887)k=p[k]k=k(p,v)p=12250889 v=a()b[v]=k else k,p=3570198>=3875112,u(-22872)g[p]=k p=7016358 end else if p>1505655 then if p<1554183 then k=u(-23124)p=b[S[1]]v=b[S[2]]p[k]=v p,k=m[u(-23014)],{}else v=b[S[1]]g=u(-23026)k=v[g]f=u(-22961)V=m[f]f=u(-23026)g=V[f]V=u(-22942)v=g[V]p=k==v p=p and 8789871 or 11363144 end else if p<1380066 then k=u(-22900)p=b[S[2]]v=4690927>10655518 p[k]=v p=10661902 elseif 1487713>p then i,x=u(-22887),u(-22915)i=V[i]i=i(V,x)f=not i k,p=f,15329025 else k=b[S[1]]v=u(-23065)p=k[v]v=p p,k=v and 7557147 or 10835927,v end end end end end else if p<3436297 then if 2977323>p then if 2821489>p then if 2752948>p then if p<2707169 then k=u(-23053)p=m[k]k=p()f=u(-23053)V=m[f]f=V()V,q=u(-22902),u(-23053)g=f[V]v,p=not g,u(-22902)k[p]=v k=u(-22862)p=b[S[2]]x=m[q]q=x()g,f,x=p,p,u(-22902)i=q[x]x=u(-23035)V,f=i and x,u(-23015)v=V or f p[k]=v k=b[S[3]]p=k and 12158667 or 7901209 elseif 2723385>p then p=k and 5287153 or 561529 else p=k and 7319063 or 11723538 end else if 2786780>p then N=1 R=f[N]N,p=u(-23023),12241072 q=R==N i=q else v=u(-22935)p=b[S[1]]V=b[S[2]]f=u(-22929)g=V[f]k,f=u(-23076),u(-22929)k=p[k]k=k(p,v,g)v=u(-22996)k=m[v]v=u(-22907)p=k[v]v=.05 k=p(v)p=b[S[1]]V=b[S[3]]g=V[f]V=b[S[3]]v,k=u(-23004),u(-23076)k=p[k]k=k(p,v,g,V)k,p={},m[u(-22894)]end end else if 2846792>p then r=u(-22862)X=i[r]R,r=p,u(-23024)N=X==r q,p=N,N and 15171621 or 1007446 elseif 2899526>p then q=u(-22961)v=a()b[v]=B[1]f=b[v]i=u(-22918)V=f[i]x=m[q]q=u(-22918)i=x[q]x=u(-23031)f=i[x]g=V==f k,p=g,g and 11804740 or 10941412 elseif 2953391>p then v=u(-23053)k=m[v]v=k()k=u(-23000)p=v[k]p=p and 5749733 or 11507434 else k[v]=g p=V f=b[S[1]]v,V=p,p p,g=f and 16367447 or 4371475,f end end else if p<3265553 then if p<3207339 then if p<3076687 then k=u(-23081)p=m[k]g=c(1489303,{S[1]})k=p(g)p=9496322 elseif p<3155969 then g,p=f,i p=f and 2955957 or 1110544 else V=u(-22916)k=b[S[2]]f=b[S[1]]v=u(-22862)g=V..f p=m[u(-23018)]k[v]=g k={}end else if p<3259201 then V=u(-22996)g=m[V]V=u(-22950)k=g[V]p=4788105 V=c(1896071,{S[2];S[1],S[3],S[4]})g=k(V)b[S[5]]=g else i,v=not f,v+V k=g>=v k=i and k i=g<=v i=f and i k=i or k i=15463306 p=k and i k=15498896 p=p or k end end else if 3281150>p then p,V,g=10026491,nil,nil elseif 3337167>p then f,x,R,q=V,p,u(-23005),u(-22958)q=i[q]q=q(i,R)k,p=q,q and 2845356 or 5124980 elseif p<3402009 then p=2950825 else p=b[S[3]]k=p(v)p=1073561 end end end else if p>3998934 then if p<4327409 then if p<4090084 then q,X=R(x,q)p=q and 2616202 or 13637203 elseif 4209112>p then k,g=u(-22876),u(-23096)p=m[k]v=m[g]V=b[S[1]]g={v(V)}k=p(J(g))p,k=m[u(-22923)],{}elseif p<4280819 then Q,E,w=u(-22889),p,u(-22958)w=R[w]w=w(R,Q)p,o=w and 4428409 or 11653789,w else j=b[S[1]]R=x r=N~=j X,p=r,r and 13885182 or 7554027 end else if 4354013>p then k=b[S[2]]V=u(-22916)f=b[S[1]]v=u(-22862)g=V..f p=m[u(-22888)]k[v]=g k={}elseif 4397180>p then p,k=V,g p=g and 6218801 or 5255797 elseif p<4425647 then x=b[S[3]]f,p=x,3154685 else T,p=o,E p=12467554 end end else if p<3703221 then if p>3609369 then if 3647666>p then p=V and 7641911 or 6926748 else p=k and 76835 or 12367980 end else if p<3452200 then g,k=14708181>=10034720,u(-22887)p=b[S[4]]k,v=p[k],u(-23090)k=k(p,v,g)v=a()b[v]=k k=b[v]p=not k p=p and 5026290 or 15855235 elseif p<3521554 then R=b[S[8]]p,x=2565551,R else k=b[S[1]]v=u(-23065)p=k[v]v=p p,k=v and 8106639 or 3666040,v end end else if p<3766278 then p=u(-22946)p=R[p]p=p(R)p=6005936 elseif 3866970>p then v,k,p=nil,{},m[u(-23030)]elseif 3967171>p then V,i=v(g,V)p=V and 3292174 or 13341392 else p=k and 16156541 or 7324643 end end end end end else if 6480151>p then if 5734120>p then if p<5190388 then if p<4983030 then if p>4924003 then if 4953447>p then x,V=u(-23130),u(-23130)k=b[S[3]]i=m[x]x=u(-22860)f=i[x]R=u(-23098)q=g[R]X,R=u(-23098),u(-23050)x=q[R]q=b[S[2]]N=g[X]X=u(-22962)R=N[X]i=f(x,q,R)k[V]=i N,i,q=u(-23132),u(-22878),u(-23132)f=m[i]i=u(-22860)V=f[i]x=g[q]q,k,p=u(-23050),u(-23132),12367980 i=x[q]R=g[N]x,N=0,u(-22962)q=R[N]f=V(i,x,q)g[k]=f g=nil else g=b[S[2]]p,k=15338641,g end else if 4622787>p then g,v,f,I,R,k,i=u(-23021),B,u(-22943),u(-22934),u(-22884),u(-23126),u(-22947)p=m[k]W,k=u(-22865),u(-23025)k=p[k]k=k(p,g)V=u(-22927)g=a()b[g]=k k,x=u(-23126),u(-22980)p=m[k]k=u(-23025)k=p[k]k=k(p,V)V=a()b[V]=k k=b[V]p=k[f]k=u(-23126)f=a()b[f]=p N=u(-22970)p=m[k]k,d=u(-23025),u(-22914)k=p[k]k=k(p,i)h,w=u(-22891),u(-22955)i=a()q=u(-22971)b[i]=k k=u(-23126)p=m[k]Q,k=u(-23037),u(-23025)k=p[k]k=k(p,x)o,x=u(-22877),k k=u(-23126)p=m[k]n,k=u(-22913),u(-23025)k=p[k]k=k(p,q)T,r=u(-22930),u(-23126)q=a()t=u(-23002)b[q]=k k=u(-23126)p=m[k]j,k,F=u(-23116),u(-23025),u(-23008)k,A=p[k],u(-23028)k=k(p,R)R=a()E,z=u(-22978),u(-22912)b[R]=k k=u(-23126)p=m[k]k=u(-23025)k=p[k]k=k(p,N)P=u(-22994)N=a()b[N]=k k=u(-22908)p=m[k]C=u(-23007)X=m[r]t=X[t]r={t(X,j)}k=p(J(r))X=a()p=k()k,r,t,j=u(-23034),u(-23052),u(-23131),u(-22993)b[X]=p p={k;r;j;t;d;P;T;W,o,E;w,Q,z;C;n;h;F;I;A}j,t=u(-22981),200 k=m[j]j,r=u(-22957),p p=k[j]d,j=255,0 k=p(j,t,d)j=a()t=u(-22981)b[j]=k k=m[t]t,w=u(-22957),u(-22961)p=k[t]P,t,d,T=23,15,17,35 k=p(t,d,P)t,d=k,u(-22981)k=m[d]P,d=28,u(-22957)p=k[d]d=25 k=p(d,P,T)P=u(-22981)d=a()b[d]=k k=m[P]P=u(-22957)p=k[P]P,T,W=30,45,60 k=p(P,T,W)Q=u(-22961)P=a()T=u(-23046)b[P]=k k=m[T]T=u(-22860)p=k[T]E=m[w]w=u(-22940)o=E[w]E,T=u(-23103),.3 W=o[E]w=m[Q]Q=u(-22936)E=w[Q]w=u(-23106)o=E[w]k=p(T,W,o)W=u(-23013)T=a()b[T]=k k=m[W]W=u(-22860)p=k[W]W=u(-23093)k=p(W)W=a()o=u(-22863)b[W]=k p=b[W]k=u(-23057)p[k]=o p=b[W]k,o=u(-22883),15159177<=10869242 p[k]=o k=u(-23081)o=l(1522007,{W,R})p=m[k]k=p(o)p=k and 15175188 or 5259610 elseif 4855088>p then p,v,k=m[u(-22937)],nil,{}else k=b[S[1]]p=not k b[S[1]]=p k=b[S[1]]p=k and 12321596 or 14954030 end end else if p<5005696 then V,p,g=u(-22915),10744951,u(-22887)g=v[g]g=g(v,V)k=g elseif 5063383>p then k,p={},m[u(-22866)]elseif p<5112728 then v=u(-23081)k=m[v]g=c(13327124,{S[1]})v=k(g)p=11262840 else p=x p=k and 16714054 or 8626104 end end else if 5404339>p then if 5275522>p then if p<5257703 then g=b[S[5]]k,p=g,6218801 elseif p<5261751 then k,E=u(-23124),u(-22948)p=b[W]o=b[f]w,E=u(-23114),o[E]E=E(o,w)p[k]=E p=16469760 else v=u(-23053)k=m[v]v=k()k=u(-22902)p=v[k]p=p and 2312004 or 11139635 end else if p<5322318 then p=v b[S[1]]=p p=561529 else p=b[S[2]]f=u(-23046)v=b[S[1]]V=m[f]f=u(-22860)g=V[f]R=u(-22961)q=m[R]k,f,R,N=u(-22963),.25,u(-22940),u(-22961)x=q[R]q=u(-23047)i=x[q]R=m[N]N=u(-22936)q=R[N]R=u(-22919)x=q[R]V=g(f,i,x)N,q,f=0,u(-23059),u(-23109)x=m[q]R,k,q=0,p[k],u(-22860)i=x[q]X,q=0,0 x=i(q,R,N,X)g={[f]=x}k=k(p,v,V,g)v,p=u(-22996),u(-23100)p=k[p]p=p(k)k=m[v]v=u(-22881)g=c(8873737,{S[1];S[3]})p=k[v]v=.2 k=p(v,g)p=6036681 end end else if 5515114>p then E,W,o=u(-23017),p,u(-22958)o=R[o]o=o(R,E)p,T=o and 12467554 or 4243371,o elseif p<5608954 then v=B[1]g=a()V=u(-23013)b[g]=B[2]k=m[V]R,V=0,u(-22860)p=k[V]V=u(-23033)f=b[S[1]]x=u(-23059)k=p(V,f)V=a()N,q=32,0 b[V]=k k=u(-23109)p=b[V]i=m[x]x=u(-22860)f=i[x]x=1 i=f(x,q,R,N)p[k]=i q,k=6,u(-22885)p=b[V]f=b[S[2]]N=0 p[k]=f k=u(-22862)p=b[V]f=u(-23102)p[k]=f f=u(-23013)k=m[f]f=u(-22860)p=k[f]i=b[V]f,x=u(-22867),u(-23055)k=p(f,i)p=u(-22906)i=m[x]x=u(-22860)f=i[x]x=0 i=f(x,q)R=1 k[p]=i f,x=u(-23013),u(-23059)k=m[f]q,f=-40,u(-22860)p=k[f]f=u(-23005)i=b[V]k=p(f,i)p=u(-23109)i=m[x]x,f=u(-22860),k k=i[x]x=1 i=k(x,q,R,N)x=u(-23059)f[p]=i R=0 i=m[x]x=u(-22860)k=i[x]p,q,N,x=u(-23098),10,0,0 i=k(x,q,R,N)R=220 f[p]=i X,k,x,p=1,1,u(-22981),u(-23121)f[p]=k k,p,r,q=v,u(-22862),0,220 f[p]=k p=u(-22871)i=m[x]N,x=40,u(-22957)k=i[x]x=220 i=k(x,q,R)f[p]=i p,q=u(-23022),u(-22961)x=m[q]q=u(-23022)i=x[q]x=u(-23064)k=i[x]f[p]=k p,q,k=u(-23104),u(-22961),12 f[p]=k p=u(-23112)x=m[q]q=u(-23112)i=x[q]x=u(-23117)k=i[x]f[p]=k i=u(-23013)k=m[i]i=u(-22860)p=k[i]i=u(-23005)x=b[V]R=u(-23059)k=p(i,x)i=a()b[i]=k p=b[i]k=u(-23109)q=m[R]R=u(-22860)x=q[R]R=0 q=x(R,N,X,r)R=u(-23059)p[k]=q p=b[i]X,r,k=0,0,u(-23098)q=m[R]N,R=-50,u(-22860)x=q[R]R=1 q=x(R,N,X,r)X,x,N=150,1,150 p[k]=q p=b[i]k=u(-23121)p[k]=x x,R,k=u(-22982),u(-22981),u(-22862)p=b[i]p[k]=x p=b[i]q=m[R]R=u(-22957)x=q[R]R,k=150,u(-22871)q=x(R,N,X)N=u(-22961)p[k]=q k=u(-23022)p=b[i]R=m[N]N=u(-23022)q=R[N]R=u(-22967)x=q[R]p[k]=x p=b[i]x,k=11,u(-23104)p[k]=x p=b[i]N,k=u(-22961),u(-23112)R=m[N]N=u(-23112)q=R[N]R=u(-22875)x=q[R]p[k]=x p=12162050>15646430 x=a()b[x]=p k=b[V]q=u(-23063)p=k[q]q=s(14300178,{x,i,S[3],S[4];S[2],S[5],V;S[6];g})k=u(-22965)k=p[k]k=k(p,q)p=b[V]k={p}p=m[u(-22977)]elseif 5680798>p then g=u(-23053)v=m[g]g=v()v=u(-23036)k=g[v]p=k and 5100477 or 11262840 else p=k and 12399357 or 14297669 end end end else if p>6175024 then if p>6310728 then if p<6336928 then g=u(-22915)k=v[g]g=u(-23098)p=k[g]g=p p,k=9612701>=10855935,u(-23012)V=p p=m[k]x=b[S[2]]q={p(x)}k=q[1]x,i,p,f=k,q[3],10887438,q[2]elseif 6360426>p then p=b[S[3]]p=p and 6580982 or 11694407 elseif p<6372607 then k=b[S[1]]p=not k p=p and 1274010 or 10661902 else v,p,k=nil,m[u(-22933)],{}end else if 6222802>p then x,p,g=u(-22885),v,u(-22963)v=k k=b[S[6]]i,p={[x]=v},m[u(-23043)]V=b[S[7]]f=b[S[8]]v,g=nil,k[g]g=g(k,V,f,i)k=u(-23100)k=g[k]k=k(g)k=b[S[9]]V=b[S[1]]g=k(V)k={}elseif 6251923>p then p=b[S[1]]v,k=u(-23068),u(-22862)p[k]=v p,k=m[u(-22987)],{}elseif p<6289801 then g,k,v,p=nil,{},nil,m[u(-23129)]else X=b[S[4]]p,R=8082084,X end end else if p<5977332 then if 5801873>p then if p<5747625 then p=b[S[1]]v,k=u(-23068),u(-22862)p[k]=v p,k=m[u(-22868)],{}elseif p<5758171 then k=u(-22880)p=m[k]V=b[S[1]]i=u(-22890)i=V[i]f={i(V)}V={p(J(f))}g,v,k,p=V[3],V[2],V[1],1038798 V=k else v=u(-22996)k=m[v]v=u(-22907)p=k[v]v=.2 k=p(v)p=k and 7393436 or 12521997 end else if 5892933>p then p,V=12664085>11867797,u(-23098)b[S[1]]=p g=b[v]f=u(-23098)k=g[V]i=u(-22984)b[S[2]]=k V=b[S[3]]g=V[f]b[S[4]]=g f=b[v]V=f[i]f=u(-22965)f,p=V[f],12597771 i=s(1586360,{v,S[1]})f=f(V,i)else p,k,v=m[u(-23094)],{},nil end end else if p<6021308 then q,R,p=nil,nil,14602881 elseif 6050191>p then p,k=m[u(-23006)],{}elseif 6097474>p then p,x=N,R p=R and 2565551 or 3453664 else k=b[S[1]]v=u(-23065)p=k[v]v=p k,p=v,v and 11998472 or 9324908 end end end end else if p<7529436 then if p<6981758 then if p>6837908 then if p<6903026 then v=u(-23065)k=b[S[1]]p=k[v]v=p p,k=v and 15880195 or 2729958,v elseif 6926589>p then v,V=p,p f=b[S[1]]p,g=f and 11428190 or 13173113,f elseif p<6936953 then f,X=nil,u(-22981)b[S[3]]=f R,i,d=u(-22960),u(-23102),80 b[S[4]]=i x=b[S[5]]q,p=u(-22862),3270127 x[q]=R x=b[S[5]]q,t=u(-22871),80 N=m[X]X=u(-22957)R=N[X]X=255 N=R(X,t,d)x[q]=N else k=b[S[1]]v=1 p=k>v p=p and 12588642 or 4336551 end else if p<6741020 then if 6604084>p then g=u(-22988)p=b[S[3]]g=p[g]g=g(p)p=nil b[S[3]]=p p=11694407 elseif p<6668233 then tA,PA=XA(jA,tA)p=tA and 14556790 or 1001098 else v,i=15816529<3044289,0 p=b[S[3]]k=u(-22900)p[k]=v k,R,V=u(-22900),u(-22961),u(-23059)p=b[S[1]]v=9146806>=6595555 p[k]=v p=b[S[1]]x=0 g=m[V]k,V=u(-23109),u(-22860)v=g[V]V,N,f=0,u(-22961),0 g=v(V,f,i,x)p[k]=g p=b[S[2]]f=u(-23046)v=b[S[1]]V=m[f]f=u(-22860)g=V[f]f=.3 q=m[R]R=u(-22940)x=q[R]q=u(-23047)i=x[q]R=m[N]N=u(-22936)q=R[N]R=u(-23106)x=q[R]R,q=360,u(-23059)V=g(f,i,x)f=u(-23109)x=m[q]q,N,k=u(-22860),0,u(-22963)k,X=p[k],340 i=x[q]q=0 x=i(q,R,N,X)g={[f]=x}k=k(p,v,V,g)p=u(-23100)p=k[p]p=p(k)p=6036681 end else if p<6784478 then p=5766609 else i,p=nil,7324643 end end end else if 7359039>p then if p<7212975 then if p<7057021 then p=10901990 elseif 7102286>p then P,T,W=p,u(-22958),u(-23003)T=R[T]T=T(R,W)p,d=T and 9577120 or 5451195,T else v,k=B[1],u(-23053)p=m[k]k=p()g,p=v,u(-22902)k[p]=g k,p,v={},m[u(-22953)],nil end else if p<7321853 then k,g=u(-23051),16 p=v[k]k=u(-23032)p[k]=g p=11723538 else p,f=14297669,nil end end else if p<7396480 then p=b[S[1]]p=p and 2540975 or 6772761 elseif p<7443178 then q,r,X=i,u(-22910),1 N=R[X]X=u(-23098)p=N[X]N=p X=g-N p=X[r]r,X=150,p p=X<=r p=p and 9720676 or 10200845 elseif p<7496350 then g=u(-23039)k=b[S[1]]p=k[g]g=c(13709244,{S[2]})k=u(-22965)k=p[k]k=k(p,g)b[S[3]]=k p=7656668 else k=u(-22946)p=b[S[1]]k=p[k]k=k(p)k,p={},m[u(-23044)]end end end else if p>7904682 then if p<8047868 then if 7955474>p then k=b[S[3]]g,p=u(-23063),15706608 g=k[g]g=g(k)elseif 8007801>p then v=u(-22915)p=b[S[1]]k=u(-22887)k=p[k]k=k(p,v)p=k and 11063758 or 15713627 elseif 8025576>p then k=b[S[1]]p=15 v=p p=nil g,V=p,u(-23065)p=k[V]V=p f=not V p,k=f and 15329025 or 1486123,f else v=B[1]p=v b[S[1]]=p p=v and 12168181 or 1244262 end else if 8069739>p then f=b[S[4]]p,i=15685865,u(-23065)V=f[i]f,i=u(-22858),u(-23120)f=V[f]f=f(V,i)k=f elseif 8094361>p then x,p=R,N p=R and 14838041 or 1188848 elseif p<8274998 then g,p=u(-22887),3666040 g,V=v[g],u(-22915)g=g(v,V)k=g else V,p,g=nil,6379321,nil end end else if 7649289>p then if p<7570487 then if 7553515>p then v,k,p=nil,{},m[u(-22904)]elseif 7555587>p then p=X and 13858082 or 16168273 else g=u(-22887)g,V=v[g],u(-23051)g=g(v,V)p,k=10835927,g end else if 7612869>p then x,p=0,u(-23086)i[p]=x p=10432602 else q=u(-23118)f=b[S[5]]p=3270127 R=b[S[4]]x=q..R i=u(-22862)f[i]=x i=u(-22871)f=b[S[5]]x=b[S[6]]f[i]=x end end else if p<7744639 then v,p,k=nil,m[u(-22997)],{}elseif 7834924>p then f,p=x,q p=11580918 elseif 7869223>p then p=6063701 X=b[S[7]]R=X else p=14640964 end end end end end end end end p=#U return J(k)end,function(m,u)local J=V(u)local B=function(B,S,U,G)return p(m,{B,S,U;G},u,J)end return B end,function(m,u)local J=V(u)local B=function(...)return p(m,{...},u,J)end return B end,function(m,u)local J=V(u)local B=function(B,S,U,G,k)return p(m,{B,S,U;G,k},u,J)end return B end,function(m,u)local J=V(u)local B=function()return p(m,{},u,J)end return B end,function(m,u)local J=V(u)local B=function(B,S)return p(m,{B,S},u,J)end return B end,function(m,u)local J=V(u)local B=function(B,S,U,G,k,b)return p(m,{B;S;U;G,k;b},u,J)end return B end return(D(4457470,{}))(J(k))end)(unpack or table[u(-23040)],newproxy,select,{...},getmetatable,setmetatable,getfenv and getfenv()or _ENV)end)(...)
+-- ==========================================
+-- DEV MIYAKO - MIYAKO BUILD BASE & STEAL VIP
+-- Game: Build a Base and Steal V3
+-- ==========================================
+
+local Workspace = game:GetService("Workspace")
+local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer
+local RunService = game:GetService("RunService")
+local UserInputService = game:GetService("UserInputService")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local CoreGui = game:GetService("CoreGui")
+local TweenService = game:GetService("TweenService") 
+
+-- ==========================================
+-- 1. DATABASE BLUEPRINT & BLOK (LOADSTRING)
+-- ==========================================
+-- Mengambil data blueprint langsung dari GitHub DEV MIYAKO
+local allBlueprints = loadstring(game:HttpGet("https://raw.githubusercontent.com/Miyako122/Miyako/refs/heads/main/Test"))()
+
+-- DAFTAR 19 BLOK 
+local blockList = {
+    "Crystal Block", "Sapphire Block", "Ruby Block", "Quartz Block",
+    "Diamond Block", "Obsidian Block", "Copper Block", "Gold Block",
+    "Iron Block", "Granite Block", "Lampstone Block", "Brick Block",
+    "Glass Block", "Stone Block", "Wood Plank Block", "Wood Block",
+    "Rock Block", "Grass Block", "Dirt Block"
+}
+
+-- ==========================================
+-- 2. SETUP UI PREMIUM DENGAN TITLE MEWAH TANPA TOAST
+-- ==========================================
+local AccentColor = Color3.fromRGB(0, 200, 255)
+local BgColor = Color3.fromRGB(15, 17, 23)
+local SectionColor = Color3.fromRGB(25, 28, 35)
+local ActiveSectionColor = Color3.fromRGB(30, 45, 60) 
+local AnimInfo = TweenInfo.new(0.3, Enum.EasingStyle.Quart, Enum.EasingDirection.Out) 
+
+local MiyakoGui = Instance.new("ScreenGui")
+MiyakoGui.Name = "MiyakoFlyV2Premium"
+MiyakoGui.ResetOnSpawn = false
+if pcall(function() MiyakoGui.Parent = CoreGui end) then else MiyakoGui.Parent = LocalPlayer:WaitForChild("PlayerGui") end
+
+-- IKON MINIMIZE MENGAMBANG (Huruf M)
+local MinimizeIcon = Instance.new("TextButton", MiyakoGui)
+MinimizeIcon.Size = UDim2.new(0, 45, 0, 45)
+MinimizeIcon.Position = UDim2.new(0.5, -22, 0.1, 0) 
+MinimizeIcon.BackgroundColor3 = SectionColor
+MinimizeIcon.Text = "M" 
+MinimizeIcon.TextSize = 22
+MinimizeIcon.TextColor3 = AccentColor
+MinimizeIcon.Font = Enum.Font.GothamBold
+MinimizeIcon.Active = true
+MinimizeIcon.Draggable = true
+MinimizeIcon.Visible = false 
+Instance.new("UICorner", MinimizeIcon).CornerRadius = UDim.new(1, 0)
+
+local IconStroke = Instance.new("UIStroke", MinimizeIcon)
+IconStroke.Color = AccentColor
+IconStroke.Transparency = 0.4
+IconStroke.Thickness = 1.5
+
+-- TOMBOL SIMPLE MODE JUMP (EMOTE TRANSPARAN)
+local SimpleBtn = Instance.new("TextButton", MiyakoGui)
+SimpleBtn.Size = UDim2.new(0, 50, 0, 50)
+SimpleBtn.Position = UDim2.new(0.62, 0, 0.40, 0) 
+SimpleBtn.BackgroundTransparency = 1 
+SimpleBtn.Text = "🙈" 
+SimpleBtn.TextSize = 28 
+SimpleBtn.Active = true
+SimpleBtn.Draggable = true 
+SimpleBtn.Visible = false 
+
+-- UKURAN MAIN FRAME PAS
+local MainFrame = Instance.new("Frame", MiyakoGui)
+MainFrame.Size = UDim2.new(0, 360, 0, 340)
+MainFrame.Position = UDim2.new(0.5, -180, 0.5, -170)
+MainFrame.BackgroundColor3 = BgColor
+MainFrame.BorderSizePixel = 0
+MainFrame.ClipsDescendants = true
+Instance.new("UICorner", MainFrame).CornerRadius = UDim.new(0, 8)
+
+local MainStroke = Instance.new("UIStroke", MainFrame)
+MainStroke.Color = AccentColor
+MainStroke.Transparency = 0.6
+MainStroke.Thickness = 1.5
+
+local TitleBar = Instance.new("Frame", MainFrame)
+TitleBar.Size = UDim2.new(1, 0, 0, 32)
+TitleBar.BackgroundColor3 = SectionColor
+TitleBar.BorderSizePixel = 0
+TitleBar.Active = true
+Instance.new("UICorner", TitleBar).CornerRadius = UDim.new(0, 8)
+
+local TitleBarExtension = Instance.new("Frame", TitleBar)
+TitleBarExtension.Size = UDim2.new(1, 0, 0, 5)
+TitleBarExtension.Position = UDim2.new(0, 0, 1, -5)
+TitleBarExtension.BackgroundColor3 = SectionColor
+TitleBarExtension.BorderSizePixel = 0
+
+-- JUDUL MEWAH BERBASIS GRADASI WARNA ELEGAN (UIGradient)
+local TitleText = Instance.new("TextLabel", TitleBar)
+TitleText.Size = UDim2.new(1, -75, 1, 0)
+TitleText.Position = UDim2.new(0, 12, 0, 0)
+TitleText.BackgroundTransparency = 1
+TitleText.Text = "MIYAKO BUILD BASE & STEAL VIP"
+TitleText.TextColor3 = Color3.fromRGB(255, 255, 255)
+TitleText.Font = Enum.Font.GothamBold
+TitleText.TextSize = 11
+TitleText.TextXAlignment = Enum.TextXAlignment.Left
+
+local TitleGradient = Instance.new("UIGradient", TitleText)
+TitleGradient.Color = ColorSequence.new({
+    ColorSequenceKeypoint.new(0, Color3.fromRGB(0, 220, 255)),
+    ColorSequenceKeypoint.new(1, Color3.fromRGB(255, 255, 255))
+})
+
+-- TOMBOL CLOSE (X) DI TITLEBAR
+local CloseBtn = Instance.new("TextButton", TitleBar)
+CloseBtn.Size = UDim2.new(0, 32, 0, 32)
+CloseBtn.Position = UDim2.new(1, -32, 0, 0)
+CloseBtn.BackgroundTransparency = 1
+CloseBtn.Text = "❌"
+CloseBtn.TextColor3 = Color3.fromRGB(255, 100, 100)
+CloseBtn.Font = Enum.Font.GothamBold
+CloseBtn.TextSize = 12
+CloseBtn.MouseButton1Click:Connect(function() MiyakoGui:Destroy() end)
+
+-- FUNGSI ANIMASI MINIMIZE / MAXIMIZE RAPI
+local function toggleMinimize()
+    if MainFrame.Visible then
+        TweenService:Create(MainFrame, TweenInfo.new(0.25, Enum.EasingStyle.Back, Enum.EasingDirection.In), {Size = UDim2.new(0, 0, 0, 0)}):Play()
+        task.delay(0.2, function()
+            MainFrame.Visible = false
+            MainFrame.Size = UDim2.new(0, 360, 0, 340) 
+            MinimizeIcon.Visible = true
+        end)
+    else
+        MinimizeIcon.Visible = false
+        MainFrame.Visible = true
+        MainFrame.Size = UDim2.new(0, 0, 0, 0)
+        TweenService:Create(MainFrame, TweenInfo.new(0.3, Enum.EasingStyle.Back, Enum.EasingDirection.Out), {Size = UDim2.new(0, 360, 0, 340)}):Play()
+    end
+end
+
+MinimizeIcon.MouseButton1Click:Connect(toggleMinimize)
+
+local MinMenuBtn = Instance.new("TextButton", TitleBar)
+MinMenuBtn.Size = UDim2.new(0, 32, 0, 32)
+MinMenuBtn.Position = UDim2.new(1, -64, 0, 0)
+MinMenuBtn.BackgroundTransparency = 1
+MinMenuBtn.Text = "🗕" 
+MinMenuBtn.TextColor3 = AccentColor
+MinMenuBtn.Font = Enum.Font.GothamBold
+MinMenuBtn.TextSize = 13
+MinMenuBtn.MouseButton1Click:Connect(toggleMinimize)
+
+-- SISTEM DRAG MOBILE-OPTIMIZED
+local dragging
+local dragInput
+local dragStart
+local startPos
+
+local function updateDrag(input)
+    local delta = input.Position - dragStart
+    MainFrame.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+end
+
+TitleBar.InputBegan:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+        dragging = true
+        dragStart = input.Position
+        startPos = MainFrame.Position
+        
+        input.Changed:Connect(function()
+            if input.UserInputState == Enum.UserInputState.End then
+                dragging = false
+            end
+        end)
+    end
+end)
+
+TitleBar.InputChanged:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+        dragInput = input
+    end
+end)
+
+UserInputService.InputChanged:Connect(function(input)
+    if input == dragInput and dragging then
+        updateDrag(input)
+    end
+end)
+
+local ContentArea = Instance.new("ScrollingFrame", MainFrame)
+ContentArea.Size = UDim2.new(1, -16, 1, -42)
+ContentArea.Position = UDim2.new(0, 8, 0, 37)
+ContentArea.BackgroundTransparency = 1
+ContentArea.ScrollBarThickness = 3
+ContentArea.CanvasSize = UDim2.new(0, 0, 0, 600)
+local UIListLayout = Instance.new("UIListLayout", ContentArea)
+UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout.Padding = UDim.new(0, 6)
+
+local function CreateHeader(text)
+    local lbl = Instance.new("TextLabel", ContentArea)
+    lbl.Size = UDim2.new(1, 0, 0, 24)
+    lbl.BackgroundTransparency = 1
+    lbl.Text = "  " .. text
+    lbl.TextColor3 = Color3.fromRGB(200, 200, 200)
+    lbl.Font = Enum.Font.GothamBold
+    lbl.TextSize = 11
+    lbl.TextXAlignment = Enum.TextXAlignment.Left
+    
+    local line = Instance.new("Frame", lbl)
+    line.Size = UDim2.new(0, 3, 0.5, 0)
+    line.Position = UDim2.new(0, 0, 0.25, 0)
+    line.BackgroundColor3 = AccentColor
+    line.BorderSizePixel = 0
+    Instance.new("UICorner", line).CornerRadius = UDim.new(1, 0)
+    return lbl
+end
+
+local function CreateToggle(text, callback)
+    local btn = Instance.new("TextButton", ContentArea)
+    btn.Size = UDim2.new(1, 0, 0, 32)
+    btn.BackgroundColor3 = SectionColor
+    btn.Text = ""
+    Instance.new("UICorner", btn).CornerRadius = UDim.new(0, 6)
+    
+    local lbl = Instance.new("TextLabel", btn)
+    lbl.Size = UDim2.new(1, -40, 1, 0)
+    lbl.Position = UDim2.new(0, 10, 0, 0)
+    lbl.BackgroundTransparency = 1
+    lbl.Text = text
+    lbl.TextColor3 = Color3.fromRGB(220, 220, 220)
+    lbl.Font = Enum.Font.GothamSemibold
+    lbl.TextSize = 12
+    lbl.TextXAlignment = Enum.TextXAlignment.Left
+    
+    local status = Instance.new("TextLabel", btn)
+    status.Size = UDim2.new(0, 40, 1, 0)
+    status.Position = UDim2.new(1, -50, 0, 0)
+    status.BackgroundTransparency = 1
+    status.Text = "OFF"
+    status.TextColor3 = Color3.fromRGB(150, 150, 150)
+    status.Font = Enum.Font.GothamBold
+    status.TextSize = 11
+    status.TextXAlignment = Enum.TextXAlignment.Right
+    
+    local state = false
+    btn.MouseButton1Click:Connect(function()
+        state = not state
+        status.Text = state and "ON" or "OFF"
+        status.TextColor3 = state and AccentColor or Color3.fromRGB(150, 150, 150)
+        
+        local targetColor = state and ActiveSectionColor or SectionColor
+        TweenService:Create(btn, AnimInfo, {BackgroundColor3 = targetColor}):Play()
+        
+        callback(state)
+    end)
+    return btn
+end
+
+-- ==========================================
+-- 3. FITUR PLAYER (SPEED 36, JUMP BYPASS, SIMPLE MODE JUMP, ANTI RAGDOLL)
+-- ==========================================
+CreateHeader("PLAYER MODULES")
+
+local speedLoop
+CreateToggle("⚡ Speed Mode", function(state)
+    if state then
+        speedLoop = RunService.RenderStepped:Connect(function()
+            pcall(function()
+                local char = LocalPlayer.Character
+                if char and char:FindFirstChild("Humanoid") then
+                    char.Humanoid.WalkSpeed = 36
+                end
+            end)
+        end)
+    else
+        if speedLoop then speedLoop:Disconnect() speedLoop = nil end
+        pcall(function()
+            local char = LocalPlayer.Character
+            if char and char:FindFirstChild("Humanoid") then
+                char.Humanoid.WalkSpeed = 16
+            end
+        end)
+    end
+end)
+
+getgenv().MiyakoAirWalk = false
+local lockedY = 0
+local platform = Instance.new("Part", Workspace)
+platform.Size = Vector3.new(20, 1, 20) 
+platform.Transparency = 1
+platform.Anchored = true
+platform.CanCollide = true
+platform.CFrame = CFrame.new(0, -99999, 0)
+
+local jumpToggleRef = nil
+
+local jumpToggleBtn = CreateToggle("☁️ Jump (Bypass)", function(state)
+    getgenv().MiyakoAirWalk = state
+end)
+
+jumpToggleRef = jumpToggleBtn
+
+UserInputService.JumpRequest:Connect(function()
+    if getgenv().MiyakoAirWalk then
+        pcall(function()
+            local char = LocalPlayer.Character
+            if char then
+                char:FindFirstChildOfClass("Humanoid"):ChangeState(Enum.HumanoidStateType.Jumping)
+                task.delay(0.03, function() if char:FindFirstChild("HumanoidRootPart") then lockedY = char.HumanoidRootPart.Position.Y - 3.5 end end)
+            end
+        end)
+    end
+end)
+
+local simpleModeActive = false
+CreateToggle("🐵 SIMPLE MODE JUMP", function(state)
+    simpleModeActive = state
+    if state then
+        SimpleBtn.Visible = true
+    else
+        SimpleBtn.Visible = false
+        if getgenv().MiyakoAirWalk then
+            jumpToggleRef:MouseButton1Click() 
+        end
+    end
+end)
+
+SimpleBtn.MouseButton1Click:Connect(function()
+    if simpleModeActive then
+        getgenv().MiyakoAirWalk = not getgenv().MiyakoAirWalk
+        SimpleBtn.Text = getgenv().MiyakoAirWalk and "🙉" or "🙈"
+        
+        if jumpToggleRef then
+            for _, child in ipairs(jumpToggleRef:GetChildren()) do
+                if child:IsA("TextLabel") and (child.Text == "ON" or child.Text == "OFF") then
+                    child.Text = getgenv().MiyakoAirWalk and "ON" or "OFF"
+                    child.TextColor3 = getgenv().MiyakoAirWalk and AccentColor or Color3.fromRGB(150, 150, 150)
+                end
+            end
+            TweenService:Create(jumpToggleRef, AnimInfo, {BackgroundColor3 = getgenv().MiyakoAirWalk and ActiveSectionColor or SectionColor}):Play()
+        end
+    end
+end)
+
+getgenv().MiyakoAntiRagdoll = false
+CreateToggle("🛡️ Anti Ragdoll", function(state)
+    getgenv().MiyakoAntiRagdoll = state
+    if not state then
+        pcall(function()
+            local char = LocalPlayer.Character
+            if char and char:FindFirstChild("Humanoid") then
+                char.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Ragdoll, true)
+                char.Humanoid:SetStateEnabled(Enum.HumanoidStateType.FallingDown, true)
+            end
+        end)
+    end
+end)
+
+-- ==========================================
+-- 3.5 FITUR COMBAT & STEAL (KILLAURA & INSTANT STEAL)
+-- ==========================================
+CreateHeader("COMBAT & STEAL MODULES")
+
+local killauraActive = false
+local attackLoop = nil
+
+local function getClosestEnemy()
+    local closestDist = 15
+    local closestPlayer = nil
+    
+    local myChar = LocalPlayer.Character
+    if not myChar or not myChar:FindFirstChild("HumanoidRootPart") then return nil end
+    local myPos = myChar.HumanoidRootPart.Position
+
+    for _, v in pairs(Players:GetPlayers()) do
+        if v ~= LocalPlayer and v.Character and v.Character:FindFirstChild("HumanoidRootPart") then
+            local hum = v.Character:FindFirstChild("Humanoid")
+            if hum and hum.Health > 0 then
+                local dist = (v.Character.HumanoidRootPart.Position - myPos).Magnitude
+                if dist < closestDist then
+                    closestDist = dist
+                    closestPlayer = v
+                end
+            end
+        end
+    end
+    return closestPlayer
+end
+
+CreateToggle("⚔️ Auto Hit (Wajib pegang tongkat)", function(state)
+    killauraActive = state
+    
+    if killauraActive then
+        attackLoop = task.spawn(function()
+            local remote = ReplicatedStorage:FindFirstChild("RemoteEvent")
+            while killauraActive do
+                task.wait(0.2)
+                local target = getClosestEnemy()
+                local toolEquipped = LocalPlayer.Character and LocalPlayer.Character:FindFirstChildOfClass("Tool")
+                
+                if target and remote and toolEquipped then
+                    pcall(function()
+                        remote:FireServer("gear_swing", LocalPlayer.UserId)
+                        task.wait(0.05)
+                        remote:FireServer("gear_hit_claim", target.UserId, target)
+                    end)
+                end
+            end
+        end)
+    else
+        if attackLoop then task.cancel(attackLoop) end
+    end
+end)
+
+getgenv().MiyakoNoLoading = false
+local stealLoopProcess = nil
+
+CreateToggle("🏃‍♂️ Auto Steal", function(state)
+    getgenv().MiyakoNoLoading = state
+    if state then
+        stealLoopProcess = task.spawn(function()
+            while getgenv().MiyakoNoLoading do
+                for _, obj in ipairs(Workspace:GetDescendants()) do
+                    if obj:IsA("ProximityPrompt") and obj.HoldDuration > 0 then
+                        obj.HoldDuration = 0
+                    end
+                end
+                task.wait(1)
+            end
+        end)
+    else
+        if stealLoopProcess then task.cancel(stealLoopProcess) end
+    end
+end)
+
+RunService.RenderStepped:Connect(function()
+    if getgenv().MiyakoAirWalk then
+        pcall(function()
+            local char = LocalPlayer.Character
+            if char and char:FindFirstChild("HumanoidRootPart") then
+                local hrp = char.HumanoidRootPart
+                if lockedY == 0 then lockedY = hrp.Position.Y - 3.5 end
+                platform.CFrame = CFrame.new(hrp.Position.X, lockedY, hrp.Position.Z)
+                hrp.AssemblyLinearVelocity = Vector3.new(hrp.AssemblyLinearVelocity.X, 0, hrp.AssemblyLinearVelocity.Z)
+            end
+        end)
+    else 
+        platform.CFrame = CFrame.new(0, -99999, 0) 
+        lockedY = 0 
+    end
+    
+    if getgenv().MiyakoAntiRagdoll then
+        pcall(function()
+            local char = LocalPlayer.Character
+            if char then
+                local hum = char:FindFirstChild("Humanoid")
+                if hum then
+                    hum:SetStateEnabled(Enum.HumanoidStateType.Ragdoll, false)
+                    hum:SetStateEnabled(Enum.HumanoidStateType.FallingDown, false)
+                    if hum.Sit then hum.Sit = false end
+                    if hum.PlatformStand then hum.PlatformStand = false end
+                end
+                
+                local hrp = char:FindFirstChild("HumanoidRootPart")
+                if hrp then
+                    for _, v in ipairs(hrp:GetChildren()) do
+                        if v:IsA("BodyVelocity") or v:IsA("BodyForce") or v:IsA("BodyThrust") or v:IsA("BodyPosition") or v:IsA("BodyAngularVelocity") or v:IsA("LinearVelocity") or v:IsA("VectorForce") then
+                            v:Destroy()
+                        end
+                    end
+                end
+            end
+        end)
+    end
+end)
+
+-- ==========================================
+-- 4. MULTI-PLOT SCANNER & AUTO BUILD
+-- ==========================================
+CreateHeader("MIYAKO DETECTOR")
+local activeBlueprintData = nil
+local activeBlueprintName = ""
+local currentPlotID = 0
+local getPlotIDActive = false
+local verifiedIDReady = false
+local currentBlock = "Iron Block"
+local tinggiTembok = 1
+
+local StatusRow = Instance.new("Frame", ContentArea)
+StatusRow.Size = UDim2.new(1, 0, 0, 35)
+StatusRow.BackgroundTransparency = 1
+
+local StatusLabel = Instance.new("TextLabel", StatusRow)
+StatusLabel.Size = UDim2.new(0.78, 0, 1, 0)
+StatusLabel.BackgroundColor3 = SectionColor
+StatusLabel.Text = "Unverified"
+StatusLabel.TextColor3 = Color3.fromRGB(150, 150, 150)
+StatusLabel.Font = Enum.Font.GothamSemibold
+StatusLabel.TextSize = 11
+Instance.new("UICorner", StatusLabel).CornerRadius = UDim.new(0, 6)
+
+local RefreshBtn = Instance.new("TextButton", StatusRow)
+RefreshBtn.Size = UDim2.new(0.2, 0, 1, 0)
+RefreshBtn.Position = UDim2.new(0.8, 0, 0, 0)
+RefreshBtn.BackgroundColor3 = AccentColor
+RefreshBtn.Text = "🔍 CEK"
+RefreshBtn.TextColor3 = Color3.fromRGB(10, 10, 10)
+RefreshBtn.Font = Enum.Font.GothamBold
+RefreshBtn.TextSize = 12
+Instance.new("UICorner", RefreshBtn).CornerRadius = UDim.new(0, 6)
+
+RefreshBtn.MouseButton1Click:Connect(function()
+    local char = LocalPlayer.Character
+    if char and char:FindFirstChild("HumanoidRootPart") then
+        local myPos = char.HumanoidRootPart.Position
+        local foundMatch = false
+        
+        for name, bpData in pairs(allBlueprints) do
+            local anchorPos = bpData[1].Position
+            local distance = (myPos - anchorPos).Magnitude
+            if distance <= 150 then
+                activeBlueprintData = bpData
+                activeBlueprintName = name
+                foundMatch = true
+                break
+            end
+        end
+        
+        if foundMatch then
+            StatusLabel.Text = "MATCHED: " .. activeBlueprintName
+            StatusLabel.TextColor3 = AccentColor
+        else
+            activeBlueprintData = nil
+            activeBlueprintName = ""
+            StatusLabel.Text = "PLOT NOT MATCHED"
+            StatusLabel.TextColor3 = Color3.fromRGB(255, 80, 80)
+        end
+    end
+end)
+
+CreateHeader("BUILDER SETTINGS")
+local SpyBtn = Instance.new("TextButton", ContentArea)
+SpyBtn.Size = UDim2.new(1, 0, 0, 32)
+SpyBtn.BackgroundColor3 = Se
