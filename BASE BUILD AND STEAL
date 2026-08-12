@@ -547,4 +547,185 @@ end)
 CreateHeader("BUILDER SETTINGS")
 local SpyBtn = Instance.new("TextButton", ContentArea)
 SpyBtn.Size = UDim2.new(1, 0, 0, 32)
-SpyBtn.BackgroundColor3 = Se
+SpyBtn.BackgroundColor3 = SectionColor
+SpyBtn.Text = "📡 MIYAKO ID CHECK"
+SpyBtn.TextColor3 = Color3.fromRGB(220, 220, 220)
+SpyBtn.Font = Enum.Font.GothamSemibold
+SpyBtn.TextSize = 11
+Instance.new("UICorner", SpyBtn).CornerRadius = UDim.new(0, 6)
+
+SpyBtn.MouseButton1Click:Connect(function()
+    getPlotIDActive = not getPlotIDActive
+    if getPlotIDActive then
+        SpyBtn.Text = "📡 CHECKING... TARUH 1 BLOK"
+        SpyBtn.TextColor3 = AccentColor
+    else
+        SpyBtn.Text = "📡 MIYAKO ID CHECK"
+        SpyBtn.TextColor3 = Color3.fromRGB(220, 220, 220)
+    end
+end)
+
+local DropdownBtn = Instance.new("TextButton", ContentArea)
+DropdownBtn.Size = UDim2.new(1, 0, 0, 32)
+DropdownBtn.BackgroundColor3 = SectionColor
+DropdownBtn.Text = "📦 Pilih Material: " .. currentBlock
+DropdownBtn.TextColor3 = Color3.fromRGB(220, 220, 220)
+DropdownBtn.Font = Enum.Font.GothamSemibold
+DropdownBtn.TextSize = 11
+Instance.new("UICorner", DropdownBtn).CornerRadius = UDim.new(0, 6)
+
+local DropdownList = Instance.new("ScrollingFrame", ContentArea)
+DropdownList.Size = UDim2.new(1, 0, 0, 0)
+DropdownList.BackgroundColor3 = Color3.fromRGB(20, 22, 28)
+DropdownList.BorderSizePixel = 0
+DropdownList.Visible = false
+DropdownList.ScrollBarThickness = 2
+DropdownList.ScrollBarImageColor3 = AccentColor
+DropdownList.CanvasSize = UDim2.new(0, 0, 0, #blockList * 25)
+Instance.new("UICorner", DropdownList).CornerRadius = UDim.new(0, 6)
+
+local ListLayout = Instance.new("UIListLayout", DropdownList)
+ListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+
+for _, bName in ipairs(blockList) do
+    local itemBtn = Instance.new("TextButton", DropdownList)
+    itemBtn.Size = UDim2.new(1, 0, 0, 25)
+    itemBtn.BackgroundTransparency = 1
+    itemBtn.Text = "  " .. bName
+    itemBtn.TextColor3 = Color3.fromRGB(200, 200, 200)
+    itemBtn.Font = Enum.Font.Gotham
+    itemBtn.TextSize = 11
+    itemBtn.TextXAlignment = Enum.TextXAlignment.Left
+    itemBtn.MouseButton1Click:Connect(function()
+        currentBlock = bName
+        DropdownBtn.Text = "📦 Pilih Material: " .. currentBlock
+        
+        local tween = TweenService:Create(DropdownList, AnimInfo, {Size = UDim2.new(1, 0, 0, 0)})
+        tween:Play()
+        tween.Completed:Connect(function() DropdownList.Visible = false end)
+        isOpen = false
+    end)
+end
+
+local isOpen = false
+DropdownBtn.MouseButton1Click:Connect(function()
+    isOpen = not isOpen
+    if isOpen then DropdownList.Visible = true end
+    
+    local targetSize = isOpen and UDim2.new(1, 0, 0, 100) or UDim2.new(1, 0, 0, 0)
+    local tween = TweenService:Create(DropdownList, AnimInfo, {Size = targetSize})
+    tween:Play()
+    
+    if not isOpen then
+        tween.Completed:Connect(function() if not isOpen then DropdownList.Visible = false end end)
+    end
+end)
+
+local HeightRow = Instance.new("Frame", ContentArea)
+HeightRow.Size = UDim2.new(1, 0, 0, 32)
+HeightRow.BackgroundTransparency = 1
+
+local HeightDesc = Instance.new("TextLabel", HeightRow)
+HeightDesc.Size = UDim2.new(0.6, 0, 1, 0)
+HeightDesc.BackgroundColor3 = SectionColor
+HeightDesc.Text = "🏢 Tinggi Lantai: 1"
+HeightDesc.TextColor3 = Color3.fromRGB(220, 220, 220)
+HeightDesc.Font = Enum.Font.GothamSemibold
+HeightDesc.TextSize = 11
+Instance.new("UICorner", HeightDesc).CornerRadius = UDim.new(0, 6)
+
+local BtnMinus = Instance.new("TextButton", HeightRow)
+BtnMinus.Size = UDim2.new(0.18, 0, 1, 0); BtnMinus.Position = UDim2.new(0.62, 0, 0, 0)
+BtnMinus.BackgroundColor3 = SectionColor; BtnMinus.Text = "-"; BtnMinus.TextColor3 = Color3.fromRGB(255,255,255)
+Instance.new("UICorner", BtnMinus).CornerRadius = UDim.new(0, 6)
+
+local BtnPlus = Instance.new("TextButton", HeightRow)
+BtnPlus.Size = UDim2.new(0.18, 0, 1, 0); BtnPlus.Position = UDim2.new(0.82, 0, 0, 0)
+BtnPlus.BackgroundColor3 = AccentColor; BtnPlus.Text = "+"; BtnPlus.TextColor3 = Color3.fromRGB(10,10,10)
+Instance.new("UICorner", BtnPlus).CornerRadius = UDim.new(0, 6)
+
+BtnMinus.MouseButton1Click:Connect(function()
+    if tinggiTembok > 1 then tinggiTembok = tinggiTembok - 1 end
+    HeightDesc.Text = "🏢 Tinggi Lantai: " .. tinggiTembok
+end)
+BtnPlus.MouseButton1Click:Connect(function()
+    if tinggiTembok < 15 then tinggiTembok = tinggiTembok + 1 end
+    HeightDesc.Text = "🏢 Tinggi Lantai: " .. tinggiTembok
+end)
+
+local ExecBtn = Instance.new("TextButton", ContentArea)
+ExecBtn.Size = UDim2.new(1, 0, 0, 38)
+ExecBtn.BackgroundColor3 = AccentColor
+ExecBtn.Text = "🔨 EKSEKUSI PEMBANGUNAN"
+ExecBtn.TextColor3 = Color3.fromRGB(10, 10, 10)
+ExecBtn.Font = Enum.Font.GothamBlack
+ExecBtn.TextSize = 12
+Instance.new("UICorner", ExecBtn).CornerRadius = UDim.new(0, 6)
+
+ExecBtn.MouseButton1Click:Connect(function()
+    if currentPlotID == 0 then
+        ExecBtn.Text = "⚠️ VERIFIKASI ID DULU!"
+        task.delay(2, function() ExecBtn.Text = "🔨 EKSEKUSI PEMBANGUNAN" end)
+        return
+    end
+
+    if not activeBlueprintData then
+        ExecBtn.Text = "⚠️ CEK PLOT DULU!"
+        task.delay(2, function() ExecBtn.Text = "🔨 EKSEKUSI PEMBANGUNAN" end)
+        return
+    end
+
+    local buildRemote = ReplicatedStorage:FindFirstChild("RemoteEvent", true)
+    if not buildRemote then return end
+
+    ExecBtn.Text = "⏳ MEMBANGUN..."
+    
+    task.spawn(function()
+        for layer = 0, tinggiTembok - 1 do
+            for _, baseCFrame in ipairs(activeBlueprintData) do
+                local targetCFrame = baseCFrame + Vector3.new(0, layer * 4, 0)
+                local args = {
+                    [1] = "placeblock", 
+                    [2] = currentPlotID, 
+                    [3] = currentBlock, 
+                    [4] = targetCFrame, 
+                    [5] = {}
+                }
+                buildRemote:FireServer(unpack(args))
+                task.wait(0.02)
+            end
+        end
+        ExecBtn.Text = "✅ SELESAI!"
+        task.delay(3, function() ExecBtn.Text = "🔨 EKSEKUSI PEMBANGUNAN" end)
+    end)
+end)
+
+-- HOOK PENYADAP ID SANGAT RINGAN
+local oldNamecall
+oldNamecall = hookmetamethod(game, "__namecall", function(self, ...)
+    local method = getnamecallmethod()
+    
+    if getPlotIDActive and not checkcaller() and (method == "InvokeServer" or method == "FireServer") then
+        local args = {...}
+        if type(args[1]) == "string" and (args[1] == "placeblock" or args[1] == "PlaceBlock") then
+            local detectedID = tonumber(args[2])
+            if detectedID then
+                currentPlotID = detectedID
+                getPlotIDActive = false
+                verifiedIDReady = true
+            end
+        end
+    end
+    return oldNamecall(self, ...)
+end)
+
+task.spawn(function()
+    while task.wait(0.2) do
+        if verifiedIDReady then
+            verifiedIDReady = false
+            SpyBtn.Text = "📡 ID DETECTED: " .. tostring(currentPlotID)
+            SpyBtn.TextColor3 = AccentColor
+            pcall(function() setclipboard(tostring(currentPlotID)) end)
+        end
+    end
+end)
