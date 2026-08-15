@@ -1,0 +1,580 @@
+
+
+local Players = game:GetService("Players")
+local TweenService = game:GetService("TweenService")
+local UserInputService = game:GetService("UserInputService")
+local RunService = game:GetService("RunService")
+
+local LocalPlayer = Players.LocalPlayer
+local HumanoidRootPart = (LocalPlayer.Character or LocalPlayer.CharacterAdded:Wait()):WaitForChild("HumanoidRootPart")
+local SpillSystem = workspace:WaitForChild("SpillSystem")
+local PlayerGui = LocalPlayer:WaitForChild("PlayerGui")
+
+local Theme = {
+    Background = Color3.fromRGB(10, 10, 14),
+    Card = Color3.fromRGB(17, 17, 24),
+    CardHover = Color3.fromRGB(22, 22, 32),
+    ContentBg = Color3.fromRGB(13, 13, 19),
+    Border = Color3.fromRGB(40, 38, 58),
+    Accent = Color3.fromRGB(124, 77, 255),
+    AccentDark = Color3.fromRGB(96, 55, 210),
+    AccentGlow = Color3.fromRGB(124, 77, 255),
+    Text = Color3.fromRGB(240, 238, 255),
+    TextDim = Color3.fromRGB(130, 125, 160),
+    ToggleOff = Color3.fromRGB(30, 28, 42),
+    Green = Color3.fromRGB(72, 210, 130),
+}
+
+local isFarming = false
+local farmThread = nil
+
+local TweenQuick = TweenInfo.new(0.15, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+local TweenSlow = TweenInfo.new(0.25, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+
+function CreateInstance(className, properties, children)
+    local instance = Instance.new(className)
+    for key, value in pairs(properties) do
+        instance[key] = value
+    end
+    if children then
+        for _, child in ipairs(children) do
+            child.Parent = instance
+        end
+    end
+    return instance
+end
+
+function Tween(instance, info, properties)
+    local tween = TweenService:Create(instance, info, properties)
+    tween:Play()
+    return tween
+end
+
+local ScreenGui = CreateInstance("ScreenGui", {
+    Name = "SLRAutoFarmUI",
+    ResetOnSpawn = false,
+    ZIndexBehavior = Enum.ZIndexBehavior.Sibling,
+    DisplayOrder = 999,
+    Parent = PlayerGui,
+})
+
+local Card = CreateInstance("Frame", {
+    Name = "Card",
+    Size = UDim2.new(0, 380, 0, 220),
+    Position = UDim2.new(0.5, -190, 0.12, 0),
+    BackgroundColor3 = Theme.Card,
+    BorderSizePixel = 0,
+    ClipsDescendants = false,
+    Parent = ScreenGui,
+})
+
+CreateInstance("UICorner", { CornerRadius = UDim.new(0, 14) }, nil).Parent = Card
+CreateInstance("UIStroke", {
+    Color = Theme.Border,
+    Thickness = 1,
+    ApplyStrokeMode = Enum.ApplyStrokeMode.Border,
+}, nil).Parent = Card
+
+local GlowOverlay = CreateInstance("Frame", {
+    Size = UDim2.new(1, 0, 0, 1),
+    BackgroundColor3 = Color3.fromRGB(255, 255, 255),
+    BackgroundTransparency = 0.82,
+    BorderSizePixel = 0,
+    ZIndex = 2,
+    Parent = Card,
+})
+CreateInstance("UICorner", { CornerRadius = UDim.new(1, 0) }, nil).Parent = GlowOverlay
+
+local GlowBorder = CreateInstance("Frame", {
+    Size = UDim2.new(1, 12, 1, 12),
+    Position = UDim2.new(0, -6, 0, -6),
+    BackgroundColor3 = Theme.AccentGlow,
+    BackgroundTransparency = 0.88,
+    BorderSizePixel = 0,
+    ZIndex = 0,
+    Parent = Card,
+})
+CreateInstance("UICorner", { CornerRadius = UDim.new(0, 20) }, nil).Parent = GlowBorder
+
+local Content = CreateInstance("Frame", {
+    Size = UDim2.new(1, -36, 1, -32),
+    Position = UDim2.new(0, 18, 0, 16),
+    BackgroundTransparency = 1,
+    ZIndex = 3,
+    Parent = Card,
+})
+
+local Header = CreateInstance("Frame", {
+    Size = UDim2.new(1, 0, 0, 40),
+    BackgroundTransparency = 1,
+    ZIndex = 3,
+    Parent = Content,
+})
+
+local IconContainer = CreateInstance("Frame", {
+    Size = UDim2.new(0, 36, 0, 36),
+    Position = UDim2.new(0, 0, 0, 2),
+    BackgroundColor3 = Theme.ContentBg,
+    BorderSizePixel = 0,
+    ZIndex = 4,
+    Parent = Header,
+})
+CreateInstance("UICorner", { CornerRadius = UDim.new(0, 8) }, nil).Parent = IconContainer
+CreateInstance("UIStroke", { Color = Theme.Border, Thickness = 1 }, nil).Parent = IconContainer
+
+CreateInstance("ImageLabel", {
+    Size = UDim2.new(1, -8, 1, -8),
+    Position = UDim2.new(0, 4, 0, 4),
+    BackgroundTransparency = 1,
+    Image = "rbxassetid://133079624350864",
+    ZIndex = 5,
+    Parent = IconContainer,
+})
+
+local TitleArea = CreateInstance("Frame", {
+    Size = UDim2.new(1, -100, 1, 0),
+    Position = UDim2.new(0, 46, 0, 0),
+    BackgroundTransparency = 1,
+    ZIndex = 3,
+    Parent = Header,
+})
+
+CreateInstance("TextLabel", {
+    Size = UDim2.new(1, 0, 0, 22),
+    Position = UDim2.new(0, 0, 0, 2),
+    BackgroundTransparency = 1,
+    Text = "SLR AutoFarm • Delayed",
+    Font = Enum.Font.GothamBold,
+    TextSize = 15,
+    TextColor3 = Theme.Text,
+    TextXAlignment = Enum.TextXAlignment.Left,
+    ZIndex = 4,
+    Parent = TitleArea,
+})
+
+CreateInstance("TextLabel", {
+    Size = UDim2.new(1, 0, 0, 14),
+    Position = UDim2.new(0, 0, 0, 24),
+    BackgroundTransparency = 1,
+    Text = "Spill Collection Utility  •  v1.0",
+    Font = Enum.Font.Gotham,
+    TextSize = 11,
+    TextColor3 = Theme.TextDim,
+    TextTransparency = 0.2,
+    TextXAlignment = Enum.TextXAlignment.Left,
+    ZIndex = 4,
+    Parent = TitleArea,
+})
+
+local CloseButton = CreateInstance("TextButton", {
+    Size = UDim2.new(0, 28, 0, 28),
+    Position = UDim2.new(1, -28, 0, 4),
+    AnchorPoint = Vector2.new(0, 0),
+    BackgroundColor3 = Theme.ToggleOff,
+    BorderSizePixel = 0,
+    Text = "X",
+    Font = Enum.Font.GothamBold,
+    TextSize = 12,
+    TextColor3 = Theme.TextDim,
+    ZIndex = 5,
+    Parent = Header,
+})
+CreateInstance("UICorner", { CornerRadius = UDim.new(1, 0) }, nil).Parent = CloseButton
+
+CloseButton.MouseEnter:Connect(function()
+    Tween(CloseButton, TweenQuick, {
+        BackgroundColor3 = Theme.CardHover,
+        TextColor3 = Theme.Text,
+    })
+end)
+CloseButton.MouseLeave:Connect(function()
+    Tween(CloseButton, TweenQuick, {
+        BackgroundColor3 = Theme.ToggleOff,
+        TextColor3 = Theme.TextDim,
+    })
+end)
+CloseButton.MouseButton1Click:Connect(function()
+    isFarming = false
+    Tween(Card, TweenSlow, {
+        Position = UDim2.new(0.5, -190, -0.2, 0),
+        BackgroundTransparency = 1,
+    })
+    task.delay(0.3, function()
+        ScreenGui:Destroy()
+    end)
+end)
+
+CreateInstance("Frame", {
+    Size = UDim2.new(1, 0, 0, 1),
+    Position = UDim2.new(0, 0, 0, 52),
+    BackgroundColor3 = Theme.Border,
+    BorderSizePixel = 0,
+    ZIndex = 3,
+    Parent = Content,
+})
+
+local StatusSection = CreateInstance("Frame", {
+    Size = UDim2.new(1, 0, 0, 36),
+    Position = UDim2.new(0, 0, 0, 62),
+    BackgroundTransparency = 1,
+    ZIndex = 3,
+    Parent = Content,
+})
+
+local StatusDot = CreateInstance("Frame", {
+    Size = UDim2.new(0, 8, 0, 8),
+    Position = UDim2.new(0, 0, 0, 14),
+    BackgroundColor3 = Theme.Green,
+    BorderSizePixel = 0,
+    ZIndex = 4,
+    Parent = StatusSection,
+})
+CreateInstance("UICorner", { CornerRadius = UDim.new(1, 0) }, nil).Parent = StatusDot
+
+CreateInstance("TextLabel", {
+    Size = UDim2.new(0, 80, 0, 14),
+    Position = UDim2.new(0, 16, 0, 0),
+    BackgroundTransparency = 1,
+    Text = "STATUS • Discord https://discord.gg/wWfjxQTxVB",
+    Font = Enum.Font.GothamBold,
+    TextSize = 9,
+    TextColor3 = Theme.TextDim,
+    TextXAlignment = Enum.TextXAlignment.Left,
+    ZIndex = 4,
+    Parent = StatusSection,
+})
+
+local StatusText = CreateInstance("TextLabel", {
+    Name = "StatusText",
+    Size = UDim2.new(1, -16, 0, 18),
+    Position = UDim2.new(0, 16, 0, 16),
+    BackgroundTransparency = 1,
+    Text = "Ready to Generate",
+    Font = Enum.Font.GothamMedium,
+    TextSize = 13,
+    TextColor3 = Theme.Text,
+    TextXAlignment = Enum.TextXAlignment.Left,
+    ZIndex = 4,
+    Parent = StatusSection,
+})
+
+local GenerateButton = CreateInstance("TextButton", {
+    Size = UDim2.new(1, 0, 0, 52),
+    Position = UDim2.new(0, 0, 1, -80),
+    BackgroundColor3 = Theme.Accent,
+    BorderSizePixel = 0,
+    Text = "",
+    ZIndex = 4,
+    Parent = Content,
+})
+CreateInstance("UICorner", { CornerRadius = UDim.new(0, 12) }, nil).Parent = GenerateButton
+
+local ButtonGlow = CreateInstance("Frame", {
+    Size = UDim2.new(1, 16, 1, 16),
+    Position = UDim2.new(0, -8, 0, -8),
+    BackgroundColor3 = Theme.AccentGlow,
+    BackgroundTransparency = 0.78,
+    BorderSizePixel = 0,
+    ZIndex = 3,
+    Parent = GenerateButton,
+})
+CreateInstance("UICorner", { CornerRadius = UDim.new(0, 18) }, nil).Parent = ButtonGlow
+
+local ButtonGlowLine = CreateInstance("Frame", {
+    Size = UDim2.new(1, 0, 0.5, 0),
+    BackgroundColor3 = Color3.fromRGB(255, 255, 255),
+    BackgroundTransparency = 0.91,
+    BorderSizePixel = 0,
+    ZIndex = 5,
+    Parent = GenerateButton,
+})
+CreateInstance("UICorner", { CornerRadius = UDim.new(0, 12) }, nil).Parent = ButtonGlowLine
+
+local ButtonContent = CreateInstance("Frame", {
+    Size = UDim2.new(0, 130, 1, 0),
+    Position = UDim2.new(0.5, -65, 0, 0),
+    BackgroundTransparency = 1,
+    ZIndex = 6,
+    Parent = GenerateButton,
+})
+
+local ButtonIcon = CreateInstance("TextLabel", {
+    Size = UDim2.new(0, 22, 1, 0),
+    BackgroundTransparency = 1,
+    Text = "⚡",
+    Font = Enum.Font.GothamBold,
+    TextSize = 20,
+    TextColor3 = Theme.Text,
+    TextXAlignment = Enum.TextXAlignment.Left,
+    ZIndex = 7,
+    Parent = ButtonContent,
+})
+
+local ButtonLabel = CreateInstance("TextLabel", {
+    Name = "BtnLabel",
+    Size = UDim2.new(1, -30, 1, 0),
+    Position = UDim2.new(0, 30, 0, 0),
+    BackgroundTransparency = 1,
+    Text = "GENERATE",
+    Font = Enum.Font.GothamBold,
+    TextSize = 14,
+    TextColor3 = Theme.Text,
+    TextXAlignment = Enum.TextXAlignment.Left,
+    ZIndex = 7,
+    Parent = ButtonContent,
+})
+
+local HotkeySection = CreateInstance("Frame", {
+    Size = UDim2.new(1, 0, 0, 16),
+    Position = UDim2.new(0, 0, 1, -18),
+    BackgroundTransparency = 1,
+    ZIndex = 3,
+    Parent = Content,
+})
+
+CreateInstance("TextLabel", {
+    Size = UDim2.new(0.5, -28, 1, 0),
+    Position = UDim2.new(0, 0, 0, 0),
+    BackgroundTransparency = 1,
+    Text = "Press",
+    Font = Enum.Font.Gotham,
+    TextSize = 10,
+    TextColor3 = Theme.TextDim,
+    TextTransparency = 0.35,
+    TextXAlignment = Enum.TextXAlignment.Right,
+    ZIndex = 4,
+    Parent = HotkeySection,
+})
+
+local HotkeyLabel = CreateInstance("TextLabel", {
+    Size = UDim2.new(0, 18, 0, 14),
+    Position = UDim2.new(0.5, -9, 0.5, -7),
+    BackgroundColor3 = Theme.ToggleOff,
+    BorderSizePixel = 0,
+    Text = "P",
+    Font = Enum.Font.GothamBold,
+    TextSize = 9,
+    TextColor3 = Theme.Text,
+    ZIndex = 4,
+    Parent = HotkeySection,
+})
+CreateInstance("UICorner", { CornerRadius = UDim.new(0, 4) }, nil).Parent = HotkeyLabel
+
+CreateInstance("TextLabel", {
+    Size = UDim2.new(0.5, -18, 1, 0),
+    Position = UDim2.new(0.5, 14, 0, 0),
+    BackgroundTransparency = 1,
+    Text = "to stop generating",
+    Font = Enum.Font.Gotham,
+    TextSize = 10,
+    TextColor3 = Theme.TextDim,
+    TextTransparency = 0.35,
+    TextXAlignment = Enum.TextXAlignment.Left,
+    ZIndex = 4,
+    Parent = HotkeySection,
+})
+
+function UpdateStatus(text, color, dotColor)
+    StatusText.Text = text
+    if color then
+        StatusText.TextColor3 = color
+    end
+    if dotColor then
+        Tween(StatusDot, TweenQuick, { BackgroundColor3 = dotColor })
+    end
+end
+
+function SetFarmingState(active)
+    isFarming = active
+    if active then
+        Tween(GenerateButton, TweenQuick, { BackgroundColor3 = Theme.AccentDark })
+        ButtonIcon.Text = "✔"
+        ButtonLabel.Text = "RUNNING..."
+        UpdateStatus("Farming Active — Collecting Spills", Theme.Text, Theme.Green)
+    else
+        Tween(GenerateButton, TweenQuick, { BackgroundColor3 = Theme.Accent })
+        ButtonIcon.Text = "⚡"
+        ButtonLabel.Text = "GASS"
+        UpdateStatus("Ready to Generate", Theme.Text, Theme.Green)
+    end
+end
+
+GenerateButton.MouseEnter:Connect(function()
+    if not isFarming then
+        Tween(GenerateButton, TweenQuick, { BackgroundColor3 = Color3.fromRGB(138, 92, 255) })
+    end
+end)
+
+GenerateButton.MouseLeave:Connect(function()
+    if not isFarming then
+        Tween(GenerateButton, TweenQuick, { BackgroundColor3 = Theme.Accent })
+    end
+end)
+
+GenerateButton.MouseButton1Down:Connect(function()
+    Tween(GenerateButton, TweenInfo.new(0.08), {
+        Size = UDim2.new(1, -6, 0, 48),
+        Position = UDim2.new(0, 3, 1, -76),
+    })
+end)
+
+GenerateButton.MouseButton1Up:Connect(function()
+    Tween(GenerateButton, TweenInfo.new(0.12), {
+        Size = UDim2.new(1, 0, 0, 52),
+        Position = UDim2.new(0, 0, 1, -80),
+    })
+end)
+
+function StartFarming()
+    isFarming = true
+    farmThread = task.spawn(function()
+        while isFarming do
+            for i = 1, 10 do
+                if not isFarming then break end
+                
+                local spill = SpillSystem:FindFirstChild("spill" .. i)
+                if spill then
+                    TeleportAndPressPrompt(spill)
+                    task.wait(0.7)
+                end
+            end
+            task.wait(1)
+        end
+    end)
+end
+
+function StopFarming()
+    isFarming = false
+    if farmThread then
+        pcall(task.cancel, farmThread)
+        farmThread = nil
+    end
+    SetFarmingState(false)
+end
+
+GenerateButton.MouseButton1Click:Connect(function()
+    if isFarming then
+        StopFarming()
+    else
+        SetFarmingState(true)
+        StartFarming()
+    end
+end)
+
+UserInputService.InputBegan:Connect(function(input, gameProcessed)
+    if gameProcessed then return end
+    if input.KeyCode == Enum.KeyCode.P and isFarming then
+        if farmThread then
+            pcall(task.cancel, farmThread)
+        end
+        Tween(GenerateButton, TweenQuick, { BackgroundColor3 = Theme.Accent })
+        ButtonIcon.Text = "⚡"
+        ButtonLabel.Text = "GASS"
+        UpdateStatus("Ready to Generate", Theme.Text, Theme.Green)
+    end
+end)
+
+-- ===== DRAG SYSTEM =====
+local isDragging = false
+local dragStart = nil
+local cardStartPos = nil
+local dragConnection = nil
+local dragEndConnection = nil
+
+-- Function to start dragging
+local function startDrag(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 then
+        isDragging = true
+        dragStart = input.Position
+        cardStartPos = Card.Position
+        
+        -- Disable button clicks while dragging
+        GenerateButton.Active = false
+        
+        -- Create connections for drag movement and end
+        dragConnection = UserInputService.InputChanged:Connect(function(inputChanged)
+            if isDragging and inputChanged.UserInputType == Enum.UserInputType.MouseMovement then
+                local delta = inputChanged.Position - dragStart
+                Card.Position = UDim2.new(
+                    cardStartPos.X.Scale,
+                    cardStartPos.X.Offset + delta.X,
+                    cardStartPos.Y.Scale,
+                    cardStartPos.Y.Offset + delta.Y
+                )
+            end
+        end)
+        
+        dragEndConnection = UserInputService.InputEnded:Connect(function(inputEnded)
+            if inputEnded.UserInputType == Enum.UserInputType.MouseButton1 and isDragging then
+                isDragging = false
+                GenerateButton.Active = true
+                
+                -- Clean up connections
+                if dragConnection then
+                    dragConnection:Disconnect()
+                    dragConnection = nil
+                end
+                if dragEndConnection then
+                    dragEndConnection:Disconnect()
+                    dragEndConnection = nil
+                end
+            end
+        end)
+    end
+end
+
+-- Connect drag start to the Card (entire card is draggable)
+Card.InputBegan:Connect(startDrag)
+
+-- Also allow dragging from the header area
+Header.InputBegan:Connect(startDrag)
+
+-- Prevent interaction with buttons from triggering drag
+GenerateButton.InputBegan:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 then
+        -- Stop any ongoing drag when clicking the button
+        if isDragging then
+            isDragging = false
+            if dragConnection then
+                dragConnection:Disconnect()
+                dragConnection = nil
+            end
+            if dragEndConnection then
+                dragEndConnection:Disconnect()
+                dragEndConnection = nil
+            end
+        end
+    end
+end)
+
+-- ===== END DRAG SYSTEM =====
+
+function TeleportAndPressPrompt(spill)
+    local prompt = spill:FindFirstChildWhichIsA("ProximityPrompt")
+    if not prompt then
+        prompt = spill:FindFirstChild("Spill")
+    end
+    
+    if prompt and prompt.Enabled then
+        local position = spill.CFrame.Position
+        local target = Vector3.new(position.X, position.Y + 3, position.Z)
+        
+        HumanoidRootPart.CFrame = CFrame.new(target)
+        task.wait(0.15)
+        prompt:InputHoldBegin(Enum.UserInputType.Keyboard)
+        task.wait(0.1)
+        prompt:InputHoldEnd(Enum.UserInputType.Keyboard)
+    end
+end
+
+LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame = CFrame.new(-19.29, 4.09, -77.35)
+
+Card.Position = UDim2.new(0.5, -190, 0.07, 0)
+Card.BackgroundTransparency = 1
+Tween(Card, TweenSlow, {
+    BackgroundTransparency = 0,
+    Position = UDim2.new(0.5, -190, 0.12, 0),
+})
+
+print("💸 SLR Auto Farm v1.0 • Delayed")
+print("Made By • MIYAKO)
