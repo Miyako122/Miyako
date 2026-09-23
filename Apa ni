@@ -1,0 +1,902 @@
+-- ==============================================================================
+-- MIYAKO STEAL ANN EGG (ULTIMATE MANUAL SNIPER EDITION - FULL COMPILATION)
+-- Logika Final: Lari ke Umpan -> Tunggu 3 Detik -> Anchor TP Target -> Sprint
+-- ==============================================================================
+-- 1. MESIN INTI (ENGINE) - 100% ORIGINAL & UNTOUCHED
+-- ==============================================================================
+local BASE_URL = "https://raw.githubusercontent.com/ojiasa/Steal-an-egg/main"
+local FALLBACK = "https://cdn.jsdelivr.net/gh/ojiasa/Steal-an-egg@main"
+
+local function fetch(path)
+    local urls = { BASE_URL .. "/" .. path, FALLBACK .. "/" .. path }
+    for _, url in ipairs(urls) do
+        local ok, src = pcall(function() return game:HttpGet(url) end)
+        if ok and src and #src > 100 then
+            local fn = loadstring(src, "=" .. path)
+            if fn then
+                local success, result = pcall(fn)
+                if success then return result end
+            end
+        end
+    end
+    warn("[MIYAKO] ❌ Gagal memuat: " .. path)
+    return nil
+end
+
+local Steal = fetch("modules/steal.lua")
+local ESP   = fetch("modules/esp.lua")
+local SellManager = fetch("modules/sell_manager.lua")
+local EggCore  = fetch("modules/EggCore.lua")
+local EggPlace = fetch("modules/eggplace.lua")
+local Treadmill = fetch("modules/Treamill.lua")
+
+_G.StealEgg = {
+    Steal = Steal, ESP = ESP, SellManager = SellManager,
+    EggCore = EggCore, EggPlace = EggPlace, Treadmill = Treadmill,
+    Start = function() if Steal then Steal.start() end end,
+    Stop = function() if Steal then Steal.stop() end end,
+    IsRunning = function() return Steal and Steal.isRunning() or false end,
+    SetTargets = function(list) if Steal then Steal.setTargets(list) end end,
+    GetAllMaps = function() return Steal and Steal.getAllMaps() or {} end,
+    OnLog = function(cb) if Steal then Steal.onLog(cb) end end,
+    SetPriorityIncome = function(on) if Steal then return Steal.setPriorityIncome(on) end end,
+    IsPriorityIncome = function() return Steal and Steal.isPriorityIncome() or false end,
+    TogglePriorityIncome = function() if Steal then Steal.togglePriorityIncome() end end,
+    SetPriorityThreshold = function(n) if Steal then Steal.setPriorityThreshold(n) end end,
+    GetPriorityThreshold = function() return Steal and Steal.getPriorityThreshold() or 1000000 end,
+    ClearIncomeCache = function() if Steal then Steal.clearIncomeCache() end end,
+    SetBigEggMode = function(on) if Steal and Steal.setBigEggMode then return Steal.setBigEggMode(on) end end,
+    IsBigEggMode = function() return Steal and Steal.isBigEggMode and Steal.isBigEggMode() or false end,
+    ToggleBigEggMode = function() if Steal and Steal.toggleBigEggMode then return Steal.toggleBigEggMode() end end,
+    ESP_Enable = function() if ESP then ESP.enable() end end,
+    ESP_Disable = function() if ESP then ESP.disable() end end,
+    ESP_Toggle = function() if ESP then return ESP.toggle() end end,
+    ESP_IsEnabled = function() return ESP and ESP.isEnabled() or false end,
+    ESP_SetMapFilter = function(list) if ESP then ESP.setMapFilter(list) end end,
+    SM_Start = function() if SellManager then SellManager.start() end end,
+    SM_Stop = function() if SellManager then SellManager.stop() end end,
+    SM_IsRunning = function() return SellManager and SellManager.isRunning() or false end,
+    SM_SetAutoSell = function(on) if SellManager then return SellManager.setAutoSell(on) end end,
+    SM_ToggleAutoSell = function() if SellManager then return SellManager.toggleAutoSell() end end,
+    SM_IsAutoSell = function() return SellManager and SellManager.isAutoSellEnabled() or false end,
+    SM_SetAutoEquip = function(on) if SellManager then return SellManager.setAutoEquip(on) end end,
+    SM_ToggleAutoEquip = function() if SellManager then return SellManager.toggleAutoEquip() end end,
+    SM_IsAutoEquip = function() return SellManager and SellManager.isAutoEquipEnabled() or false end,
+    SM_SetThreshold = function(v) if SellManager then SellManager.setSellThreshold(v) end end,
+    SM_GetThreshold = function() return SellManager and SellManager.getSellThreshold() or 1000000 end,
+    SM_SetIncludeZero = function(on) if SellManager then SellManager.setIncludeZero(on) end end,
+    SM_GetStats = function() return SellManager and SellManager.getStats() or {} end,
+    SM_RunOnce = function() if SellManager then SellManager.runOnce() end end,
+    SM_ScanInfo = function() if SellManager then SellManager.scanInfo() end end,
+    SM_OnLog = function(cb) if SellManager then SellManager.onLog(cb) end end,
+    Egg_SetAutoHatch = function(on)
+        if not EggCore then return false end
+        if on then return EggCore.startAutoHatch(5) else return EggCore.stopAutoHatch() end
+    end,
+    Egg_ToggleAutoHatch = function()
+        if not EggCore then return false end
+        if EggCore.isAutoHatchOn() then EggCore.stopAutoHatch(); return false else EggCore.startAutoHatch(5); return true end
+    end,
+    Egg_IsAutoHatch = function() return EggCore and EggCore.isAutoHatchOn() or false end,
+    Egg_GetToggles = function()
+        if not EggCore then return { hatch = false } end
+        return { hatch = EggCore.isAutoHatchOn() }
+    end,
+    Egg_HatchAll = function() if EggCore then return EggCore.hatchAll(30) end return 0 end,
+    Egg_HatchOnce = function() if EggCore then return EggCore.hatchOnce() end return 0 end,
+    Egg_GetStatus = function() if EggCore then return EggCore.getStatus() end return {} end,
+    EggPlace_Start = function() if EggPlace then return EggPlace.start() end return false end,
+    EggPlace_Stop = function() if EggPlace then return EggPlace.stop() end return false end,
+    EggPlace_IsRunning = function() return EggPlace and EggPlace.isRunning() or false end,
+    EggPlace_GetStats = function() return EggPlace and EggPlace.getStats() or {} end,
+    EggPlace_OnLog = function(cb) if EggPlace and EggPlace.OnLog then EggPlace.OnLog(cb) end end,
+    EggCore_SetConfig = function(tbl) if EggCore and EggCore.SetConfig then return EggCore.SetConfig(tbl) end end,
+    EggCore_GetConfig = function() if EggCore and EggCore.GetConfig then return EggCore.GetConfig() end return {} end,
+    EggCore_OnLog = function(cb) if EggCore and EggCore.OnLog then EggCore.OnLog(cb) end end,
+    Treadmill_SetEnabled = function(on) if Treadmill and Treadmill.setEnabled then return Treadmill.setEnabled(on) end end,
+    Treadmill_Toggle = function() if Treadmill and Treadmill.toggle then return Treadmill.toggle() end end,
+    Treadmill_IsEnabled = function() return Treadmill and Treadmill.isEnabled and Treadmill.isEnabled() or false end,
+    Treadmill_GetCount = function() return Treadmill and Treadmill.getCount and Treadmill.getCount() or 0 end,
+    Treadmill_OnLog = function(cb) if Treadmill and Treadmill.OnLog then Treadmill.OnLog(cb) end end,
+    Version = "MIYAKO STEAL ANN EGG",
+}
+local API = _G.StealEgg
+
+-- ==============================================================================
+-- 2. TEMA UI MIYAKO HIGH-TECH (COMPACT MODE)
+-- ==============================================================================
+local CoreGui = game:GetService("CoreGui")
+local Players = game:GetService("Players")
+local TweenService = game:GetService("TweenService")
+local RS = game:GetService("ReplicatedStorage")
+local LP = Players.LocalPlayer
+
+local old = CoreGui:FindFirstChild("MIYAKO_STEAL_AN_EGG") or LP:WaitForChild("PlayerGui"):FindFirstChild("MIYAKO_STEAL_AN_EGG")
+if old then old:Destroy() end
+
+local sg = Instance.new("ScreenGui")
+sg.Name = "MIYAKO_STEAL_AN_EGG"
+sg.ResetOnSpawn = false
+pcall(function() sg.Parent = CoreGui end)
+if not sg.Parent then sg.Parent = LP:WaitForChild("PlayerGui") end
+
+local COLORS = {
+    Bg         = Color3.fromRGB(15, 15, 18),
+    Panel      = Color3.fromRGB(24, 24, 28),
+    Sidebar    = Color3.fromRGB(20, 20, 24),
+    NeonCyan   = Color3.fromRGB(0, 255, 200),
+    TextWhite  = Color3.fromRGB(250, 250, 250),
+    TextDim    = Color3.fromRGB(160, 160, 170),
+    CardBg     = Color3.fromRGB(30, 30, 36),
+    ToggleOff  = Color3.fromRGB(60, 60, 70),
+    Red        = Color3.fromRGB(255, 60, 80)
+}
+
+local RarityScores = {
+    ["Common"] = 1, ["Celestial"] = 2, ["Uncommon"] = 2, ["SuperRare"] = 2,
+    ["Rare"] = 3, ["Epic"] = 4, ["Legendary"] = 5, ["Squishy God"] = 6, 
+    ["Mythic"] = 6, ["Rainbow"] = 6, ["Exclusive"] = 7, ["Cosmic"] = 7, 
+    ["Secret"] = 8, ["Exotic"] = 8, ["Limited"] = 9, ["Eternal"] = 9,
+    ["Divine"] = 10, ["Superior"] = 10, ["Titan"] = 11, ["Light & Dark"] = 12
+}
+
+local EggState, AssetsData, PlotState
+pcall(function() EggState = require(RS.Client.EggState) end)
+pcall(function() AssetsData = require(RS.Data.Assets) end)
+pcall(function() PlotState = require(RS.Client.PlotState) end)
+
+local ALL_MAPS = {
+    "Forest","Lake","Desert","Jungle","Snow","Volcano",
+    "Abyss Ocean","Prehistoric","Cosmic","Cherry Blossom",
+    "Titan Temple","Light Dark"
+}
+local MAP_POS = {}
+for _, m in ipairs(API.GetAllMaps and API.GetAllMaps() or {}) do MAP_POS[m.name] = m.pos end
+
+local ACTIVE_TAB = "main"
+local SELECTED_MAPS = {}
+for _, m in ipairs(ALL_MAPS) do SELECTED_MAPS[m] = true end
+
+-- ==============================================================================
+-- 3. CLICK-TO-STEAL ENGINE (ANCHOR STABILIZATION & FIXED RUNNING)
+-- ==============================================================================
+local isManualStealing = false
+
+local function findHRP()
+    return LP.Character and (LP.Character:FindFirstChild("HumanoidRootPart") or LP.Character.PrimaryPart)
+end
+
+local function GetLocalPlotCenter()
+    local plotObj = PlotState and PlotState.ResolvePlot and PlotState.ResolvePlot()
+    local pt = plotObj and plotObj.CenterPoint and (typeof(plotObj.CenterPoint) == "Vector3" and plotObj.CenterPoint or plotObj.CenterPoint.Position)
+    if pt then return Vector3.new(pt.X, math.max(pt.Y, 70.4), pt.Z) end
+    return Vector3.new(464.7, 70.4, -364.0)
+end
+
+local SAFE_ZONE_POS = Vector3.new(464.7, 70.4, -364.0)
+
+local function isEggInField(checkUid)
+    local s, data = pcall(EggState.ReadFieldEggs)
+    if s and data and data.Records then
+        for _, r in ipairs(data.Records) do
+            if r.Uid == checkUid and r.State == "Slot" then return true end
+        end
+    end
+    return false
+end
+
+local function fireProximity(targetPos, distance)
+    local hrp = findHRP()
+    if not hrp then return end
+    for _, d in ipairs(workspace:GetDescendants()) do
+        if d:IsA("ProximityPrompt") and (d.Name == "CarryAreaEgg" or d.ActionText == "Steal") then
+            if d.Parent and (d.Parent.Position - targetPos).Magnitude < distance then
+                d.HoldDuration = 0
+                pcall(function() fireproximityprompt(d) end)
+            end
+        end
+    end
+end
+
+local function getDecoyEgg(targetUid)
+    local s, data = pcall(EggState.ReadFieldEggs)
+    if not s or not data or not data.Records then return nil end
+    local decoy, minDist = nil, math.huge
+    local hrp = findHRP()
+    if not hrp then return nil end
+    
+    for _, rec in ipairs(data.Records) do
+        if rec.Uid ~= targetUid and rec.State == "Slot" and (rec.AreaId == "Forest" or rec.AreaId == "Lake") and rec.BoundsCFrame then
+            local dist = (rec.BoundsCFrame.Position - hrp.Position).Magnitude
+            if dist < minDist then
+                minDist = dist
+                decoy = {
+                    Uid = rec.Uid,
+                    Pos = rec.BoundsCFrame.Position,
+                    SlotKey = rec.FirstAreaSlotKey or rec.SlotKey or "Forest:Slot_002"
+                }
+            end
+        end
+    end
+    return decoy
+end
+
+local function StealEggManual(targetUid, targetPos, targetSlotKey, targetArea)
+    if isManualStealing then return end
+    isManualStealing = true
+    
+    task.spawn(function()
+        local hum = LP.Character and LP.Character:FindFirstChild("Humanoid")
+        local hrp = findHRP()
+        local coreGui = game:GetService("StarterGui")
+        local net = RS:FindFirstChild("Packages") and RS.Packages:FindFirstChild("Networking")
+        local carryRemote = net and net:FindFirstChild("RF/EggWorld/AskFieldEggCarry")
+        
+        if not hum or not hrp or not carryRemote then isManualStealing = false; return end
+
+        local function notify(msg)
+            pcall(function() coreGui:SetCore("SendNotification", {Title="MIYAKO STEAL ANN EGG", Text=msg, Duration=3}) end)
+        end
+
+        local isFarTarget = (targetArea ~= "Forest" and targetArea ~= "Lake")
+
+        if isFarTarget then
+            -- ------------------------------------------------------------------
+            -- FASE 1: LARI KE UMPAN AYAM
+            -- ------------------------------------------------------------------
+            local decoyEgg = getDecoyEgg(targetUid)
+            if not decoyEgg then
+                notify("❌ Tidak ada umpan di map! Tunggu sebentar.")
+                isManualStealing = false
+                return
+            end
+
+            notify("1. Berlari menuju ayam umpan...")
+            
+            hum.WalkSpeed = 350
+            local runToDecoyT0 = os.clock()
+            while (decoyEgg.Pos - hrp.Position).Magnitude > 5 and (os.clock() - runToDecoyT0 < 5) do
+                hum:MoveTo(decoyEgg.Pos)
+                task.wait(0.1)
+            end
+            
+            -- ------------------------------------------------------------------
+            -- FASE 2: AMBIL UMPAN & TUNGGU 3 DETIK (MUTLAK)
+            -- ------------------------------------------------------------------
+            notify("2. Mengambil umpan & Menunggu 3 detik...")
+            
+            local grabDecoyT0 = os.clock()
+            -- Spam ambil selama maksimal 2 detik atau sampai telur nempel
+            while isEggInField(decoyEgg.Uid) and (os.clock() - grabDecoyT0 < 2) do
+                hrp.CFrame = CFrame.new(decoyEgg.Pos + Vector3.new(0, 1.2, 0))
+                pcall(function() carryRemote:InvokeServer({ Uid = decoyEgg.Uid, FirstAreaSlotKey = decoyEgg.SlotKey }) end)
+                fireProximity(hrp.Position, 25)
+                
+                if LP.Character:FindFirstChild("EggModel") or LP.Character:FindFirstChild("CarryItem") then
+                    break
+                end
+                task.wait(0.1)
+            end
+
+            -- WAKTU TUNGGU MUTLAK 3 DETIK (Sesuai instruksi untuk mengatasi bug ragdoll delay)
+            task.wait(3)
+        end
+
+        -- ----------------------------------------------------------------------
+        -- FASE 3: INSTAN TP, STABILISASI (ANCHOR) & VALIDASI TELUR TARGET
+        -- ----------------------------------------------------------------------
+        notify("3. Waktu habis! Instant Lock ke Target...")
+        
+        -- KUNCI FISIKA: Cegah karakter jatuh, terlempar, atau membawa momentum kecepatan
+        hrp.AssemblyLinearVelocity = Vector3.zero
+        hrp.AssemblyAngularVelocity = Vector3.zero
+        
+        -- BEKUKAN KARAKTER (ANCHOR) AGAR TIDAK JATUH TERJEREMBAB ATAU MASUK TANAH
+        hrp.Anchored = true
+        
+        -- TP DENGAN TINGGI AMAN (+2 STUDS DARI TANAH)
+        hrp.CFrame = CFrame.new(targetPos + Vector3.new(0, 2, 0))
+        task.wait(0.2) -- Biarkan posisi tersinkron ke server dengan stabil
+        
+        -- LEPAS BEKU (UNANCHOR) DAN PAKSA MENDARAT AGAR ANIMASI NORMAL
+        hrp.Anchored = false
+        hum.PlatformStand = false
+        hum.Sit = false
+        pcall(function() hum:ChangeState(Enum.HumanoidStateType.Landed) end)
+        task.wait(0.1)
+        
+        local targetGrabbed = false
+        local grabTargetT0 = os.clock()
+        
+        -- Coba ambil telur target
+        while isEggInField(targetUid) and (os.clock() - grabTargetT0 < 5) do
+            hrp.CFrame = CFrame.new(targetPos + Vector3.new(0, 2, 0))
+            
+            local payload = { Uid = targetUid }
+            if targetSlotKey then
+                payload.FirstAreaSlotKey = targetSlotKey
+                payload.SlotKey = targetSlotKey
+            end
+            
+            pcall(function() carryRemote:InvokeServer(payload) end)
+            fireProximity(hrp.Position, 30)
+            
+            -- CEK MUTLAK: Jika telur benar-benar sudah nempel di karakter, break loop
+            if LP.Character:FindFirstChild("EggModel") or LP.Character:FindFirstChild("CarryItem") then
+                targetGrabbed = true
+                break
+            end
+            
+            task.wait(0.1)
+        end
+
+        if not targetGrabbed then
+            notify("⚠️ Gagal! Telur target tidak berhasil diangkat.")
+            isManualStealing = false
+            return
+        end
+
+        -- ----------------------------------------------------------------------
+        -- FASE 4: BERLARI SPRINT KE BASE PLOT SENDIRI (ANTI-RESET SPEED)
+        -- ----------------------------------------------------------------------
+        notify("4. Telur di tangan! Sprint 450 Speed...")
+        local plotTarget = GetLocalPlotCenter()
+        local runT0 = os.clock()
+        
+        while (plotTarget - hrp.Position).Magnitude > 15 and (os.clock() - runT0 < 10) do
+            hum.WalkSpeed = 450 
+            hum:MoveTo(plotTarget)
+            
+            -- Cegah ragdoll reset saat berlari (mengatasi bug jatuh bangun saat lari)
+            if hum:GetState() == Enum.HumanoidStateType.Ragdoll or hum:GetState() == Enum.HumanoidStateType.FallingDown or hum:GetState() == Enum.HumanoidStateType.Freefall then
+                hum.PlatformStand = false
+                pcall(function() hum:ChangeState(Enum.HumanoidStateType.Running) end)
+            end
+            
+            -- Jika di tengah jalan telurnya hilang/lepas, batalkan lari
+            if not (LP.Character:FindFirstChild("EggModel") or LP.Character:FindFirstChild("CarryItem")) then
+                break
+            end
+            
+            task.wait(0.05)
+        end
+
+        hum.WalkSpeed = 16
+        hum:MoveTo(hrp.Position)
+        notify("✅ Aman di Plot Sendiri!")
+        isManualStealing = false
+    end)
+end
+
+-- ==============================================================================
+-- 4. FLOATING ICON (UNTUK MINIMIZE)
+-- ==============================================================================
+local OpenIcon = Instance.new("ImageButton", sg)
+OpenIcon.Size = UDim2.new(0, 50, 0, 50)
+OpenIcon.Position = UDim2.new(0, 20, 0, 20)
+OpenIcon.BackgroundColor3 = COLORS.Bg
+OpenIcon.Image = "rbxassetid://93427694236333"
+OpenIcon.Visible = false
+OpenIcon.Draggable = true
+OpenIcon.Active = true
+Instance.new("UICorner", OpenIcon).CornerRadius = UDim.new(1, 0)
+local IconStroke = Instance.new("UIStroke", OpenIcon)
+IconStroke.Color = COLORS.NeonCyan; IconStroke.Thickness = 2
+
+-- ==============================================================================
+-- 5. PEMBUATAN PANEL UTAMA
+-- ==============================================================================
+local MainPanel = Instance.new("Frame", sg)
+MainPanel.Size = UDim2.new(0, 620, 0, 360) 
+MainPanel.Position = UDim2.new(0.5, -310, 0.5, -180)
+MainPanel.BackgroundColor3 = COLORS.Bg
+MainPanel.Active = true
+MainPanel.Draggable = true
+Instance.new("UICorner", MainPanel).CornerRadius = UDim.new(0, 8)
+local border = Instance.new("UIStroke", MainPanel)
+border.Color = COLORS.NeonCyan
+border.Thickness = 2
+
+OpenIcon.MouseButton1Click:Connect(function()
+    OpenIcon.Visible = false
+    MainPanel.Visible = true
+end)
+
+local Header = Instance.new("Frame", MainPanel)
+Header.Size = UDim2.new(1, 0, 0, 35)
+Header.BackgroundTransparency = 1
+local Title = Instance.new("TextLabel", Header)
+Title.Size = UDim2.new(1, -100, 1, 0)
+Title.Position = UDim2.new(0, 15, 0, 0)
+Title.BackgroundTransparency = 1
+Title.Text = "MIYAKO STEAL ANN EGG"
+Title.TextColor3 = COLORS.NeonCyan
+Title.Font = Enum.Font.GothamBlack
+Title.TextSize = 16
+Title.TextXAlignment = Enum.TextXAlignment.Left
+
+local MinBtn = Instance.new("TextButton", Header)
+MinBtn.Size = UDim2.new(0, 30, 0, 20)
+MinBtn.Position = UDim2.new(1, -70, 0, 8)
+MinBtn.BackgroundColor3 = COLORS.Panel
+MinBtn.Text = "—"
+MinBtn.TextColor3 = COLORS.TextWhite
+MinBtn.Font = Enum.Font.GothamBold
+Instance.new("UICorner", MinBtn).CornerRadius = UDim.new(0, 4)
+MinBtn.MouseButton1Click:Connect(function()
+    MainPanel.Visible = false
+    OpenIcon.Visible = true
+end)
+
+local CloseBtn = Instance.new("TextButton", Header)
+CloseBtn.Size = UDim2.new(0, 30, 0, 20)
+CloseBtn.Position = UDim2.new(1, -35, 0, 8)
+CloseBtn.BackgroundColor3 = COLORS.Red
+CloseBtn.Text = "X"
+CloseBtn.TextColor3 = COLORS.TextWhite
+CloseBtn.Font = Enum.Font.GothamBold
+Instance.new("UICorner", CloseBtn).CornerRadius = UDim.new(0, 4)
+CloseBtn.MouseButton1Click:Connect(function() sg:Destroy() end)
+
+local Sidebar = Instance.new("Frame", MainPanel)
+Sidebar.Size = UDim2.new(0, 110, 1, -45)
+Sidebar.Position = UDim2.new(0, 10, 0, 35)
+Sidebar.BackgroundColor3 = COLORS.Sidebar
+Instance.new("UICorner", Sidebar).CornerRadius = UDim.new(0, 6)
+local SideLayout = Instance.new("UIListLayout", Sidebar)
+SideLayout.Padding = UDim.new(0, 8)
+SideLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+Instance.new("UIPadding", Sidebar).PaddingTop = UDim.new(0, 10)
+
+local ContentArea = Instance.new("Frame", MainPanel)
+ContentArea.Size = UDim2.new(1, -130, 1, -45)
+ContentArea.Position = UDim2.new(0, 125, 0, 35)
+ContentArea.BackgroundTransparency = 1
+
+local Pages = {}
+local TabBtns = {}
+
+local function setTab(id)
+    ACTIVE_TAB = id
+    for tid, page in pairs(Pages) do page.Visible = (tid == id) end
+    for _, item in pairs(TabBtns) do
+        item.btn.BackgroundColor3 = (item.id == id) and COLORS.NeonCyan or COLORS.Panel
+        item.btn.TextColor3 = (item.id == id) and COLORS.Bg or COLORS.TextWhite
+    end
+end
+
+local function mkTab(id, text)
+    local btn = Instance.new("TextButton", Sidebar)
+    btn.Size = UDim2.new(0, 90, 0, 32)
+    btn.BackgroundColor3 = COLORS.Panel
+    btn.Text = text
+    btn.Font = Enum.Font.GothamBold
+    btn.TextSize = 13
+    btn.TextColor3 = COLORS.TextWhite
+    Instance.new("UICorner", btn).CornerRadius = UDim.new(0, 6)
+    btn.MouseButton1Click:Connect(function() setTab(id) end)
+    table.insert(TabBtns, { id = id, btn = btn })
+    return btn
+end
+
+mkTab("main", "MAIN")
+mkTab("pet", "PET")
+mkTab("esp", "ESP")
+mkTab("egg", "EGG")
+
+-- ==============================================================================
+-- 6. MODAL POP-UP SYSTEM
+-- ==============================================================================
+local ModalOverlay = Instance.new("Frame", MainPanel)
+ModalOverlay.Size = UDim2.new(1, 0, 1, 0)
+ModalOverlay.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+ModalOverlay.BackgroundTransparency = 0.6
+ModalOverlay.Visible = false
+ModalOverlay.ZIndex = 50
+Instance.new("UICorner", ModalOverlay).CornerRadius = UDim.new(0, 8)
+
+local MapModal = Instance.new("Frame", ModalOverlay)
+MapModal.Size = UDim2.new(0, 400, 0, 250)
+MapModal.Position = UDim2.new(0.5, -200, 0.5, -125)
+MapModal.BackgroundColor3 = COLORS.Panel
+MapModal.Visible = false
+MapModal.ZIndex = 51
+Instance.new("UICorner", MapModal).CornerRadius = UDim.new(0, 8)
+Instance.new("UIStroke", MapModal).Color = COLORS.NeonCyan
+
+local MapTitle = Instance.new("TextLabel", MapModal)
+MapTitle.Size = UDim2.new(1, 0, 0, 30)
+MapTitle.BackgroundTransparency = 1
+MapTitle.Text = "SELECT TARGET MAPS"
+MapTitle.TextColor3 = COLORS.NeonCyan
+MapTitle.Font = Enum.Font.GothamBlack
+MapTitle.TextSize = 14
+MapTitle.ZIndex = 52
+
+local MapScroll = Instance.new("ScrollingFrame", MapModal)
+MapScroll.Size = UDim2.new(1, -20, 1, -70)
+MapScroll.Position = UDim2.new(0, 10, 0, 30)
+MapScroll.BackgroundTransparency = 1
+MapScroll.ScrollBarThickness = 2
+MapScroll.ZIndex = 52
+local MapGrid = Instance.new("UIGridLayout", MapScroll)
+MapGrid.CellSize = UDim2.new(0, 180, 0, 30)
+MapGrid.CellPadding = UDim2.new(0, 5, 0, 5)
+
+local MapCloseBtn = Instance.new("TextButton", MapModal)
+MapCloseBtn.Size = UDim2.new(0, 100, 0, 30)
+MapCloseBtn.Position = UDim2.new(0.5, -50, 1, -35)
+MapCloseBtn.BackgroundColor3 = COLORS.Red
+MapCloseBtn.Text = "CLOSE"
+MapCloseBtn.TextColor3 = COLORS.TextWhite
+MapCloseBtn.Font = Enum.Font.GothamBold
+MapCloseBtn.ZIndex = 52
+Instance.new("UICorner", MapCloseBtn).CornerRadius = UDim.new(0, 4)
+MapCloseBtn.MouseButton1Click:Connect(function() MapModal.Visible = false; ModalOverlay.Visible = false end)
+
+local function updateTargetMaps()
+    local list = {}
+    for m, sel in pairs(SELECTED_MAPS) do
+        if sel and MAP_POS[m] then table.insert(list, { name = m, pos = MAP_POS[m] }) end
+    end
+    API.SetTargets(list)
+end
+
+for _, opt in ipairs(ALL_MAPS) do
+    local mBtn = Instance.new("TextButton", MapScroll)
+    mBtn.BackgroundColor3 = COLORS.CardBg
+    mBtn.BackgroundTransparency = SELECTED_MAPS[opt] and 0 or 0.6
+    mBtn.Text = opt .. (SELECTED_MAPS[opt] and " [ON]" or "")
+    mBtn.TextColor3 = SELECTED_MAPS[opt] and COLORS.NeonCyan or COLORS.TextDim
+    mBtn.Font = Enum.Font.GothamBold
+    mBtn.TextSize = 12
+    mBtn.ZIndex = 53
+    Instance.new("UICorner", mBtn).CornerRadius = UDim.new(0, 4)
+    mBtn.MouseButton1Click:Connect(function()
+        SELECTED_MAPS[opt] = not SELECTED_MAPS[opt]
+        mBtn.BackgroundTransparency = SELECTED_MAPS[opt] and 0 or 0.6
+        mBtn.Text = opt .. (SELECTED_MAPS[opt] and " [ON]" or "")
+        mBtn.TextColor3 = SELECTED_MAPS[opt] and COLORS.NeonCyan or COLORS.TextDim
+        updateTargetMaps()
+    end)
+end
+
+local ValModal = Instance.new("Frame", ModalOverlay)
+ValModal.Size = UDim2.new(0, 300, 0, 220)
+ValModal.Position = UDim2.new(0.5, -150, 0.5, -110)
+ValModal.BackgroundColor3 = COLORS.Panel
+ValModal.Visible = false
+ValModal.ZIndex = 51
+Instance.new("UICorner", ValModal).CornerRadius = UDim.new(0, 8)
+Instance.new("UIStroke", ValModal).Color = COLORS.NeonCyan
+
+local ValTitle = Instance.new("TextLabel", ValModal)
+ValTitle.Size = UDim2.new(1, 0, 0, 30)
+ValTitle.BackgroundTransparency = 1
+ValTitle.Text = "SET PRIORITY TARGET VALUE"
+ValTitle.TextColor3 = COLORS.NeonCyan
+ValTitle.Font = Enum.Font.GothamBlack
+ValTitle.TextSize = 14
+ValTitle.ZIndex = 52
+
+local ValBox = Instance.new("TextBox", ValModal)
+ValBox.Size = UDim2.new(0, 260, 0, 40)
+ValBox.Position = UDim2.new(0, 20, 0, 35)
+ValBox.BackgroundColor3 = COLORS.Bg
+ValBox.Text = "1M"
+ValBox.TextColor3 = COLORS.NeonCyan
+ValBox.Font = Enum.Font.GothamBold
+ValBox.TextSize = 18
+ValBox.ZIndex = 52
+Instance.new("UICorner", ValBox).CornerRadius = UDim.new(0, 6)
+
+local ValGridFrame = Instance.new("Frame", ValModal)
+ValGridFrame.Size = UDim2.new(0, 260, 0, 80)
+ValGridFrame.Position = UDim2.new(0, 20, 0, 85)
+ValGridFrame.BackgroundTransparency = 1
+ValGridFrame.ZIndex = 52
+local VGrid = Instance.new("UIGridLayout", ValGridFrame)
+VGrid.CellSize = UDim2.new(0, 80, 0, 35)
+VGrid.CellPadding = UDim2.new(0, 10, 0, 10)
+
+local ValCloseBtn = Instance.new("TextButton", ValModal)
+ValCloseBtn.Size = UDim2.new(0, 100, 0, 30)
+ValCloseBtn.Position = UDim2.new(0.5, -50, 1, -35)
+ValCloseBtn.BackgroundColor3 = COLORS.Red
+ValCloseBtn.Text = "CONFIRM"
+ValCloseBtn.TextColor3 = COLORS.TextWhite
+ValCloseBtn.Font = Enum.Font.GothamBold
+ValCloseBtn.ZIndex = 52
+Instance.new("UICorner", ValCloseBtn).CornerRadius = UDim.new(0, 4)
+
+-- ==============================================================================
+-- 7. BANTUAN PEMBUATAN ELEMEN UI STANDARD
+-- ==============================================================================
+local function createToggle(parent, label, defaultState, callback)
+    local frame = Instance.new("Frame", parent)
+    frame.Size = UDim2.new(1, 0, 0, 40)
+    frame.BackgroundColor3 = COLORS.Panel
+    Instance.new("UICorner", frame).CornerRadius = UDim.new(0, 4)
+    local lbl = Instance.new("TextLabel", frame)
+    lbl.Size = UDim2.new(1, -60, 1, 0)
+    lbl.Position = UDim2.new(0, 10, 0, 0)
+    lbl.BackgroundTransparency = 1
+    lbl.Text = label
+    lbl.TextColor3 = COLORS.TextWhite
+    lbl.Font = Enum.Font.GothamBold
+    lbl.TextSize = 12
+    lbl.TextXAlignment = Enum.TextXAlignment.Left
+    local btn = Instance.new("TextButton", frame)
+    btn.Size = UDim2.new(0, 40, 0, 20)
+    btn.Position = UDim2.new(1, -50, 0.5, -10)
+    btn.BackgroundColor3 = defaultState and COLORS.NeonCyan or COLORS.ToggleOff
+    btn.Text = ""
+    Instance.new("UICorner", btn).CornerRadius = UDim.new(1, 0)
+    local knob = Instance.new("Frame", btn)
+    knob.Size = UDim2.new(0, 16, 0, 16)
+    knob.Position = defaultState and UDim2.new(1, -18, 0.5, -8) or UDim2.new(0, 2, 0.5, -8)
+    knob.BackgroundColor3 = COLORS.TextWhite
+    Instance.new("UICorner", knob).CornerRadius = UDim.new(1, 0)
+    
+    local state = defaultState
+    btn.MouseButton1Click:Connect(function()
+        state = not state
+        TweenService:Create(btn, TweenInfo.new(0.2), {BackgroundColor3 = state and COLORS.NeonCyan or COLORS.ToggleOff}):Play()
+        TweenService:Create(knob, TweenInfo.new(0.2), {Position = state and UDim2.new(1, -18, 0.5, -8) or UDim2.new(0, 2, 0.5, -8)}):Play()
+        if callback then callback(state) end
+    end)
+    return frame
+end
+
+local function createMenuButton(parent, label, defaultText, onClick)
+    local frame = Instance.new("Frame", parent)
+    frame.Size = UDim2.new(1, 0, 0, 40)
+    frame.BackgroundColor3 = COLORS.Panel
+    Instance.new("UICorner", frame).CornerRadius = UDim.new(0, 4)
+    local lbl = Instance.new("TextLabel", frame)
+    lbl.Size = UDim2.new(0, 110, 1, 0)
+    lbl.Position = UDim2.new(0, 10, 0, 0)
+    lbl.BackgroundTransparency = 1
+    lbl.Text = label
+    lbl.TextColor3 = COLORS.TextWhite
+    lbl.Font = Enum.Font.GothamBold
+    lbl.TextSize = 12
+    lbl.TextXAlignment = Enum.TextXAlignment.Left
+    local btn = Instance.new("TextButton", frame)
+    btn.Size = UDim2.new(1, -120, 0, 26)
+    btn.Position = UDim2.new(0, 110, 0.5, -13)
+    btn.BackgroundColor3 = COLORS.CardBg
+    btn.Text = defaultText
+    btn.TextColor3 = COLORS.NeonCyan
+    btn.Font = Enum.Font.GothamBold
+    btn.TextSize = 12
+    Instance.new("UICorner", btn).CornerRadius = UDim.new(0, 4)
+    btn.MouseButton1Click:Connect(function() onClick(btn) end)
+    return frame
+end
+
+-- ==============================================================================
+-- 8. MEMBANGUN HALAMAN (TABS)
+-- ==============================================================================
+local PageMain = Instance.new("Frame", ContentArea)
+PageMain.Size = UDim2.new(1, 0, 1, 0)
+PageMain.BackgroundTransparency = 1
+Pages.main = PageMain
+
+-- Kolom Kiri: Kontrol
+local ControlCol = Instance.new("ScrollingFrame", PageMain)
+ControlCol.Size = UDim2.new(0, 230, 1, 0)
+ControlCol.BackgroundTransparency = 1
+ControlCol.ScrollBarThickness = 2
+local CLayout = Instance.new("UIListLayout", ControlCol)
+CLayout.Padding = UDim.new(0, 8)
+
+createMenuButton(ControlCol, "Target Maps", "Select Maps ▼", function()
+    ModalOverlay.Visible = true; MapModal.Visible = true
+end)
+
+createMenuButton(ControlCol, "Best Egg Value", "1M ▼", function(btnRef)
+    ModalOverlay.Visible = true; ValModal.Visible = true
+    local presets = {1, 5, 10, 50, 100, 500}
+    for _, child in ipairs(ValGridFrame:GetChildren()) do if child:IsA("TextButton") then child:Destroy() end end
+    
+    for _, v in ipairs(presets) do
+        local pBtn = Instance.new("TextButton", ValGridFrame)
+        pBtn.BackgroundColor3 = COLORS.CardBg
+        pBtn.Text = v .. "M"
+        pBtn.TextColor3 = COLORS.TextWhite
+        pBtn.Font = Enum.Font.GothamBold
+        pBtn.TextSize = 12
+        pBtn.ZIndex = 53
+        Instance.new("UICorner", pBtn).CornerRadius = UDim.new(0, 4)
+        pBtn.MouseButton1Click:Connect(function() ValBox.Text = v .. "M" end)
+    end
+    
+    ValCloseBtn.MouseButton1Click:Once(function()
+        local rawText = ValBox.Text:gsub("M", "")
+        local num = tonumber(rawText)
+        if num then
+            btnRef.Text = num .. "M ▼"
+            API.SetPriorityThreshold(num * 1000000)
+        end
+        ValModal.Visible = false; ModalOverlay.Visible = false
+    end)
+end)
+
+createToggle(ControlCol, "Steal Best Egg", API.IsPriorityIncome(), function(s) API.SetPriorityIncome(s) end)
+createToggle(ControlCol, "Auto Steal Big Egg", API.IsBigEggMode(), function(s) API.SetBigEggMode(s) end)
+createToggle(ControlCol, "START AUTO STEAL", API.IsRunning(), function(s) if s then API.Start() else API.Stop() end end)
+createToggle(ControlCol, "Anti Treadmill", API.Treadmill_IsEnabled(), function(s) API.Treadmill_SetEnabled(s) end)
+
+-- Kolom Kanan: Live Map Scanner
+local ScannerCol = Instance.new("Frame", PageMain)
+ScannerCol.Size = UDim2.new(1, -240, 1, 0)
+ScannerCol.Position = UDim2.new(0, 240, 0, 0)
+ScannerCol.BackgroundColor3 = COLORS.Panel
+Instance.new("UICorner", ScannerCol).CornerRadius = UDim.new(0, 6)
+Instance.new("UIStroke", ScannerCol).Color = COLORS.ToggleOff
+
+local ScanTitle = Instance.new("TextLabel", ScannerCol)
+ScanTitle.Size = UDim2.new(1, 0, 0, 25)
+ScanTitle.BackgroundTransparency = 1
+ScanTitle.Text = "EGG"
+ScanTitle.TextColor3 = COLORS.NeonCyan
+ScanTitle.Font = Enum.Font.GothamBlack
+ScanTitle.TextSize = 11
+
+local RadarScroll = Instance.new("ScrollingFrame", ScannerCol)
+RadarScroll.Size = UDim2.new(1, -10, 1, -30)
+RadarScroll.Position = UDim2.new(0, 5, 0, 25)
+RadarScroll.BackgroundTransparency = 1
+RadarScroll.ScrollBarThickness = 2
+RadarScroll.AutomaticCanvasSize = Enum.AutomaticSize.Y
+RadarScroll.CanvasSize = UDim2.new(0, 0, 0, 0)
+local RLayout = Instance.new("UIListLayout", RadarScroll)
+RLayout.Padding = UDim.new(0, 5)
+
+-- TAB LAINNYA
+local function createSimplePage(id)
+    local page = Instance.new("ScrollingFrame", ContentArea)
+    page.Size = UDim2.new(1, 0, 1, 0)
+    page.BackgroundTransparency = 1
+    page.ScrollBarThickness = 2
+    page.Visible = false
+    Pages[id] = page
+    local l = Instance.new("UIListLayout", page)
+    l.Padding = UDim.new(0, 8)
+    return page
+end
+
+local PagePet = createSimplePage("pet")
+createToggle(PagePet, "Auto Sell Pet All", API.SM_IsAutoSell(), function(s) API.SM_SetAutoSell(s); if s and not API.SM_IsRunning() then API.SM_Start() end end)
+createToggle(PagePet, "Auto Equip Best Pet", API.SM_IsAutoEquip(), function(s) API.SM_SetAutoEquip(s); if s and not API.SM_IsRunning() then API.SM_Start() end end)
+
+local PageESP = createSimplePage("esp")
+createToggle(PageESP, "ESP Egg (Built-in)", API.ESP_IsEnabled(), function(s) if s then API.ESP_Enable() else API.ESP_Disable() end end)
+
+local PageEgg = createSimplePage("egg")
+createToggle(PageEgg, "Auto Hatch Egg", API.Egg_IsAutoHatch(), function(s) API.Egg_SetAutoHatch(s) end)
+createToggle(PageEgg, "Auto Place Egg", API.EggPlace_IsRunning(), function(s) if s then API.EggPlace_Start() else API.EggPlace_Stop() end end)
+
+-- ==============================================================================
+-- 9. PENGISIAN RADAR & TRIGGER
+-- ==============================================================================
+task.spawn(function()
+    while task.wait(1.5) do
+        if not sg.Parent or ACTIVE_TAB ~= "main" then continue end
+        
+        for _, child in ipairs(RadarScroll:GetChildren()) do
+            if child:IsA("TextButton") then child:Destroy() end
+        end
+        
+        if not EggState or not EggState.ReadFieldEggs then continue end
+        local ok, snap = pcall(EggState.ReadFieldEggs)
+        if not ok or not snap or not snap.Records then continue end
+        
+        local activeEggs = {}
+        for _, record in ipairs(snap.Records) do
+            if record.State == "Slot" and record.BoundsCFrame then
+                local areaName = record.AreaId or "Unknown"
+                if SELECTED_MAPS[areaName] then
+                    local rName = record.Rarity or "Common"
+                    if type(rName) == "table" then rName = rName.DisplayName or rName.Name or rName._id or "Common" end
+                    local val = RarityScores[rName] or 1
+                    
+                    local scale = tonumber(record.AssetScale) or 1
+                    local nestScale = tonumber(record.NestScale) or 1
+                    local isBig = (scale >= 1.35 or nestScale >= 1.0)
+                    
+                    local petCat = record.AssetCategory or record.Name or "Unknown"
+                    local iconId = ""
+                    if AssetsData then
+                        local dir = AssetsData.Directory or AssetsData
+                        if dir[petCat] then iconId = dir[petCat].Icon or (dir[petCat].Egg and dir[petCat].Egg.Icon) or "" end
+                    end
+                    
+                    local slotKey = record.FirstAreaSlotKey or record.SlotKey or record.Key or (record.AreaId and record.SlotId and (record.AreaId .. ":" .. record.SlotId))
+                    
+                    table.insert(activeEggs, {
+                        Uid = record.Uid, 
+                        Pos = record.BoundsCFrame.Position,
+                        Name = petCat, 
+                        Icon = iconId, 
+                        RarityName = rName, 
+                        Value = val, 
+                        IsBig = isBig, 
+                        Area = areaName,
+                        SlotKey = slotKey
+                    })
+                end
+            end
+        end
+        
+        table.sort(activeEggs, function(a, b) return a.Value > b.Value end)
+        
+        for _, egg in ipairs(activeEggs) do
+            local card = Instance.new("TextButton", RadarScroll)
+            card.Size = UDim2.new(1, -10, 0, 45)
+            card.BackgroundColor3 = COLORS.CardBg
+            card.Text = ""
+            card.AutoButtonColor = false
+            Instance.new("UICorner", card).CornerRadius = UDim.new(0, 6)
+            
+            card.MouseEnter:Connect(function() card.BackgroundColor3 = COLORS.Panel end)
+            card.MouseLeave:Connect(function() card.BackgroundColor3 = COLORS.CardBg end)
+            
+            local img = Instance.new("ImageLabel", card)
+            img.Size = UDim2.new(0, 35, 0, 35)
+            img.Position = UDim2.new(0, 5, 0, 5)
+            img.BackgroundTransparency = 1
+            img.Image = egg.Icon
+            
+            local nLbl = Instance.new("TextLabel", card)
+            nLbl.Size = UDim2.new(1, -95, 0, 15)
+            nLbl.Position = UDim2.new(0, 45, 0, 5)
+            nLbl.BackgroundTransparency = 1
+            nLbl.Text = string.format("📍%s | %s [%s]", egg.Area, egg.Name, egg.RarityName)
+            nLbl.TextColor3 = COLORS.TextWhite
+            nLbl.TextSize = 10
+            nLbl.Font = Enum.Font.GothamBold
+            nLbl.TextXAlignment = Enum.TextXAlignment.Left
+            
+            local sLbl = Instance.new("TextLabel", card)
+            sLbl.Size = UDim2.new(1, -95, 0, 15)
+            sLbl.Position = UDim2.new(0, 45, 0, 22)
+            sLbl.BackgroundTransparency = 1
+            sLbl.Text = egg.IsBig and "[TELUR BESAR]" or "[TELUR KECIL]"
+            sLbl.TextColor3 = egg.IsBig and COLORS.NeonCyan or COLORS.TextDim
+            sLbl.TextSize = 10
+            sLbl.Font = Enum.Font.Gotham
+            sLbl.TextXAlignment = Enum.TextXAlignment.Left
+            
+            local stealTxt = Instance.new("TextLabel", card)
+            stealTxt.Size = UDim2.new(0, 50, 1, 0)
+            stealTxt.Position = UDim2.new(1, -55, 0, 0)
+            stealTxt.BackgroundTransparency = 1
+            stealTxt.Text = "STEAL"
+            stealTxt.TextColor3 = COLORS.NeonCyan
+            stealTxt.Font = Enum.Font.GothamBlack
+            stealTxt.TextSize = 11
+            
+            card.MouseButton1Click:Connect(function()
+                if not isManualStealing then
+                    card.BackgroundColor3 = COLORS.NeonCyan
+                    nLbl.TextColor3 = COLORS.Bg
+                    sLbl.TextColor3 = COLORS.Bg
+                    stealTxt.TextColor3 = COLORS.Bg
+                    
+                    MainPanel.Visible = false
+                    OpenIcon.Visible = true
+                    StealEggManual(egg.Uid, egg.Pos, egg.SlotKey, egg.Area)
+                end
+            end)
+        end
+    end
+end)
+
+setTab("main")
+updateTargetMaps()
+if API.EggCore_SetConfig then
+    API.EggCore_SetConfig({ finishDelay = 0.5, batchSize = 3, betweenEggDelay = 0.1, finishRetries = 2, finishRetryDelay = 0.3 })
+end
+print("[MIYAKO] ✅ MIYAKO STEAL ANN EGG ULTIMATE Berhasil Dimuat.")
