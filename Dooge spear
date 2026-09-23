@@ -1,0 +1,208 @@
+-- Auto Dodge Spear (always on)
+local Players          = game:GetService("Players")
+local RunService       = game:GetService("RunService")
+local UserInputService = game:GetService("UserInputService")
+local ReplicatedStorage= game:GetService("ReplicatedStorage")
+local Workspace        = game:GetService("Workspace")
+local LocalPlayer      = Players.LocalPlayer
+local Root
+
+getgenv().VD = getgenv().VD or {}
+local VD = getgenv().VD
+
+local function updateRoot(char)
+    char = char or LocalPlayer.Character
+    Root = char and char:FindFirstChild("HumanoidRootPart") or nil
+end
+updateRoot()
+LocalPlayer.CharacterAdded:Connect(function(c)
+    task.wait(0.2)
+    updateRoot(c)
+end)
+
+
+local function GetRole()
+    local t = LocalPlayer.Team and LocalPlayer.Team.Name
+    if not t then return "Unknown" end
+    local l = t:lower()
+    if l:find("killer") then return "Killer" end
+    if l:find("survivor") then return "Survivor" end
+    return t
+end
+local function IsSurvivor(p)
+    local t = p.Team and p.Team.Name
+    return t and t:lower():find("survivor") ~= nil
+end
+
+VD.SURV_AutoDodgeSpear = false
+getgenv().GANKZ_IsDodging = false
+
+local function VD_Notify(title, content, dur)
+    print("[" .. tostring(title) .. "]", content)
+end
+
+Workspace.ChildAdded:Connect(function(child)
+    if child and child.Name == "Spearprojectile" and VD.SURV_AutoDodgeSpear and GetRole() == "Survivor" then
+        task.spawn(function()
+            if getgenv().GANKZ_IsDodging then return end
+
+            local root = Root or (LocalPlayer.Character and LocalPlayer.Character:FindFirstChild("HumanoidRootPart"))
+            if not root then return end
+
+            task.wait(0.05)
+
+            local mainPart = child:WaitForChild("Hitbox", 1) or child:WaitForChild("Spear1", 1) or child.PrimaryPart or child:FindFirstChildWhichIsA("BasePart")
+            if not mainPart then return end
+
+            task.wait()
+
+            local originPos = mainPart.Position
+            local spearDir = mainPart.CFrame.UpVector
+            local toPlayer = (root.Position - originPos)
+            if toPlayer.Magnitude < 0.1 then return end
+            toPlayer = toPlayer.Unit
+            local dot = spearDir:Dot(toPlayer)
+
+            if dot > 0.85 then
+                getgenv().GANKZ_IsDodging = true
+                local originalCFrame = root.CFrame
+                local rightVector = root.CFrame.RightVector
+                root.CFrame = root.CFrame + (rightVector * 8)
+                pcall(VD_Notify, "Auto Dodge", "Spear terdeteksi! Menghindar otomatis...", 2)
+                task.wait(1)
+                if Root then
+                    Root.CFrame = originalCFrame
+                elseif root and root.Parent then
+                    root.CFrame = originalCFrame
+                end
+                getgenv().GANKZ_IsDodging = false
+            end
+        end)
+    end
+end)
+
+-- =====================================================
+-- FLOATING ON/OFF UI (INVIS style)
+-- =====================================================
+local function GANKZ_CreateDODGEToggleUI()
+    local player = game:GetService("Players").LocalPlayer
+    local parent = nil
+    if gethui then
+        local ok, hui = pcall(gethui)
+        if ok and hui then parent = hui end
+    end
+    if not parent then
+        local ok, core = pcall(function() return game:GetService("CoreGui") end)
+        if ok and core then parent = core end
+    end
+    if not parent then
+        parent = player:WaitForChild("PlayerGui", 10)
+    end
+    if not parent then return end
+
+    local old = parent:FindFirstChild("DODGE_ToggleUI")
+    if old then pcall(function() old:Destroy() end) end
+
+    local gui = Instance.new("ScreenGui")
+    gui.Name = "DODGE_ToggleUI"
+    gui.ResetOnSpawn = false
+    gui.IgnoreGuiInset = true
+    gui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+    gui.DisplayOrder = 999999
+    gui.Parent = parent
+
+    local btn = Instance.new("TextButton")
+    btn.Name = "ToggleBtn"
+    btn.Size = UDim2.fromOffset(92, 92)
+    btn.Position = UDim2.new(0.88, 0, 0.64, 0)
+    btn.AnchorPoint = Vector2.new(0.5, 0.5)
+    btn.BackgroundColor3 = Color3.fromRGB(18, 18, 22)
+    btn.BackgroundTransparency = 0.12
+    btn.Text = ""
+    btn.AutoButtonColor = false
+    btn.ZIndex = 10
+    btn.Parent = gui
+    Instance.new("UICorner", btn).CornerRadius = UDim.new(1, 0)
+
+    local stroke = Instance.new("UIStroke")
+    stroke.Thickness = 2
+    stroke.Parent = btn
+
+    local label = Instance.new("TextLabel")
+    label.BackgroundTransparency = 1
+    label.Size = UDim2.fromScale(1, 1)
+    label.Font = Enum.Font.GothamBold
+    label.TextScaled = true
+    label.TextColor3 = Color3.fromRGB(255, 255, 255)
+    label.ZIndex = 11
+    label.Parent = btn
+    local constraint = Instance.new("UITextSizeConstraint")
+    constraint.MaxTextSize = 14
+    constraint.Parent = label
+
+    local function isOn()
+        return VD.SURV_AutoDodgeSpear == true
+    end
+
+    local function paint()
+        if isOn() then
+            stroke.Color = Color3.fromRGB(80, 200, 255)
+            label.Text = "DODGE\nON"
+            label.TextColor3 = Color3.fromRGB(80, 200, 255)
+        else
+            stroke.Color = Color3.fromRGB(120, 120, 120)
+            label.Text = "DODGE\nOFF"
+            label.TextColor3 = Color3.fromRGB(200, 200, 200)
+        end
+    end
+
+    local function setState(on)
+        if on then
+            VD.SURV_AutoDodgeSpear = true
+            print("[DODGE] ON")
+        else
+            VD.SURV_AutoDodgeSpear = false
+            print("[DODGE] OFF")
+        end
+        paint()
+    end
+
+    -- keep UI label in sync
+    task.spawn(function()
+        while gui and gui.Parent do
+            paint()
+            task.wait(0.25)
+        end
+    end)
+
+    -- drag
+    local dragging, dragStart, startPos = false, nil, nil
+    btn.InputBegan:Connect(function(input)
+        if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+            dragging = true
+            dragStart = input.Position
+            startPos = btn.Position
+        end
+    end)
+    game:GetService("UserInputService").InputChanged:Connect(function(input)
+        if dragging and (input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch) then
+            local delta = input.Position - dragStart
+            btn.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+        end
+    end)
+    btn.InputEnded:Connect(function(input)
+        if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+            dragging = false
+        end
+    end)
+
+    btn.MouseButton1Click:Connect(function()
+        setState(not isOn())
+    end)
+
+    paint()
+    print("[DODGE] UI toggle ready (drag + tap)")
+    return gui
+end
+
+task.defer(GANKZ_CreateDODGEToggleUI)
