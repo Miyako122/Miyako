@@ -1,0 +1,281 @@
+-- ========================================================
+-- BYPASS GENERATOR MANUAL (MENG HUB STANDALONE)
+-- ========================================================
+local Players = game:GetService("Players")
+local Workspace = game:GetService("Workspace")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local UserInputService = game:GetService("UserInputService")
+local LocalPlayer = Players.LocalPlayer
+
+local Remotes = ReplicatedStorage:WaitForChild("Remotes", 5)
+local genFolder = Remotes and Remotes:WaitForChild("Generator", 5)
+local RepairEvent = genFolder and genFolder:WaitForChild("RepairEvent", 5)
+
+-- State
+local ProcessedGens = {}
+local GenCache = {}
+local GenCacheTimer = 0
+
+-- Function Get Parent GUI yang aman
+local function getGuiContainer()
+    local ok, core = pcall(function() return game:GetService("CoreGui") end)
+    if ok and core then return core end
+    return LocalPlayer:WaitForChild("PlayerGui", 5) or LocalPlayer:FindFirstChildOfClass("PlayerGui")
+end
+
+-- Ambil semua generator di map
+local function GetAllGenerators()
+    local now = tick()
+    if now - GenCacheTimer < 5 then return GenCache end
+    GenCache = {}
+    GenCacheTimer = now
+
+    local mapFolder = Workspace:FindFirstChild("Map")
+    if not mapFolder then return GenCache end
+
+    pcall(function()
+        for _, v in pairs(mapFolder:GetDescendants()) do
+            if v:IsA("Model") and v.Name == "Generator" then
+                local isRealGen = v:GetAttribute("RepairProgress") ~= nil
+                    or v:GetAttribute("kickcount") ~= nil
+                    or v:GetAttribute("ProgressRepair") ~= nil
+                if isRealGen then
+                    table.insert(GenCache, v)
+                end
+            end
+        end
+    end)
+    return GenCache
+end
+
+-- Ambil titik perbaikan (GeneratorPoint)
+local function GetGeneratorPoints(genModel)
+    local points = {}
+    pcall(function()
+        for _, obj in pairs(genModel:GetChildren()) do
+            if obj.Name:find("GeneratorPoint") and obj:IsA("BasePart") then
+                table.insert(points, obj)
+            end
+        end
+    end)
+    return points
+end
+
+local function waitForRepairing(point, timeout)
+    local start = tick()
+    while tick() - start < (timeout or 1) do
+        if point:GetAttribute("IsRepairing") == true then
+            return true
+        end
+        task.wait(0.05)
+    end
+    return false
+end
+
+local function clearProcessedOnLeave(genModel, targetPoint)
+    local conn
+    conn = targetPoint:GetAttributeChangedSignal("IsRepairing"):Connect(function()
+        if targetPoint:GetAttribute("IsRepairing") == false then
+            ProcessedGens[genModel] = nil
+            conn:Disconnect()
+        end
+    end)
+end
+
+-- Logika Bypass Manual Meng Hub
+local function DoMultiRepairPlain(targetPoint)
+    local genModel = targetPoint.Parent
+    if ProcessedGens[genModel] then return end
+
+    ProcessedGens[genModel] = true
+    clearProcessedOnLeave(genModel, targetPoint)
+
+    local allPoints = GetGeneratorPoints(genModel)
+    local character = LocalPlayer.Character
+    local hrp = character and character:FindFirstChild("HumanoidRootPart")
+    if not hrp or not RepairEvent then 
+        ProcessedGens[genModel] = nil 
+        return 
+    end
+
+    local originalCFrame = hrp.CFrame
+
+    for _, point in pairs(allPoints) do
+        if point ~= targetPoint and point.Parent then
+            local wasAnchored = hrp.Anchored
+            hrp.Anchored = false
+            hrp.CFrame = point.CFrame
+            task.wait(0.05)
+            hrp.Anchored = wasAnchored
+
+            pcall(function() RepairEvent:FireServer(point, true) end)
+
+            if not waitForRepairing(point, 0.8) then
+                pcall(function() RepairEvent:FireServer(point, false) end)
+                task.wait(0.05)
+                hrp.Anchored = false
+                hrp.CFrame = point.CFrame
+                task.wait(0.05)
+                hrp.Anchored = wasAnchored
+                pcall(function() RepairEvent:FireServer(point, true) end)
+                waitForRepairing(point, 0.5)
+            end
+        end
+    end
+
+    hrp.Anchored = false
+    hrp.CFrame = originalCFrame
+    pcall(function() RepairEvent:FireServer(targetPoint, false) end)
+end
+
+-- ================= TOMBOL GUI "GEN" (DRAGGABLE) =================
+local function createButton()
+    local parentGui = getGuiContainer()
+    if not parentGui then return end
+
+    local old = parentGui:FindFirstChild("BypassGenUI")
+    if old then old:Destroy() end
+
+    local BypassUI = Instance.new("ScreenGui")
+    BypassUI.Name = "BypassGenUI"
+    BypassUI.ResetOnSpawn = false
+    BypassUI.IgnoreGuiInset = true
+    BypassUI.DisplayOrder = 999
+    BypassUI.Parent = parentGui
+
+    local BypassButton = Instance.new("ImageButton")
+    BypassButton.Name = "BypassGenButton"
+    BypassButton.Size = UDim2.new(0, 55, 0, 55)
+    BypassButton.Position = UDim2.new(0.88, 0, 0.55, 0)
+    BypassButton.AnchorPoint = Vector2.new(0.5, 0.5)
+    BypassButton.BackgroundColor3 = Color3.fromRGB(20, 20, 25)
+    BypassButton.BackgroundTransparency = 0.15
+    BypassButton.AutoButtonColor = true
+    BypassButton.Visible = _G.BypassGenEnabled or false
+    BypassButton.ZIndex = 50
+    BypassButton.Parent = BypassUI
+
+    local corner = Instance.new("UICorner")
+    corner.CornerRadius = UDim.new(1, 0)
+    corner.Parent = BypassButton
+
+    local stroke = Instance.new("UIStroke")
+    stroke.Color = Color3.fromRGB(170, 0, 255)
+    stroke.Thickness = 2
+    stroke.Transparency = 0.2
+    stroke.Parent = BypassButton
+
+    local label = Instance.new("TextLabel")
+    label.Size = UDim2.new(1, 0, 1, 0)
+    label.BackgroundTransparency = 1
+    label.Text = "GEN"
+    label.TextColor3 = Color3.fromRGB(255, 255, 255)
+    label.TextScaled = true
+    label.Font = Enum.Font.GothamBold
+    label.ZIndex = 51
+    label.Parent = BypassButton
+
+    -- Fitur Geser Tombol (Draggable Touch)
+    local dragging, dragStart, startPos, moved = false, nil, nil, false
+    BypassButton.InputBegan:Connect(function(input)
+        if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+            dragging = true
+            moved = false
+            dragStart = input.Position
+            startPos = BypassButton.Position
+        end
+    end)
+
+    BypassButton.InputChanged:Connect(function(input)
+        if dragging and (input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch) then
+            local delta = input.Position - dragStart
+            if delta.Magnitude > 6 then moved = true end
+            if moved then
+                BypassButton.Position = UDim2.new(
+                    startPos.X.Scale, startPos.X.Offset + delta.X,
+                    startPos.Y.Scale, startPos.Y.Offset + delta.Y
+                )
+            end
+        end
+    end)
+
+    BypassButton.InputEnded:Connect(function(input)
+        if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+            if dragging and not moved then
+                -- Klik Tombol GEN
+                local char = LocalPlayer.Character
+                local hrp = char and char:FindFirstChild("HumanoidRootPart")
+                if hrp then
+                    local bestPoint, bestDist = nil, math.huge
+                    for _, gen in pairs(GetAllGenerators()) do
+                        for _, point in pairs(GetGeneratorPoints(gen)) do
+                            local d = (hrp.Position - point.Position).Magnitude
+                            if d < bestDist then
+                                bestDist = d
+                                bestPoint = point
+                            end
+                        end
+                    end
+
+                    if bestPoint and bestDist <= 8 then
+                        DoMultiRepairPlain(bestPoint)
+                    end
+                end
+            end
+            dragging = false
+            dragStart = nil
+            startPos = nil
+            moved = false
+        end
+    end)
+
+    _G.BypassGenButtonRef = BypassButton
+    _G.BypassGenUIRef = BypassUI
+end
+
+-- Hook Metamethod Namecall untuk deteksi otomatis saat mulai repair biasa
+pcall(function()
+    if hookmetamethod and not _G.BypassNamecallHooked then
+        _G.BypassNamecallHooked = true
+        local oldNamecall
+        oldNamecall = hookmetamethod(game, "__namecall", function(self, ...)
+            local args = {...}
+            local method = getnamecallmethod()
+            if method == "FireServer" and self == RepairEvent and _G.BypassGenEnabled then
+                local targetPoint = args[1]
+                local isStarting = args[2]
+                if isStarting and targetPoint and targetPoint.Parent then
+                    local genModel = targetPoint.Parent
+                    if not ProcessedGens[genModel] then
+                        task.spawn(function()
+                            DoMultiRepairPlain(targetPoint)
+                        end)
+                        return
+                    end
+                end
+            end
+            return oldNamecall(self, ...)
+        end)
+    end
+end)
+
+-- Pengontrol Toggle Global
+_G.SetBypassGen = function(state)
+    _G.BypassGenEnabled = state
+    if _G.BypassGenButtonRef then
+        _G.BypassGenButtonRef.Visible = state
+    end
+    if not state then
+        ProcessedGens = {}
+    end
+end
+
+-- Event Spawn Karakter
+LocalPlayer.CharacterAdded:Connect(function()
+    task.wait(0.5)
+    createButton()
+end)
+
+createButton()
+_G.BypassGenLoaded = true
+print("[Bypass Gen Manual] Berhasil Dimuat.")
