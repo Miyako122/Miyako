@@ -1,10 +1,12 @@
 -- ==========================================================
--- SOURCE CODE AUTO PARRY (MENG HUB)[span_1](start_span)[span_1](end_span)
+-- AUTO PARRY V2 (TERHUBUNG KE GUI MIYAKO)
+-- Link GitHub: https://raw.githubusercontent.com/Miyako122/Miyako/refs/heads/main/Auto%20Pary%20V2
 -- ==========================================================
 local Players = game:GetService("Players")
 local LocalPlayer = Players.LocalPlayer
 local RunService = game:GetService("RunService")
 local VirtualInputManager = game:GetService("VirtualInputManager")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 local VALID_PARRY_IDS = {
     ["122812055447896"] = "Veil lunge",
@@ -31,7 +33,8 @@ local VALID_PARRY_IDS = {
     ["80411309607666"]  = "Abyssal S1"
 }
 
-local Config = {
+-- Menghubungkan pengaturan ke GUI Miyako via _G.ConfigV2
+_G.ConfigV2 = _G.ConfigV2 or {
     Surv_AutoParry = false,
     Surv_ParrySafety = false,
     Surv_ParryAggressive = false,
@@ -40,6 +43,7 @@ local Config = {
     Surv_ParryFace = 1,
     Ignored_Skills_List = {},
 }
+local Config = _G.ConfigV2
 
 local State = {
     ParryCooldown = false,
@@ -52,7 +56,7 @@ local function IsKiller(p)
 end
 
 local function IsDowned(char) 
-    return char and (char:GetAttribute("Knocked") == true or char:GetAttribute("IsHooked") == true) 
+    return char and (char:GetAttribute("Knocked") == true or char:GetAttribute("IsHooked") == true or char:GetAttribute("Downed") == true or char:GetAttribute("IsDown") == true) 
 end
 
 local function IsSafeToParry(char)
@@ -99,7 +103,7 @@ end
 local function ExecuteParry()
     if State.ParryCooldown then return end
     pcall(function()
-        local parryRemote = game:GetService("ReplicatedStorage")
+        local parryRemote = ReplicatedStorage
             :FindFirstChild("Remotes")
             :FindFirstChild("Items")
             :FindFirstChild("Parrying Dagger")
@@ -113,7 +117,7 @@ end
 
 local function ListenToParryResult()
     task.spawn(function()
-        local remotes = game:GetService("ReplicatedStorage"):WaitForChild("Remotes", 5)
+        local remotes = ReplicatedStorage:WaitForChild("Remotes", 5)
         local dagger = remotes and remotes:WaitForChild("Items", 5):WaitForChild("Parrying Dagger", 5)
         local parryResultRemote = dagger and dagger:WaitForChild("parryResult", 5)
 
@@ -179,9 +183,12 @@ local function AttachParrySensor(kChar)
         local delta = myHRP.Position - kHRP.Position
         local startDistance = delta.Magnitude
 
+        local currentRadius = tonumber(Config.Surv_ParryRadius) or 6
+        local currentFace = tonumber(Config.Surv_ParryFace) or 1
+
         if Config.Surv_ParryAggressive then
             local aggressiveRadius = 12
-            local detectionRadius = Config.Surv_ParryRadius + 5
+            local detectionRadius = currentRadius + 5
             if startDistance > detectionRadius then return end
 
             if startDistance <= aggressiveRadius then
@@ -202,7 +209,7 @@ local function AttachParrySensor(kChar)
                 end)
             end
         else
-            if startDistance > Config.Surv_ParryRadius then return end
+            if startDistance > currentRadius then return end
 
             local myPosFlat = Vector3.new(myHRP.Position.X, 0, myHRP.Position.Z)
             local kPosFlat = Vector3.new(kHRP.Position.X, 0, kHRP.Position.Z)
@@ -211,7 +218,7 @@ local function AttachParrySensor(kChar)
                 local flatDirection = flatDelta.Unit
                 local kLookFlat = Vector3.new(kHRP.CFrame.LookVector.X, 0, kHRP.CFrame.LookVector.Z).Unit
                 local isFacing = kLookFlat:Dot(flatDirection)
-                if isFacing < Config.Surv_ParryFace then return end
+                if isFacing < currentFace then return end
             end
             ExecuteParry()
         end
