@@ -24,7 +24,7 @@ local currentConnection = nil
 local goalConnection = nil
 local visibleConnection = nil
 
--- FUNGSI HIT TOMBOL (DIAKALIN AGAR MODE INSTAN JALAN & LAYAR TETAP BISA DIGESER)
+-- FUNGSI HIT TOMBOL (FIX LAYAR NGADAT / FREEZE PAS SKILL CHECK)
 local function hitSkillCheck()
     pcall(function()
         local pGui = LocalPlayer:FindFirstChildOfClass("PlayerGui") or PlayerGui
@@ -46,16 +46,16 @@ local function hitSkillCheck()
             local cx = p.X + (s.X / 2) + i.X
             local cy = p.Y + (s.Y / 2) + i.Y
             
-            -- Diakalin pakai task.spawn agar eksekusi sentuh virtual tidak nge-block atau nahan fokus layar HP
+            -- Eksekusi touch event secara terpisah agar langsung lepas dan tidak mengunci kamera
             task.spawn(function()
                 VirtualInputManager:SendTouchEvent(8822, 0, cx, cy)
-                task.wait(0.001)
+                task.wait()
                 VirtualInputManager:SendTouchEvent(8822, 2, cx, cy)
             end)
         else
             task.spawn(function()
                 VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.Space, false, game)
-                task.wait(0.001)
+                task.wait()
                 VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.Space, false, game)
             end)
         end
