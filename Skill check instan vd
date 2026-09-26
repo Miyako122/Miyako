@@ -1,30 +1,4 @@
--- ========================================================
--- SOURCE SKILL CHECK MENG HUB (FIXED TARGET BUTTON & RUNTIME)
--- ========================================================
-
-if getgenv()._MengSkillCheckRunning then return end
-getgenv()._MengSkillCheckRunning = true
-
-if getgenv().AutoSkillCheck == nil then getgenv().AutoSkillCheck = false end
-if getgenv().SkillCheckMode == nil then getgenv().SkillCheckMode = "Instant" end
-
-local Players = game:GetService("Players")
-local LocalPlayer = Players.LocalPlayer
-local PlayerGui = LocalPlayer:WaitForChild("PlayerGui", 5) or LocalPlayer:FindFirstChildOfClass("PlayerGui")
-local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local RunService = game:GetService("RunService")
-local UserInputService = game:GetService("UserInputService")
-local VirtualInputManager = game:GetService("VirtualInputManager")
-
-local isScourgeActive = false
-local scourgeSession = nil
-local lastScourgeTime = 0
-
-local currentConnection = nil
-local goalConnection = nil
-local visibleConnection = nil
-
--- FUNGSI HIT TOMBOL MOBILE & PC (FIX TARGET BUTTON)
+-- FUNGSI HIT TOMBOL MOBILE & PC (FIX FREEZE LAYAR HP)
 local function hitSkillCheck()
     pcall(function()
         local pGui = LocalPlayer:FindFirstChildOfClass("PlayerGui") or PlayerGui
@@ -36,18 +10,22 @@ local function hitSkillCheck()
         
         if btn and btn:IsA("GuiObject") and btn.Visible then
             if firesignal then
+                -- Cukup gunakan firesignal agar tidak mengunci/mengganggu sentuhan kamera layar HP
                 pcall(function() firesignal(btn.MouseButton1Down) end)
                 task.wait(0.008)
                 pcall(function() firesignal(btn.MouseButton1Up) end)
+                pcall(function() firesignal(btn.Activated) end)
+            else
+                -- SendTouchEvent hanya sebagai cadangan jika firesignal tidak ada
+                local p = btn.AbsolutePosition
+                local s = btn.AbsoluteSize
+                local i = game:GetService("GuiService"):GetGuiInset()
+                local cx = p.X + (s.X / 2) + i.X
+                local cy = p.Y + (s.Y / 2) + i.Y
+                VirtualInputManager:SendTouchEvent(8822, 0, cx, cy)
+                task.wait(0.008)
+                VirtualInputManager:SendTouchEvent(8822, 2, cx, cy)
             end
-            local p = btn.AbsolutePosition
-            local s = btn.AbsoluteSize
-            local i = game:GetService("GuiService"):GetGuiInset()
-            local cx = p.X + (s.X / 2) + i.X
-            local cy = p.Y + (s.Y / 2) + i.Y
-            VirtualInputManager:SendTouchEvent(8822, 0, cx, cy)
-            task.wait(0.008)
-            VirtualInputManager:SendTouchEvent(8822, 2, cx, cy)
         else
             VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.Space, false, game)
             task.wait(0.008)
@@ -55,136 +33,3 @@ local function hitSkillCheck()
         end
     end)
 end
-
--- Listener King's Scourge asli Meng Hub
-task.spawn(function()
-    local Remotes = ReplicatedStorage:WaitForChild("Remotes", 5)
-    local KillerPerks = Remotes and Remotes:WaitForChild("KillerPerks", 5)
-    local kingscourge = KillerPerks and KillerPerks:WaitForChild("kingscourge", 5)
-    local KingScourgeStart = kingscourge and kingscourge:WaitForChild("KingScourgeStart", 5)
-    local KingScourgeHit = kingscourge and kingscourge:WaitForChild("KingScourgeHit", 5)
-
-    if KingScourgeStart and KingScourgeHit then
-        KingScourgeStart.OnClientEvent:Connect(function(p1, p2, p3)
-            if not getgenv().AutoSkillCheck or getgenv().SkillCheckMode ~= "Instant" then return end
-            if tick() - lastScourgeTime < 0.3 then return end
-
-            lastScourgeTime = tick()
-            isScourgeActive = true
-            scourgeSession = p2
-            local totalHits = p3 or 1
-
-            task.spawn(function()
-                for i = 1, totalHits do
-                    if not isScourgeActive or not scourgeSession then break end
-                    local pGui = LocalPlayer:FindFirstChildOfClass("PlayerGui") or PlayerGui
-                    local prompt = pGui and pGui:FindFirstChild("SkillCheckPromptGui")
-                    local check = prompt and prompt:FindFirstChild("Check")
-                    local line = check and check:FindFirstChild("Line")
-                    local goal = check and check:FindFirstChild("Goal")
-                    
-                    if goal and line then
-                        line.Rotation = goal.Rotation + 109
-                    end
-
-                    task.wait(0.028)
-                    pcall(function() KingScourgeHit:FireServer(scourgeSession, "success") end)
-                    hitSkillCheck()
-                    task.wait(0.042 + math.random(1, 7) / 100)
-                end
-
-                task.wait(0.2)
-                isScourgeActive = false
-                scourgeSession = nil
-            end)
-        end)
-    end
-end)
-
-local function stopTracking()
-    if currentConnection then
-        currentConnection:Disconnect()
-        currentConnection = nil
-    end
-end
-
-local function startTracking(check, line, goal)
-    if isScourgeActive then return end
-    stopTracking()
-
-    if not check or not check.Visible or not line or not goal then return end
-
-    local targetRotation = goal.Rotation
-
-    if getgenv().SkillCheckMode == "Instant" then
-        line.Rotation = 109 + targetRotation
-        hitSkillCheck()
-        return
-    end
-
-    local zoneEnd = 116 + targetRotation
-    currentConnection = RunService.Heartbeat:Connect(function()
-        if not getgenv().AutoSkillCheck or isScourgeActive or not check or not check.Visible then
-            stopTracking()
-            return
-        end
-
-        local rot = line.Rotation % 360
-        local targetZoneStart = (109 + targetRotation) % 360
-        local targetZoneEnd = zoneEnd % 360
-
-        local inZone = false
-        if targetZoneStart > targetZoneEnd then
-            inZone = (rot >= targetZoneStart or rot <= targetZoneEnd)
-        else
-            inZone = (rot >= targetZoneStart and rot <= targetZoneEnd)
-        end
-
-        if inZone then
-            stopTracking()
-            hitSkillCheck()
-        end
-    end)
-end
-
-local function hookCheckGui(prompt)
-    if not prompt then return end
-    local check = prompt:WaitForChild("Check", 5)
-    local line = check and check:WaitForChild("Line", 5)
-    local goal = check and check:WaitForChild("Goal", 5)
-    if not check or not line or not goal then return end
-
-    if goalConnection then goalConnection:Disconnect() end
-    if visibleConnection then visibleConnection:Disconnect() end
-
-    goalConnection = goal:GetPropertyChangedSignal("Rotation"):Connect(function()
-        if not getgenv().AutoSkillCheck or isScourgeActive then return end
-        if goal.Rotation ~= 0 then
-            task.spawn(function() startTracking(check, line, goal) end)
-        end
-    end)
-
-    visibleConnection = check:GetPropertyChangedSignal("Visible"):Connect(function()
-        if not getgenv().AutoSkillCheck or isScourgeActive then return end
-        if check.Visible then
-            task.spawn(function() startTracking(check, line, goal) end)
-        end
-    end)
-
-    if check.Visible and getgenv().AutoSkillCheck then
-        task.spawn(function() startTracking(check, line, goal) end)
-    end
-end
-
--- Inisialisasi GUI jika sudah terbuka di layar
-local currentPrompt = PlayerGui:FindFirstChild("SkillCheckPromptGui")
-if currentPrompt then
-    hookCheckGui(currentPrompt)
-end
-
-PlayerGui.ChildAdded:Connect(function(child)
-    if child.Name == "SkillCheckPromptGui" then
-        task.wait(0.02)
-        hookCheckGui(child)
-    end
-end)
