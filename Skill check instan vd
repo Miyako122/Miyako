@@ -24,7 +24,7 @@ local currentConnection = nil
 local goalConnection = nil
 local visibleConnection = nil
 
--- FUNGSI HIT TOMBOL ASLI (DIKEMBALIKAN AGAR MODE INSTAN NORMAL TANPA MENGUNCI LAYAR BERLEBIHAN)
+-- FUNGSI HIT TOMBOL (DIAKALIN AGAR MODE INSTAN JALAN & LAYAR TETAP BISA DIGESER)
 local function hitSkillCheck()
     pcall(function()
         local pGui = LocalPlayer:FindFirstChildOfClass("PlayerGui") or PlayerGui
@@ -36,25 +36,28 @@ local function hitSkillCheck()
         if btn and btn:IsA("GuiObject") and btn.Visible then
             if firesignal then
                 pcall(function() firesignal(btn.MouseButton1Down) end)
-                task.wait(0.008)
                 pcall(function() firesignal(btn.MouseButton1Up) end)
+                pcall(function() firesignal(btn.Activated) end)
             end
+            
             local p = btn.AbsolutePosition
             local s = btn.AbsoluteSize
             local i = game:GetService("GuiService"):GetGuiInset()
             local cx = p.X + (s.X / 2) + i.X
             local cy = p.Y + (s.Y / 2) + i.Y
             
-            -- Menggunakan touch event dengan durasi sangat singkat agar tidak mengunci pergerakan kamera
-            VirtualInputManager:SendTouchEvent(8822, 0, cx, cy)
-            task.wait(0.005)
-            VirtualInputManager:SendTouchEvent(8822, 1, cx, cy)
-            task.wait(0.005)
-            VirtualInputManager:SendTouchEvent(8822, 2, cx, cy)
+            -- Diakalin pakai task.spawn agar eksekusi sentuh virtual tidak nge-block atau nahan fokus layar HP
+            task.spawn(function()
+                VirtualInputManager:SendTouchEvent(8822, 0, cx, cy)
+                task.wait(0.001)
+                VirtualInputManager:SendTouchEvent(8822, 2, cx, cy)
+            end)
         else
-            VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.Space, false, game)
-            task.wait(0.008)
-            VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.Space, false, game)
+            task.spawn(function()
+                VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.Space, false, game)
+                task.wait(0.001)
+                VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.Space, false, game)
+            end)
         end
     end)
 end
