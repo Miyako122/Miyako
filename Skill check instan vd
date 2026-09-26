@@ -1,12 +1,10 @@
 -- ========================================================
--- SOURCE SKILL CHECK MENG HUB (STANDALONE LOADSTRING)
--- 100% LOGIKA MENG HUB
+-- SOURCE SKILL CHECK MENG HUB (FIXED TARGET BUTTON & RUNTIME)
 -- ========================================================
 
 if getgenv()._MengSkillCheckRunning then return end
 getgenv()._MengSkillCheckRunning = true
 
--- Nilai awal jika belum diset dari GUI
 if getgenv().AutoSkillCheck == nil then getgenv().AutoSkillCheck = false end
 if getgenv().SkillCheckMode == nil then getgenv().SkillCheckMode = "Instant" end
 
@@ -16,34 +14,44 @@ local PlayerGui = LocalPlayer:WaitForChild("PlayerGui", 5) or LocalPlayer:FindFi
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local RunService = game:GetService("RunService")
 local UserInputService = game:GetService("UserInputService")
-local VIM = game:GetService("VirtualInputManager")
+local VirtualInputManager = game:GetService("VirtualInputManager")
 
 local isScourgeActive = false
 local scourgeSession = nil
 local lastScourgeTime = 0
 
 local currentConnection = nil
-local currentGoalRotation = -1
+local goalConnection = nil
+local visibleConnection = nil
 
-local skillGui = PlayerGui:FindFirstChild("SkillCheckPromptGui")
-local check = skillGui and skillGui:FindFirstChild("Check")
-local line = check and check:FindFirstChild("Line")
-local goal = check and check:FindFirstChild("Goal")
-
+-- FUNGSI HIT TOMBOL MOBILE & PC (FIX TARGET BUTTON)
 local function hitSkillCheck()
     pcall(function()
-        local mobile = PlayerGui:FindFirstChild("Survivor-mob")
-        local btn = mobile and mobile:FindFirstChild("Controls") and mobile.Controls:FindFirstChild("action")
-        if btn and btn.Visible then
+        local pGui = LocalPlayer:FindFirstChildOfClass("PlayerGui") or PlayerGui
+        local mobile = pGui and pGui:FindFirstChild("Survivor-mob")
+        local controls = mobile and mobile:FindFirstChild("Controls")
+        local action = controls and controls:FindFirstChild("action")
+        -- Tombol target valid di mobile adalah 'check' atau 'action'
+        local btn = action and (action:FindFirstChild("check") or action)
+        
+        if btn and btn:IsA("GuiObject") and btn.Visible then
             if firesignal then
-                firesignal(btn.MouseButton1Down)
+                pcall(function() firesignal(btn.MouseButton1Down) end)
                 task.wait(0.008)
-                firesignal(btn.MouseButton1Up)
+                pcall(function() firesignal(btn.MouseButton1Up) end)
             end
-        else
-            VIM:SendKeyEvent(true, Enum.KeyCode.Space, false, game)
+            local p = btn.AbsolutePosition
+            local s = btn.AbsoluteSize
+            local i = game:GetService("GuiService"):GetGuiInset()
+            local cx = p.X + (s.X / 2) + i.X
+            local cy = p.Y + (s.Y / 2) + i.Y
+            VirtualInputManager:SendTouchEvent(8822, 0, cx, cy)
             task.wait(0.008)
-            VIM:SendKeyEvent(false, Enum.KeyCode.Space, false, game)
+            VirtualInputManager:SendTouchEvent(8822, 2, cx, cy)
+        else
+            VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.Space, false, game)
+            task.wait(0.008)
+            VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.Space, false, game)
         end
     end)
 end
@@ -69,17 +77,18 @@ task.spawn(function()
             task.spawn(function()
                 for i = 1, totalHits do
                     if not isScourgeActive or not scourgeSession then break end
-
+                    local pGui = LocalPlayer:FindFirstChildOfClass("PlayerGui") or PlayerGui
+                    local prompt = pGui and pGui:FindFirstChild("SkillCheckPromptGui")
+                    local check = prompt and prompt:FindFirstChild("Check")
+                    local line = check and check:FindFirstChild("Line")
+                    local goal = check and check:FindFirstChild("Goal")
+                    
                     if goal and line then
                         line.Rotation = goal.Rotation + 109
                     end
 
                     task.wait(0.028)
-
-                    pcall(function()
-                        KingScourgeHit:FireServer(scourgeSession, "success")
-                    end)
-
+                    pcall(function() KingScourgeHit:FireServer(scourgeSession, "success") end)
                     hitSkillCheck()
                     task.wait(0.042 + math.random(1, 7) / 100)
                 end
@@ -99,23 +108,13 @@ local function stopTracking()
     end
 end
 
-local function isUiValid()
-    if not skillGui or not skillGui.Parent then return false end
-    check = skillGui:FindFirstChild("Check")
-    if not check then return false end
-    line = check:FindFirstChild("Line")
-    goal = check:FindFirstChild("Goal")
-    return line and goal
-end
-
-local function startTracking()
+local function startTracking(check, line, goal)
     if isScourgeActive then return end
     stopTracking()
 
-    if not isUiValid() or not check.Visible then return end
+    if not check or not check.Visible or not line or not goal then return end
 
     local targetRotation = goal.Rotation
-    currentGoalRotation = targetRotation
 
     if getgenv().SkillCheckMode == "Instant" then
         line.Rotation = 109 + targetRotation
@@ -125,56 +124,67 @@ local function startTracking()
 
     local zoneEnd = 116 + targetRotation
     currentConnection = RunService.Heartbeat:Connect(function()
-        if not getgenv().AutoSkillCheck or isScourgeActive or not isUiValid() or not check.Visible then
+        if not getgenv().AutoSkillCheck or isScourgeActive or not check or not check.Visible then
             stopTracking()
             return
         end
 
-        local rot = line.Rotation
-        if rot > zoneEnd + 3 then
-            stopTracking()
-            return
+        local rot = line.Rotation % 360
+        local targetZoneStart = (109 + targetRotation) % 360
+        local targetZoneEnd = zoneEnd % 360
+
+        local inZone = false
+        if targetZoneStart > targetZoneEnd then
+            inZone = (rot >= targetZoneStart or rot <= targetZoneEnd)
+        else
+            inZone = (rot >= targetZoneStart and rot <= targetZoneEnd)
         end
 
-        if rot >= (109 + targetRotation) and rot <= zoneEnd then
+        if inZone then
             stopTracking()
             hitSkillCheck()
         end
     end)
 end
 
-function initAutoPerfect()
-    stopTracking()
-    if not (skillGui and check and line and goal) then return end
+local function hookCheckGui(prompt)
+    if not prompt then return end
+    local check = prompt:WaitForChild("Check", 5)
+    local line = check and check:WaitForChild("Line", 5)
+    local goal = check and check:WaitForChild("Goal", 5)
+    if not check or not line or not goal then return end
 
-    goal:GetPropertyChangedSignal("Rotation"):Connect(function()
+    if goalConnection then goalConnection:Disconnect() end
+    if visibleConnection then visibleConnection:Disconnect() end
+
+    goalConnection = goal:GetPropertyChangedSignal("Rotation"):Connect(function()
         if not getgenv().AutoSkillCheck or isScourgeActive then return end
-        local freshGoal = skillGui:FindFirstChild("Check") and skillGui.Check:FindFirstChild("Goal")
-        if freshGoal and freshGoal.Rotation ~= 0 then
-            goal = freshGoal
-            check = skillGui:FindFirstChild("Check")
-            line = check and check:FindFirstChild("Line")
-            task.spawn(startTracking)
+        if goal.Rotation ~= 0 then
+            task.spawn(function() startTracking(check, line, goal) end)
         end
     end)
 
-    check:GetPropertyChangedSignal("Visible"):Connect(function()
+    visibleConnection = check:GetPropertyChangedSignal("Visible"):Connect(function()
         if not getgenv().AutoSkillCheck or isScourgeActive then return end
         if check.Visible then
-            task.spawn(startTracking)
+            task.spawn(function() startTracking(check, line, goal) end)
         end
     end)
+
+    if check.Visible and getgenv().AutoSkillCheck then
+        task.spawn(function() startTracking(check, line, goal) end)
+    end
+end
+
+-- Inisialisasi GUI jika sudah terbuka di layar
+local currentPrompt = PlayerGui:FindFirstChild("SkillCheckPromptGui")
+if currentPrompt then
+    hookCheckGui(currentPrompt)
 end
 
 PlayerGui.ChildAdded:Connect(function(child)
     if child.Name == "SkillCheckPromptGui" then
         task.wait(0.02)
-        skillGui = child
-        check = child:WaitForChild("Check", 5)
-        line = check and check:WaitForChild("Line", 5)
-        goal = check and check:WaitForChild("Goal", 5)
-        if getgenv().AutoSkillCheck then
-            initAutoPerfect()
-        end
+        hookCheckGui(child)
     end
 end)
